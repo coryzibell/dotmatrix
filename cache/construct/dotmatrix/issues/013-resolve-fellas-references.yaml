@@ -1,0 +1,47 @@
+title: "Resolve Fellas identity references"
+type: issue
+labels:
+  - dx
+  - documentation
+  - identity:ramakandra
+body: |
+  ## Summary
+
+  Fellas identity was consolidated into Smith ("one or many, he scales") but references remain throughout documentation, causing confusion.
+
+  ## Current State
+
+  **Fellas referenced in:**
+  - `neo.md` line 9: "The Fellas-first rule lives there"
+  - `neo.md` lines 44-57: Entire "Smith vs Fellas" section
+  - `orchestration.md`: Fellas-first language
+  - `agents/fellas.md`: Legacy file still exists
+
+  **But:**
+  - No `identities/fellas.md` (canonical location)
+  - CLAUDE.md table updated to show Smith scaling
+  - No `ram/fellas/` directory
+
+  ## Decision Needed
+
+  **Option A: Complete the consolidation**
+  1. Remove Fellas references from neo.md
+  2. Update orchestration.md to remove Fellas-first language
+  3. Document Smith's 1:N scaling as canonical parallel approach
+  4. Delete `agents/fellas.md`
+
+  **Option B: Restore Fellas**
+  1. Create `identities/fellas.md`
+  2. Create `ram/fellas/`
+  3. Add to CLAUDE.md table
+  4. Keep Smith vs Fellas distinction
+
+  ## Recommendation
+
+  Option A - the consolidation already happened in CLAUDE.md. Complete it.
+
+  ## From Construct
+
+  Identified by: Morpheus (documentation), Ramakandra (tech debt)
+
+  > "System evolved from 'Fellas for parallel, Smith for singular' → 'Smith scales 1:N' but migration incomplete."

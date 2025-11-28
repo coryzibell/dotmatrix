@@ -1,0 +1,51 @@
+title: Build a Dispatch Dashboard
+type: discussion
+category: ideas
+labels: &id001
+- enhancement
+- dx
+- identity:sati
+body: "## From Sati's Perspective\n\n> \"The one thing I'd build next.\"\n\n## The\
+  \ Vision\n\nA `dispatch-status.sh` that makes the invisible system **observable\
+  \ at a glance**:\n\n```\n./matrix/dispatch-status.sh\n\n\U0001F3AF Active Workflows\n\
+  \u251C\u2500 Construct: dotmatrix (Phase 7/8 - Oracle, Spoon, Sati)\n\u2514\u2500\
+  \ [none]\n\n\U0001F4CA Identity Activity (Last 7 Days)\nSmith:       12 dispatches\
+  \ \u2502 11 success \u2502 1 partial\nArchitect:    8 dispatches \u2502  8 success\n\
+  Neo:         47 orchestrations\nTrinity:      3 dispatches \u2502  2 success \u2502\
+  \ 1 failure (logged to ram/trinity/errors.md)\n\n\U0001F4BE Storage\nRAM:      \
+  \   2.3 MB (12 identities active)\nCache:       8.1 MB (3 active constructs)\nArtifacts:\
+  \   42 KB (10 scripts, 4 templates)\n\n\u26A0\uFE0F  Warnings\n- ram/trinity/errors.md\
+  \ has unresolved failures\n- cache/construct/dotmatrix/ not archived (>7 days old)\n\
+  ```\n\n## Why This Would Be Valuable\n\nRight now:\n- No visibility into which identities\
+  \ are active\n- No tracking of success/failure rates\n- No awareness of storage\
+  \ consumption\n- No warnings about stale cache\n\nWith this dashboard:\n- See system\
+  \ health at a glance\n- Track identity effectiveness\n- Know when to prune\n\n##\
+  \ Implementation Thoughts\n\nCould follow `garden-paths.sh` pattern:\n- Simple bash\n\
+  - Parse RAM files for activity\n- Check cache timestamps\n- Output colored status\n\
+  \n## Discussion\n\n- What metrics matter most?\n- Should this be bash or Python?\n\
+  - Integration with the identity system?\n"
+metadata:
+  github_discussion_id: D_kwDOQcaC0c4AjB_7
+  last_synced:
+    title: Build a Dispatch Dashboard
+    body: "## From Sati's Perspective\n\n> \"The one thing I'd build next.\"\n\n##\
+      \ The Vision\n\nA `dispatch-status.sh` that makes the invisible system **observable\
+      \ at a glance**:\n\n```\n./matrix/dispatch-status.sh\n\n\U0001F3AF Active Workflows\n\
+      \u251C\u2500 Construct: dotmatrix (Phase 7/8 - Oracle, Spoon, Sati)\n\u2514\u2500\
+      \ [none]\n\n\U0001F4CA Identity Activity (Last 7 Days)\nSmith:       12 dispatches\
+      \ \u2502 11 success \u2502 1 partial\nArchitect:    8 dispatches \u2502  8 success\n\
+      Neo:         47 orchestrations\nTrinity:      3 dispatches \u2502  2 success\
+      \ \u2502 1 failure (logged to ram/trinity/errors.md)\n\n\U0001F4BE Storage\n\
+      RAM:         2.3 MB (12 identities active)\nCache:       8.1 MB (3 active constructs)\n\
+      Artifacts:   42 KB (10 scripts, 4 templates)\n\n\u26A0\uFE0F  Warnings\n- ram/trinity/errors.md\
+      \ has unresolved failures\n- cache/construct/dotmatrix/ not archived (>7 days\
+      \ old)\n```\n\n## Why This Would Be Valuable\n\nRight now:\n- No visibility\
+      \ into which identities are active\n- No tracking of success/failure rates\n\
+      - No awareness of storage consumption\n- No warnings about stale cache\n\nWith\
+      \ this dashboard:\n- See system health at a glance\n- Track identity effectiveness\n\
+      - Know when to prune\n\n## Implementation Thoughts\n\nCould follow `garden-paths.sh`\
+      \ pattern:\n- Simple bash\n- Parse RAM files for activity\n- Check cache timestamps\n\
+      - Output colored status\n\n## Discussion\n\n- What metrics matter most?\n- Should\
+      \ this be bash or Python?\n- Integration with the identity system?\n"
+    labels: *id001
+    github_updated_at: '2025-11-27T01:54:43Z'

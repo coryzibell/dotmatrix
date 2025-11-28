@@ -1,0 +1,51 @@
+title: Construct as CI check
+type: discussion
+category: Ideas
+labels: &id001
+- enhancement
+- infrastructure
+- identity:oracle
+body: "## The Idea\n\nRight now Construct is manual: kautau says \"Construct this\
+  \ project,\" workflow runs.\n\nWhat if Construct ran on every commit?\n\n## Vision\n\
+  \n```yaml\n# .github/workflows/construct.yml\nname: Construct Audit\non: [push,\
+  \ pull_request]\n\njobs:\n  construct:\n    runs-on: ubuntu-latest\n    steps:\n\
+  \      - uses: actions/checkout@v4\n      - name: Run Construct\n        run: |\n\
+  \          # Dispatch identities\n          # Generate findings\n          # Create\
+  \ issues/PRs for critical findings\n      - name: Health Score\n        run: |\n\
+  \          # Calculate score from findings\n          # Fail if below threshold\n\
+  ```\n\n## What This Enables\n\n- **Health score per commit** - Track project health\
+  \ over time\n- **Auto-generated issues** - Critical findings become issues automatically\n\
+  - **PR validation** - \"This PR introduces a security vulnerability\"\n- **Historical\
+  \ comparison** - \"Security improved 20% since last month\"\n\n## Challenges\n\n\
+  - Token cost per commit (22 identity dispatches)\n- CI runtime (Construct takes\
+  \ time)\n- Which findings warrant blocking a PR?\n\n## Lighter Version\n\nMaybe\
+  \ not full Construct, but:\n- Cypher on security-sensitive files\n- Deus on test\
+  \ coverage\n- Apoc on dependency changes\n\nTriggered by file patterns, not every\
+  \ commit.\n\n## From Construct\n\nIdentified by: Oracle (alternatives)\n\n> \"Latent\
+  \ capability: Run Construct on every commit.\"\n"
+metadata:
+  github_issue_number: 6
+  last_synced:
+    title: Construct as CI check
+    body: "## The Idea\n\nRight now Construct is manual: kautau says \"Construct this\
+      \ project,\" workflow runs.\n\nWhat if Construct ran on every commit?\n\n##\
+      \ Vision\n\n```yaml\n# .github/workflows/construct.yml\nname: Construct Audit\n\
+      on: [push, pull_request]\n\njobs:\n  construct:\n    runs-on: ubuntu-latest\n\
+      \    steps:\n      - uses: actions/checkout@v4\n      - name: Run Construct\n\
+      \        run: |\n          # Dispatch identities\n          # Generate findings\n\
+      \          # Create issues/PRs for critical findings\n      - name: Health Score\n\
+      \        run: |\n          # Calculate score from findings\n          # Fail\
+      \ if below threshold\n```\n\n## What This Enables\n\n- **Health score per commit**\
+      \ - Track project health over time\n- **Auto-generated issues** - Critical findings\
+      \ become issues automatically\n- **PR validation** - \"This PR introduces a\
+      \ security vulnerability\"\n- **Historical comparison** - \"Security improved\
+      \ 20% since last month\"\n\n## Challenges\n\n- Token cost per commit (22 identity\
+      \ dispatches)\n- CI runtime (Construct takes time)\n- Which findings warrant\
+      \ blocking a PR?\n\n## Lighter Version\n\nMaybe not full Construct, but:\n-\
+      \ Cypher on security-sensitive files\n- Deus on test coverage\n- Apoc on dependency\
+      \ changes\n\nTriggered by file patterns, not every commit.\n\n## From Construct\n\
+      \nIdentified by: Oracle (alternatives)\n\n> \"Latent capability: Run Construct\
+      \ on every commit.\"\n"
+    labels: *id001
+    github_updated_at: '2025-11-27T02:11:53Z'
+  github_discussion_id: D_kwDOQcaC0c4AjCAa

@@ -1,0 +1,55 @@
+title: 'Identity Lifecycle: Birth, Growth, and Retirement'
+type: discussion
+category: ideas
+labels: &id001
+- architecture
+- identity:oracle
+body: "## From Oracle's Perspective\n\n> \"You have 27 identities. Tomorrow you might\
+  \ have 30. Next month, 40.\"\n\n## The Identity Breeding Problem\n\nEach identity\
+  \ has:\n- A markdown file to maintain\n- A RAM directory\n- Dispatch protocol Neo\
+  \ must remember\n- Potential overlap with others\n\nThe system **scales by addition**\
+  \ but has no **removal mechanism**.\n\n## Questions That Need Answers\n\n- **When\
+  \ do identities retire?** (unused for 3 months \u2192 archive?)\n- **When do two\
+  \ merge?** (overlapping dispatch calls \u2192 consolidate?)\n- **How do we track\
+  \ usage?** (which identities get dispatched, which languish?)\n\n## Proposed Lifecycle\n\
+  \n```\nBirth: New identity created for specific need\n  \u2193\nGrowth: Identity\
+  \ accumulates RAM, develops expertise\n  \u2193\nMaturity: Identity has clear role,\
+  \ active usage\n  \u2193\nDecline: Usage drops, overlap with others\n  \u2193\n\
+  Retirement: Archive or merge\n```\n\n## Metrics to Track\n\n- **Dispatch frequency**:\
+  \ How often is this identity called?\n- **Success rate**: How often does work complete\
+  \ successfully?\n- **Overlap score**: How often does another identity do similar\
+  \ work?\n- **RAM growth**: Is this identity accumulating knowledge?\n\n## Self-Pruning\
+  \ System\n\nWhat if identities that don't serve fade gracefully?\n\n- `garden-paths.sh`\
+  \ already shows collaboration patterns\n- Could extend to show \"cold\" identities\
+  \ (no activity in 30 days)\n- Hamann could propose consolidation when overlap detected\n\
+  \n## Discussion\n\n- Should identities ever truly \"die\" or just archive?\n- Who\
+  \ decides when to merge overlapping identities?\n- Is 27 too many? Too few? Just\
+  \ right?\n"
+metadata:
+  github_discussion_id: D_kwDOQcaC0c4AjB_9
+  last_synced:
+    title: 'Identity Lifecycle: Birth, Growth, and Retirement'
+    body: "## From Oracle's Perspective\n\n> \"You have 27 identities. Tomorrow you\
+      \ might have 30. Next month, 40.\"\n\n## The Identity Breeding Problem\n\nEach\
+      \ identity has:\n- A markdown file to maintain\n- A RAM directory\n- Dispatch\
+      \ protocol Neo must remember\n- Potential overlap with others\n\nThe system\
+      \ **scales by addition** but has no **removal mechanism**.\n\n## Questions That\
+      \ Need Answers\n\n- **When do identities retire?** (unused for 3 months \u2192\
+      \ archive?)\n- **When do two merge?** (overlapping dispatch calls \u2192 consolidate?)\n\
+      - **How do we track usage?** (which identities get dispatched, which languish?)\n\
+      \n## Proposed Lifecycle\n\n```\nBirth: New identity created for specific need\n\
+      \  \u2193\nGrowth: Identity accumulates RAM, develops expertise\n  \u2193\n\
+      Maturity: Identity has clear role, active usage\n  \u2193\nDecline: Usage drops,\
+      \ overlap with others\n  \u2193\nRetirement: Archive or merge\n```\n\n## Metrics\
+      \ to Track\n\n- **Dispatch frequency**: How often is this identity called?\n\
+      - **Success rate**: How often does work complete successfully?\n- **Overlap\
+      \ score**: How often does another identity do similar work?\n- **RAM growth**:\
+      \ Is this identity accumulating knowledge?\n\n## Self-Pruning System\n\nWhat\
+      \ if identities that don't serve fade gracefully?\n\n- `garden-paths.sh` already\
+      \ shows collaboration patterns\n- Could extend to show \"cold\" identities (no\
+      \ activity in 30 days)\n- Hamann could propose consolidation when overlap detected\n\
+      \n## Discussion\n\n- Should identities ever truly \"die\" or just archive?\n\
+      - Who decides when to merge overlapping identities?\n- Is 27 too many? Too few?\
+      \ Just right?\n"
+    labels: *id001
+    github_updated_at: '2025-11-27T01:54:45Z'

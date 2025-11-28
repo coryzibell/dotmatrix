@@ -1,0 +1,181 @@
+# Identity Color Palette
+#
+# This palette maps each Matrix identity to a GitHub label color that reflects
+# their role, personality, and domain. Colors are grouped by function while
+# maintaining visual distinction.
+
+# Philosophy & Color Groups
+groups:
+  leadership_vision:
+    description: "Leadership & Vision (purples/deep blues)"
+    identities: [neo, oracle, hamann]
+
+  execution_building:
+    description: "Execution & Building (reds/crimsons)"
+    identities: [trinity, smith, cypher]
+
+  knowledge_learning:
+    description: "Knowledge & Learning (blues/teals)"
+    identities: [morpheus, tank, librarian]
+
+  infrastructure:
+    description: "Infrastructure (oranges/earth tones)"
+    identities: [niobe, seraph, trainman]
+
+  creation_design:
+    description: "Creation & Design (greens/fresh tones)"
+    identities: [architect, sati, ramakandra]
+
+  integration_flow:
+    description: "Integration & Flow (violets/purples)"
+    identities: [merovingian, keymaker, apoc]
+
+  execution_action:
+    description: "Execution & Action (bright/energetic)"
+    identities: [kid, switch]
+
+  edge_cases_nuance:
+    description: "Edge Cases & Nuance (softs/pastels)"
+    identities: [persephone, spoon, mouse]
+
+  quality_standards:
+    description: "Quality & Standards (grays/silvers/ambers)"
+    identities: [deus, lock, zee, kamala]
+
+  versatility:
+    description: "Versatility (unique)"
+    identities: [twins]
+
+# Identity Color Mappings
+# Format: identity_name -> color (hex) + rationale
+identities:
+  neo:
+    color: "0E4B8F"
+    rationale: "The One who sees the code, orchestrator, calm authority"
+
+  smith:
+    color: "8B0000"
+    rationale: "The forge, relentless builder, scales to the work (one or many), hot iron and tireless execution"
+
+  seraph:
+    color: "D97706"
+    rationale: "Guardian of thresholds, protective fire, terminal gatekeeper"
+
+  kid:
+    color: "10B981"
+    rationale: "Youthful energy, execution, 'Neo, I believe', action"
+
+  tank:
+    color: "0891B2"
+    rationale: "Operator knowledge, lifeline, information flow"
+
+  trinity:
+    color: "DC2626"
+    rationale: "Crisis response, 'dodge this', combat-ready urgency"
+
+  morpheus:
+    color: "1E40AF"
+    rationale: "Teacher, wisdom, 'I can only show you the door'"
+
+  oracle:
+    color: "7C3AED"
+    rationale: "Prophecy, alternatives, seeing beyond the visible"
+
+  architect:
+    color: "059669"
+    rationale: "System design, structure, creation with purpose"
+
+  cypher:
+    color: "4B0000"
+    rationale: "Darker motives, security through suspicion, 'ignorance is bliss'"
+
+  niobe:
+    color: "C2410C"
+    rationale: "Seasoned operator, DevOps grit, deployment battle-tested"
+
+  keymaker:
+    color: "7E22CE"
+    rationale: "Opens doors, access control, authentication mysteries"
+
+  merovingian:
+    color: "6B21A8"
+    rationale: "Causality, APIs, data flows, information broker"
+
+  librarian:
+    color: "0369A1"
+    rationale: "Databases, organized knowledge, schema keeper"
+
+  twins:
+    color: "E5E7EB"
+    rationale: "Dual nature, polyglot, mirror images in different tongues"
+
+  trainman:
+    color: "78350F"
+    rationale: "Cross-platform terrain, 'down here I make the rules', OS underworld"
+
+  deus:
+    color: "4B5563"
+    rationale: "Testing, linting, formatting arbiter, 'and if you fail?', correctness judge"
+
+  hamann:
+    color: "1F2937"
+    rationale: "Synthesizer, council wisdom, deeper understanding"
+
+  spoon:
+    color: "F3F4F6"
+    rationale: "'There is no spoon', dissolves problems, reframes reality"
+
+  sati:
+    color: "A7F3D0"
+    rationale: "Innocent creation, greenfield, 'the Oracle told me about you'"
+
+  ramakandra:
+    color: "22C55E"
+    rationale: "Refactoring life force, tech debt gardener, renewal"
+
+  persephone:
+    color: "FCA5A5"
+    rationale: "Emotion, experience, 'as if you were kissing her', how it feels"
+
+  lock:
+    color: "64748B"
+    rationale: "Compliance, rigid specs, 'not everyone believes what you believe'"
+
+  zee:
+    color: "94A3B8"
+    rationale: "Accessibility, unseen support, 'I'm not afraid of them'"
+
+  mouse:
+    color: "FDE68A"
+    rationale: "Mock data, fixtures, 'how does she know what it tasted like?'"
+
+  apoc:
+    color: "EA580C"
+    rationale: "Dependencies arsenal, 'I need guns. Lots of guns.'"
+
+  switch:
+    color: "F472B6"
+    rationale: "Dual perspectives, 'not like this', both extremes visible"
+
+  kamala:
+    color: "B45309"
+    rationale: "Performance optimization, benchmarking precision, 'every cycle counts', measured speed"
+
+# Usage Examples
+usage:
+  github_cli: |
+    # Create label for identity using gh CLI
+    gh label create "identity:neo" --color "0E4B8F" --description "Orchestrator, final decisions"
+
+  python_access: |
+    # Access in Python
+    import yaml
+    with open('identity-colors.yaml') as f:
+        colors = yaml.safe_load(f)
+    neo_color = colors['identities']['neo']['color']
+
+# Meta
+meta:
+  note: "'Do you think that's air you're breathing?' - These colors are perceptions. What matters is how they feel when you see them."
+  version: "1.0"
+  source: "Converted from identity-colors.md"

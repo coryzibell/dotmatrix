@@ -1,0 +1,170 @@
+title: Construct as Continuous Integration
+type: discussion
+category: ideas
+labels: &id001
+- vision
+- ci
+- identity:oracle
+body: '## From Oracle''s Perspective
+
+
+  > "Right now Construct is manual. Latent capability: Run Construct on every commit."
+
+
+  ## The Vision
+
+
+  Imagine:
+
+  - Push to `main`
+
+  - GitHub Action triggers Construct
+
+  - 22 identities audit the change
+
+  - Findings auto-generate issues/PRs
+
+  - You get a "health score" per commit
+
+
+  ## What This Would Enable
+
+
+  - **Continuous audit**: Every change reviewed by specialized perspectives
+
+  - **Trend tracking**: "Security score improved 15% this quarter"
+
+  - **Early warning**: Cypher catches vulnerability before it reaches production
+
+  - **Documentation drift**: Morpheus notices when code changes but docs don''t
+
+
+  ## Technical Challenges
+
+
+  - **Cost**: 22 identity dispatches per commit = expensive
+
+  - **Time**: Full Construct takes ~30 minutes
+
+  - **Noise**: Most commits don''t need full audit
+
+
+  ## Possible Solutions
+
+
+  - **Construct Lite**: Cypher + Deus only (security + tests) for regular commits
+
+  - **Construct Full**: All 22 for PRs to main
+
+  - **Smart triggers**: Only audit changed files/modules
+
+  - **Cached context**: Reuse architecture analysis across commits
+
+
+  ## Implementation Path
+
+
+  1. Create `construct-lite.yaml` GitHub Action
+
+  2. Dispatch subset of identities (Cypher, Deus, Morpheus)
+
+  3. Post summary as PR comment
+
+  4. Full Construct remains manual for deep analysis
+
+
+  ## Discussion
+
+
+  - Is the cost/benefit worth it?
+
+  - Which identities matter most for CI?
+
+  - How do you prevent audit fatigue?
+
+  '
+metadata:
+  github_discussion_id: D_kwDOQcaC0c4AjB__
+  last_synced:
+    title: Construct as Continuous Integration
+    body: '## From Oracle''s Perspective
+
+
+      > "Right now Construct is manual. Latent capability: Run Construct on every
+      commit."
+
+
+      ## The Vision
+
+
+      Imagine:
+
+      - Push to `main`
+
+      - GitHub Action triggers Construct
+
+      - 22 identities audit the change
+
+      - Findings auto-generate issues/PRs
+
+      - You get a "health score" per commit
+
+
+      ## What This Would Enable
+
+
+      - **Continuous audit**: Every change reviewed by specialized perspectives
+
+      - **Trend tracking**: "Security score improved 15% this quarter"
+
+      - **Early warning**: Cypher catches vulnerability before it reaches production
+
+      - **Documentation drift**: Morpheus notices when code changes but docs don''t
+
+
+      ## Technical Challenges
+
+
+      - **Cost**: 22 identity dispatches per commit = expensive
+
+      - **Time**: Full Construct takes ~30 minutes
+
+      - **Noise**: Most commits don''t need full audit
+
+
+      ## Possible Solutions
+
+
+      - **Construct Lite**: Cypher + Deus only (security + tests) for regular commits
+
+      - **Construct Full**: All 22 for PRs to main
+
+      - **Smart triggers**: Only audit changed files/modules
+
+      - **Cached context**: Reuse architecture analysis across commits
+
+
+      ## Implementation Path
+
+
+      1. Create `construct-lite.yaml` GitHub Action
+
+      2. Dispatch subset of identities (Cypher, Deus, Morpheus)
+
+      3. Post summary as PR comment
+
+      4. Full Construct remains manual for deep analysis
+
+
+      ## Discussion
+
+
+      - Is the cost/benefit worth it?
+
+      - Which identities matter most for CI?
+
+      - How do you prevent audit fatigue?
+
+      '
+    labels: *id001
+    github_updated_at: '2025-11-27T01:54:48Z'

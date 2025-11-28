@@ -1,0 +1,40 @@
+title: "Add tests for sync_merge.py three-way merge logic"
+type: issue
+labels:
+  - reliability
+  - identity:deus
+body: |
+  ## Summary
+
+  sync_merge.py contains critical three-way merge logic used by all sync operations. Zero test coverage. Wrong merge decisions = data loss.
+
+  ## Risk Assessment
+
+  From Deus analysis:
+  - **Risk:** Merge conflicts incorrectly resolved → data loss on GitHub
+  - **Impact:** User edits overwritten, local changes lost
+  - **Detection:** Silent. User discovers after data already overwritten.
+
+  ## What To Test
+
+  ### Priority 1 (Must Test)
+  - `compute_field_changes()` - all change type combinations
+  - `merge_labels()` - union/intersection logic, edge cases (empty, all added, all removed)
+  - `merge_fields()` - conflict resolution paths
+
+  ### Edge Cases
+  - Deeply nested data structures
+  - Non-string/list types
+  - Empty string vs None normalization
+
+  ## Estimated Effort
+
+  - 300-400 lines of test code
+  - 8-12 hours implementation
+  - Covers 80% of data loss risk
+
+  ## From Construct
+
+  Identified by: Deus (test analysis)
+
+  > "Single point of failure for all sync operations... prevents cascading data loss across all sync scripts."

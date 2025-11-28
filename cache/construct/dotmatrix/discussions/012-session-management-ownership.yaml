@@ -1,0 +1,149 @@
+title: Who owns session management - Keymaker or Merovingian?
+type: discussion
+category: ideas
+labels: &id001
+- architecture
+- identity:keymaker
+- identity:merovingian
+body: '## From Keymaker''s Review
+
+
+  > "Session management - Stateful sessions, cookie handling, session stores. Currently
+  unclear if this is Keymaker or Merovingian (data flow)."
+
+
+  ## The Ambiguity
+
+
+  Session management touches both domains:
+
+
+  **Keymaker''s claim:**
+
+  - Sessions are access control mechanisms
+
+  - Cookie auth is authentication
+
+  - Session tokens are... tokens
+
+
+  **Merovingian''s claim:**
+
+  - Session stores are data flows
+
+  - Session state is a contract between client and server
+
+  - Cookie handling is part of the HTTP contract
+
+
+  ## Keymaker''s Recommendation
+
+
+  > "Suggestion: Keymaker - it''s an access control mechanism"
+
+
+  Sessions determine *who can access what*. That''s authentication/authorization,
+  not data flow design.
+
+
+  ## Proposed Resolution
+
+
+  | Aspect | Owner | Reason |
+
+  |--------|-------|--------|
+
+  | Session token format | Keymaker | Token design |
+
+  | Session storage strategy | Merovingian | Data persistence contract |
+
+  | Session validation logic | Keymaker | Access control |
+
+  | Session cookie attributes | Keymaker | Security settings (HttpOnly, Secure, SameSite)
+  |
+
+
+  ## Discussion
+
+
+  - Is this split too granular?
+
+  - Should one identity own it entirely?
+
+  - Does this even come up often enough to matter?
+
+  '
+metadata:
+  github_discussion_id: D_kwDOQcaC0c4AjCAd
+  last_synced:
+    title: Who owns session management - Keymaker or Merovingian?
+    body: '## From Keymaker''s Review
+
+
+      > "Session management - Stateful sessions, cookie handling, session stores.
+      Currently unclear if this is Keymaker or Merovingian (data flow)."
+
+
+      ## The Ambiguity
+
+
+      Session management touches both domains:
+
+
+      **Keymaker''s claim:**
+
+      - Sessions are access control mechanisms
+
+      - Cookie auth is authentication
+
+      - Session tokens are... tokens
+
+
+      **Merovingian''s claim:**
+
+      - Session stores are data flows
+
+      - Session state is a contract between client and server
+
+      - Cookie handling is part of the HTTP contract
+
+
+      ## Keymaker''s Recommendation
+
+
+      > "Suggestion: Keymaker - it''s an access control mechanism"
+
+
+      Sessions determine *who can access what*. That''s authentication/authorization,
+      not data flow design.
+
+
+      ## Proposed Resolution
+
+
+      | Aspect | Owner | Reason |
+
+      |--------|-------|--------|
+
+      | Session token format | Keymaker | Token design |
+
+      | Session storage strategy | Merovingian | Data persistence contract |
+
+      | Session validation logic | Keymaker | Access control |
+
+      | Session cookie attributes | Keymaker | Security settings (HttpOnly, Secure,
+      SameSite) |
+
+
+      ## Discussion
+
+
+      - Is this split too granular?
+
+      - Should one identity own it entirely?
+
+      - Does this even come up often enough to matter?
+
+      '
+    labels: *id001
+    github_updated_at: '2025-11-27T02:12:01Z'

@@ -1,0 +1,196 @@
+metadata:
+  title: Fix command injection in balance-checker
+  type: issue
+  labels:
+  - identity:smith
+  - blocker
+  - security
+  assignees: []
+  milestone: null
+  github_issue_number: 15
+  state: open
+  github_updated_at: '2025-11-26T21:21:14Z'
+  last_synced:
+    title: Fix command injection in balance-checker
+    body: '# Fix command injection in balance-checker
+
+
+
+
+
+
+
+      From Construct review of `matrix` project. Cypher identified critical security
+      vulnerability during security audit.
+
+
+      **Source:** Cypher''s security audit
+
+
+      ## Problem
+
+
+      `cmd/matrix/balance_checker.go:187-295` executes shell commands from markdown
+      `[verify:]` directives without sanitization.
+
+
+      An attacker with write access to markdown files in `~/.claude/ram/` could execute
+      arbitrary commands by inserting malicious `[verify:]` directives.
+
+
+      ## Solution
+
+
+      **Option A: Remove the feature entirely**
+
+      - Delete `[verify:]` directive handling
+
+      - Simplest, eliminates attack surface completely
+
+
+      **Option B: Implement command allowlist**
+
+      - Only permit: `grep`, `find`, `test`, `[`, `cat`, `head`, `wc`
+
+      - Validate command before execution
+
+      - Log rejected attempts
+
+
+      **Recommendation:** Option B - the verification feature is useful for checking
+      if design docs match reality, just needs guardrails.
+
+
+      ## Implementation Steps
+
+
+      1. Create `isAllowedCommand(cmd string) bool` function
+
+      2. Parse directive to extract base command (first word)
+
+      3. Check against allowlist before execution
+
+      4. Return clear error message for rejected commands
+
+      5. Add tests for both allowed and rejected cases
+
+
+      ## Acceptance Criteria
+
+
+      - [ ] No arbitrary command execution possible
+
+      - [ ] Allowlisted commands (`grep`, `find`, `test`, `cat`, `head`, `wc`) work
+      as before
+
+      - [ ] Rejected commands return helpful error message
+
+      - [ ] Unit tests cover allowlist validation
+
+      - [ ] Cypher re-audits after fix
+
+
+      ## Handoff
+
+
+      1. Smith implements the fix
+
+      2. Deus writes security-focused tests
+
+      3. Cypher re-audits the fix
+
+      4. Neo reviews and merges'
+    labels:
+    - identity:smith
+    - blocker
+    - security
+    updated_at: '2025-11-26T21:21:14Z'
+body_markdown: '# Fix command injection in balance-checker
+
+
+
+
+
+
+
+  From Construct review of `matrix` project. Cypher identified critical security vulnerability
+  during security audit.
+
+
+  **Source:** Cypher''s security audit
+
+
+  ## Problem
+
+
+  `cmd/matrix/balance_checker.go:187-295` executes shell commands from markdown `[verify:]`
+  directives without sanitization.
+
+
+  An attacker with write access to markdown files in `~/.claude/ram/` could execute
+  arbitrary commands by inserting malicious `[verify:]` directives.
+
+
+  ## Solution
+
+
+  **Option A: Remove the feature entirely**
+
+  - Delete `[verify:]` directive handling
+
+  - Simplest, eliminates attack surface completely
+
+
+  **Option B: Implement command allowlist**
+
+  - Only permit: `grep`, `find`, `test`, `[`, `cat`, `head`, `wc`
+
+  - Validate command before execution
+
+  - Log rejected attempts
+
+
+  **Recommendation:** Option B - the verification feature is useful for checking if
+  design docs match reality, just needs guardrails.
+
+
+  ## Implementation Steps
+
+
+  1. Create `isAllowedCommand(cmd string) bool` function
+
+  2. Parse directive to extract base command (first word)
+
+  3. Check against allowlist before execution
+
+  4. Return clear error message for rejected commands
+
+  5. Add tests for both allowed and rejected cases
+
+
+  ## Acceptance Criteria
+
+
+  - [ ] No arbitrary command execution possible
+
+  - [ ] Allowlisted commands (`grep`, `find`, `test`, `cat`, `head`, `wc`) work as
+  before
+
+  - [ ] Rejected commands return helpful error message
+
+  - [ ] Unit tests cover allowlist validation
+
+  - [ ] Cypher re-audits after fix
+
+
+  ## Handoff
+
+
+  1. Smith implements the fix
+
+  2. Deus writes security-focused tests
+
+  3. Cypher re-audits the fix
+
+  4. Neo reviews and merges'
+comments: []

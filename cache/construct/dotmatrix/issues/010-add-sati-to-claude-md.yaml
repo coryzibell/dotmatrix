@@ -1,0 +1,27 @@
+title: "Add Sati to CLAUDE.md identity table"
+type: issue
+labels:
+  - documentation
+  - identity:morpheus
+body: |
+  ## Summary
+
+  Sati identity exists (`identities/sati.md`) but is missing from the CLAUDE.md identity table.
+
+  ## Current State
+
+  - `identities/sati.md` exists with full definition
+  - `identity-colors.yaml` includes Sati (28 identities)
+  - CLAUDE.md table missing Sati row
+
+  ## Fix
+
+  Add row to CLAUDE.md identity table:
+
+  ```markdown
+  | `/sati` | Sati | Greenfield, prototypes | "Spike a quick proof of concept" | "The Oracle told me about you." |
+  ```
+
+  ## From Construct
+
+  Identified by: Morpheus (documentation review)

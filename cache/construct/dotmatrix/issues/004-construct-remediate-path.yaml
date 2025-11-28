@@ -1,0 +1,39 @@
+title: Construct -> Remediate path for auto-fix PRs
+type: discussion
+category: Ideas
+labels: &id001
+- enhancement
+- identity:oracle
+body: "## The Gap\n\nConstruct is observation-only. After audit, you have:\n- `security-findings.md`\n\
+  - `tech-debt.md`\n- `ux-recommendations.md`\n\nAnd then what? Smith gets \"implement\
+  \ these 47 recommendations\"?\n\n## The Opportunity\n\nWhat if Construct findings\
+  \ could generate:\n- **Issues** for bugs, gaps, recommendations (current behavior)\n\
+  - **Draft PRs** for fixes where the solution is obvious (new capability)\n\n###\
+  \ Example\n\nCypher finds: \"API key exposed in `config.js`\"\n\nInstead of just\
+  \ creating an issue, Smith could:\n1. Create a branch\n2. Move API key to `.env`\n\
+  3. Update `config.js` to read from env\n4. Push branch\n5. Create draft PR with\
+  \ description\n\n## Decision Points\n\n- What makes a fix \"obvious enough\" for\
+  \ auto-remediation?\n- Should PRs be draft-only (human reviews before merge)?\n\
+  - Which identities own the remediation logic?\n\n## From Construct\n\nIdentified\
+  \ by: Oracle (alternatives)\n\n> \"You audit beautifully. You have no structured\
+  \ path from audit \u2192 action.\"\n"
+metadata:
+  github_issue_number: 4
+  last_synced:
+    title: Construct -> Remediate path for auto-fix PRs
+    body: "## The Gap\n\nConstruct is observation-only. After audit, you have:\n-\
+      \ `security-findings.md`\n- `tech-debt.md`\n- `ux-recommendations.md`\n\nAnd\
+      \ then what? Smith gets \"implement these 47 recommendations\"?\n\n## The Opportunity\n\
+      \nWhat if Construct findings could generate:\n- **Issues** for bugs, gaps, recommendations\
+      \ (current behavior)\n- **Draft PRs** for fixes where the solution is obvious\
+      \ (new capability)\n\n### Example\n\nCypher finds: \"API key exposed in `config.js`\"\
+      \n\nInstead of just creating an issue, Smith could:\n1. Create a branch\n2.\
+      \ Move API key to `.env`\n3. Update `config.js` to read from env\n4. Push branch\n\
+      5. Create draft PR with description\n\n## Decision Points\n\n- What makes a\
+      \ fix \"obvious enough\" for auto-remediation?\n- Should PRs be draft-only (human\
+      \ reviews before merge)?\n- Which identities own the remediation logic?\n\n\
+      ## From Construct\n\nIdentified by: Oracle (alternatives)\n\n> \"You audit beautifully.\
+      \ You have no structured path from audit \u2192 action.\"\n"
+    labels: *id001
+    github_updated_at: '2025-11-27T02:11:51Z'
+  github_discussion_id: D_kwDOQcaC0c4AjCAY

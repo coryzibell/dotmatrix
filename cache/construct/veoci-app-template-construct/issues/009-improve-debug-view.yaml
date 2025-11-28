@@ -1,0 +1,94 @@
+metadata:
+  title: Enhance debug view with configuration diagnostics
+  type: issue
+  labels:
+  - identity:smith
+  - enhancement
+  - dx
+  assignees: []
+  milestone: null
+  github_issue_number: 9
+  last_synced:
+    title: Enhance debug view with configuration diagnostics
+    body: "# Enhance debug view with configuration diagnostics\n\n\n\n\n\n\nFrom Construct\
+      \ review of `veoci-app-template-construct`. Persephone and Seraph noted the\
+      \ debug view is underutilized.\n\n**Source:** `~/.claude/cache/construct/veoci-app-template-construct/devex-review.md`\n\
+      \n## Problem\n\nA `/debug` route exists but doesn't help diagnose common issues:\n\
+      - Is VEOCI_API_URL configured correctly?\n- Is the API reachable?\n- Is the\
+      \ user authenticated?\n- What's in localStorage?\n\nDevelopers debugging issues\
+      \ have to manually inspect DevTools instead of using a built-in diagnostic panel.\n\
+      \n## Solution\n\nEnhance the debug view to show configuration status and common\
+      \ diagnostics.\n\n## Implementation Steps\n\n1. Update `src/views/DebugView.vue`\
+      \ to include:\n\n   **API Configuration Section:**\n   - Display current `VEOCI_API_URL`\
+      \ value\n   - Show connection status (reachable/unreachable)\n   - Test button\
+      \ to ping API health endpoint\n\n   **Auth State Section:**\n   - Is authenticated:\
+      \ yes/no\n   - Token present: yes/no (don't show actual token)\n   - Token expiry\
+      \ time (decoded from JWT)\n   - Refresh token status\n\n   **localStorage Section:**\n\
+      \   - List all keys\n   - Show values (redact sensitive ones like tokens)\n\
+      \   - Clear button for debugging\n\n   **Environment Section:**\n   - Current\
+      \ mode (development/production)\n   - VeociJS SDK version\n   - Build timestamp\n\
+      \n2. Example structure:\n   ```vue\n   <template>\n     <v-container>\n    \
+      \   <h1>Debug Panel</h1>\n\n       <v-card class=\"mb-4\">\n         <v-card-title>API\
+      \ Configuration</v-card-title>\n         <v-card-text>\n           <v-table\
+      \ density=\"compact\">\n             <tbody>\n               <tr>\n        \
+      \         <td>API URL</td>\n                 <td><code>{{ apiUrl || 'NOT SET'\
+      \ }}</code></td>\n                 <td>\n                   <v-chip :color=\"\
+      apiStatus\" size=\"small\">\n                     {{ apiStatusText }}\n    \
+      \               </v-chip>\n                 </td>\n               </tr>\n  \
+      \           </tbody>\n           </v-table>\n           <v-btn @click=\"testConnection\"\
+      \ class=\"mt-2\">\n             Test Connection\n           </v-btn>\n     \
+      \    </v-card-text>\n       </v-card>\n\n       <!-- Auth State, localStorage,\
+      \ Environment sections... -->\n     </v-container>\n   </template>\n   ```\n\
+      \n3. Add route guard to only show in development:\n   ```typescript\n   {\n\
+      \     path: '/debug',\n     component: DebugView,\n     beforeEnter: () => {\n\
+      \       if (import.meta.env.PROD) {\n         return { path: '/' }\n       }\n\
+      \     }\n   }\n   ```\n\n## Acceptance Criteria\n\n- [ ] Debug view shows API\
+      \ URL and connection status\n- [ ] Debug view shows auth state (without exposing\
+      \ tokens)\n- [ ] Debug view shows localStorage contents (redacted)\n- [ ] \"\
+      Test Connection\" button verifies API reachability\n- [ ] Debug view only accessible\
+      \ in development mode\n- [ ] Helps diagnose common issues in <1 minute\n\n##\
+      \ Handoff\n\nSmith implements. Persephone reviews UX. Seraph verifies it helps\
+      \ first-run debugging."
+    labels:
+    - dx
+    - enhancement
+    - identity:smith
+    github_updated_at: '2025-11-27T00:29:55Z'
+    assignees: []
+body_markdown: "# Enhance debug view with configuration diagnostics\n\n\n\n\n\n\n\
+  From Construct review of `veoci-app-template-construct`. Persephone and Seraph noted\
+  \ the debug view is underutilized.\n\n**Source:** `~/.claude/cache/construct/veoci-app-template-construct/devex-review.md`\n\
+  \n## Problem\n\nA `/debug` route exists but doesn't help diagnose common issues:\n\
+  - Is VEOCI_API_URL configured correctly?\n- Is the API reachable?\n- Is the user\
+  \ authenticated?\n- What's in localStorage?\n\nDevelopers debugging issues have\
+  \ to manually inspect DevTools instead of using a built-in diagnostic panel.\n\n\
+  ## Solution\n\nEnhance the debug view to show configuration status and common diagnostics.\n\
+  \n## Implementation Steps\n\n1. Update `src/views/DebugView.vue` to include:\n\n\
+  \   **API Configuration Section:**\n   - Display current `VEOCI_API_URL` value\n\
+  \   - Show connection status (reachable/unreachable)\n   - Test button to ping API\
+  \ health endpoint\n\n   **Auth State Section:**\n   - Is authenticated: yes/no\n\
+  \   - Token present: yes/no (don't show actual token)\n   - Token expiry time (decoded\
+  \ from JWT)\n   - Refresh token status\n\n   **localStorage Section:**\n   - List\
+  \ all keys\n   - Show values (redact sensitive ones like tokens)\n   - Clear button\
+  \ for debugging\n\n   **Environment Section:**\n   - Current mode (development/production)\n\
+  \   - VeociJS SDK version\n   - Build timestamp\n\n2. Example structure:\n   ```vue\n\
+  \   <template>\n     <v-container>\n       <h1>Debug Panel</h1>\n\n       <v-card\
+  \ class=\"mb-4\">\n         <v-card-title>API Configuration</v-card-title>\n   \
+  \      <v-card-text>\n           <v-table density=\"compact\">\n             <tbody>\n\
+  \               <tr>\n                 <td>API URL</td>\n                 <td><code>{{\
+  \ apiUrl || 'NOT SET' }}</code></td>\n                 <td>\n                  \
+  \ <v-chip :color=\"apiStatus\" size=\"small\">\n                     {{ apiStatusText\
+  \ }}\n                   </v-chip>\n                 </td>\n               </tr>\n\
+  \             </tbody>\n           </v-table>\n           <v-btn @click=\"testConnection\"\
+  \ class=\"mt-2\">\n             Test Connection\n           </v-btn>\n         </v-card-text>\n\
+  \       </v-card>\n\n       <!-- Auth State, localStorage, Environment sections...\
+  \ -->\n     </v-container>\n   </template>\n   ```\n\n3. Add route guard to only\
+  \ show in development:\n   ```typescript\n   {\n     path: '/debug',\n     component:\
+  \ DebugView,\n     beforeEnter: () => {\n       if (import.meta.env.PROD) {\n  \
+  \       return { path: '/' }\n       }\n     }\n   }\n   ```\n\n## Acceptance Criteria\n\
+  \n- [ ] Debug view shows API URL and connection status\n- [ ] Debug view shows auth\
+  \ state (without exposing tokens)\n- [ ] Debug view shows localStorage contents\
+  \ (redacted)\n- [ ] \"Test Connection\" button verifies API reachability\n- [ ]\
+  \ Debug view only accessible in development mode\n- [ ] Helps diagnose common issues\
+  \ in <1 minute\n\n## Handoff\n\nSmith implements. Persephone reviews UX. Seraph\
+  \ verifies it helps first-run debugging."

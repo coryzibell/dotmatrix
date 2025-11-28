@@ -1,0 +1,47 @@
+title: 'Model Assignments: Should Mouse and Fellas use Haiku?'
+type: discussion
+category: ideas
+labels: &id001
+- enhancement
+- cost-optimization
+- identity:architect
+body: "## From Architect's Review\n\n> \"Should any identity run on Haiku for cost\
+  \ efficiency?\"\n\n## Current State\n\nAll identities except Kid (haiku) and Neo\
+  \ (opus) run on Sonnet.\n\n## Architect's Analysis\n\n| Identity | Current Model\
+  \ | Token Intensity | Could Use Haiku? |\n|----------|---------------|-----------------|------------------|\n\
+  | Architect | Sonnet | High (complex reasoning) | No |\n| Smith | Sonnet | High\
+  \ (implementation) | No |\n| Tank | Sonnet | Medium (research, summarization) |\
+  \ Possibly |\n| Mouse | Sonnet | Low (data generation) | **Yes** |\n| Fellas | Sonnet\
+  \ | Low (parallel tasks, simple execution) | **Yes** |\n\n## Recommendation\n\n\
+  - **Mouse \u2192 Haiku**: Generating mock data does not require deep reasoning\n\
+  - **Fellas \u2192 Haiku**: Parallel breadth tasks (update 5 function signatures)\
+  \ are mechanical\n- **Tank**: Keep Sonnet - research quality matters\n\n## Considerations\n\
+  \n### For Haiku\n- Significant cost savings on high-volume tasks\n- Mouse and Fellas\
+  \ tasks are largely mechanical\n- Faster response times for simple operations\n\n\
+  ### Against Haiku\n- Even \"simple\" tasks can have edge cases\n- Context understanding\
+  \ may suffer\n- Consistency with other identities\n\n## Discussion\n\n- Is the cost/quality\
+  \ tradeoff worth it?\n- Should we test with specific task types first?\n- Are there\
+  \ other identities that could use Haiku?\n"
+metadata:
+  github_discussion_id: D_kwDOQcaC0c4AjCAb
+  last_synced:
+    title: 'Model Assignments: Should Mouse and Fellas use Haiku?'
+    body: "## From Architect's Review\n\n> \"Should any identity run on Haiku for\
+      \ cost efficiency?\"\n\n## Current State\n\nAll identities except Kid (haiku)\
+      \ and Neo (opus) run on Sonnet.\n\n## Architect's Analysis\n\n| Identity | Current\
+      \ Model | Token Intensity | Could Use Haiku? |\n|----------|---------------|-----------------|------------------|\n\
+      | Architect | Sonnet | High (complex reasoning) | No |\n| Smith | Sonnet | High\
+      \ (implementation) | No |\n| Tank | Sonnet | Medium (research, summarization)\
+      \ | Possibly |\n| Mouse | Sonnet | Low (data generation) | **Yes** |\n| Fellas\
+      \ | Sonnet | Low (parallel tasks, simple execution) | **Yes** |\n\n## Recommendation\n\
+      \n- **Mouse \u2192 Haiku**: Generating mock data does not require deep reasoning\n\
+      - **Fellas \u2192 Haiku**: Parallel breadth tasks (update 5 function signatures)\
+      \ are mechanical\n- **Tank**: Keep Sonnet - research quality matters\n\n## Considerations\n\
+      \n### For Haiku\n- Significant cost savings on high-volume tasks\n- Mouse and\
+      \ Fellas tasks are largely mechanical\n- Faster response times for simple operations\n\
+      \n### Against Haiku\n- Even \"simple\" tasks can have edge cases\n- Context\
+      \ understanding may suffer\n- Consistency with other identities\n\n## Discussion\n\
+      \n- Is the cost/quality tradeoff worth it?\n- Should we test with specific task\
+      \ types first?\n- Are there other identities that could use Haiku?\n"
+    labels: *id001
+    github_updated_at: '2025-11-27T02:11:59Z'

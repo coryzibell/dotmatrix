@@ -1,0 +1,91 @@
+# Category Label Color Palette
+#
+# These labels categorize issues/discussions by domain, priority, and type.
+# Colors are chosen to complement (not duplicate) identity colors.
+#
+# Philosophy: Identity labels = WHO (vibrant), Category labels = WHAT KIND (muted/distinct)
+
+# Category Labels - classify the domain/type of work
+categories:
+  security:
+    color: "FBBD23"
+    description: "Security vulnerabilities, auth, hardening"
+
+  data:
+    color: "36D399"
+    description: "Schemas, queries, migrations, data flows"
+
+  infrastructure:
+    color: "A8A29E"
+    description: "DevOps, CI/CD, deployment, operations"
+
+  api:
+    color: "F472B6"
+    description: "Contracts, endpoints, integrations"
+
+  architecture:
+    color: "38BDF8"
+    description: "System design, structure, patterns"
+
+  reliability:
+    color: "34D399"
+    description: "Testing, verification, error handling"
+
+  documentation:
+    color: "A78BFA"
+    description: "Guides, READMEs, specs, examples"
+
+  dx:
+    color: "2DD4BF"
+    description: "Developer experience, tooling, conventions"
+
+  compliance:
+    color: "78716C"
+    description: "Standards, regulations, governance"
+
+  strategy:
+    color: "C084FC"
+    description: "Vision, roadmap, reframes"
+
+# Priority Labels - urgency/importance
+priorities:
+  P0:
+    color: "FF0000"
+    description: "Critical - blocks shipping"
+
+  P1:
+    color: "FF6B6B"
+    description: "High - ship soon"
+
+  P2:
+    color: "FFA94D"
+    description: "Medium - schedule it"
+
+  P3:
+    color: "FFE066"
+    description: "Low - backlog"
+
+# Type Labels - issue vs discussion
+types:
+  idea:
+    color: "C4B5FD"
+    description: "Discussion topic, not actionable issue"
+
+  bug:
+    color: "F87171"
+    description: "Something is broken"
+
+  enhancement:
+    color: "A3E635"
+    description: "Improvement to existing functionality"
+
+# Blocker label (often used standalone)
+special:
+  blocker:
+    color: "DC2626"
+    description: "Blocks progress on other work"
+
+# Meta
+meta:
+  version: "1.0"
+  note: "Category colors are deliberately more muted than identity colors"

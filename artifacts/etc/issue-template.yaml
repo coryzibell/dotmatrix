@@ -1,0 +1,160 @@
+# GitHub Issue Template (YAML)
+# Machine-readable format for API-driven issue creation
+# Source: ~/.claude/artifacts/etc/issue-template.md
+
+metadata:
+  title: "Fix command injection in balance-checker"
+  type: "issue"  # "issue" or "idea" - ideas go to GitHub Discussions
+  labels:
+    - "identity:smith"
+    - "blocker"
+    - "security"
+  assignees: []
+  milestone: null
+  project: "matrix"
+
+context:
+  source_path: "construct"
+  review_phase: "Phase 5 (Security Review)"
+  reviewer_identity: "cypher"
+  findings_file: "~/.claude/cache/construct/matrix/security-findings.md"
+  description: "From Construct review of `matrix` project. Cypher identified critical security vulnerability during Phase 5 (Security Review)."
+
+problem:
+  summary: "`cmd/matrix/balance_checker.go:187-295` executes shell commands from markdown `[verify:]` directives without sanitization."
+
+  vulnerability_details:
+    file: "cmd/matrix/balance_checker.go"
+    lines: "187-295"
+    attack_vector: "Markdown file with malicious [verify:] directive"
+    access_required: "Write access to ~/.claude/ram/"
+
+  code_example: |
+    // Current vulnerable code pattern
+    directive := extractVerifyDirective(line)  // e.g., "[verify:rm -rf /]"
+    cmd := exec.Command("sh", "-c", directive)
+    output, _ := cmd.Output()
+
+  threat: "An attacker with write access to markdown files in `~/.claude/ram/` could execute arbitrary commands."
+
+solution:
+  options:
+    - id: "A"
+      name: "Remove the feature entirely"
+      description: "Delete `[verify:]` directive handling"
+      pros:
+        - "Simplest"
+        - "Eliminates attack surface completely"
+      cons: []
+
+    - id: "B"
+      name: "Implement command allowlist"
+      description: "Only permit: `grep`, `find`, `test`, `[`, `cat`, `head`, `wc`"
+      steps:
+        - "Validate command before execution"
+        - "Log rejected attempts"
+      pros:
+        - "Preserves useful feature"
+        - "Adds guardrails"
+      cons: []
+
+  recommendation:
+    option: "B"
+    rationale: "The verification feature is useful, just needs guardrails."
+
+implementation:
+  steps:
+    - step: 1
+      action: "Create `isAllowedCommand(cmd string) bool` function"
+    - step: 2
+      action: "Parse directive to extract base command"
+    - step: 3
+      action: "Check against allowlist before execution"
+    - step: 4
+      action: "Return clear error for rejected commands"
+    - step: 5
+      action: "Add tests for both allowed and rejected cases"
+
+  acceptance_criteria:
+    - checked: false
+      criterion: "No arbitrary command execution possible"
+    - checked: false
+      criterion: "Allowlisted commands work as before"
+    - checked: false
+      criterion: "Rejected commands return helpful error message"
+    - checked: false
+      criterion: "Unit tests cover allowlist validation"
+    - checked: false
+      criterion: "Cypher re-audits after fix"
+
+handoff:
+  workflow:
+    - step: 1
+      identity: "smith"
+      action: "Implements the fix"
+    - step: 2
+      identity: "deus"
+      action: "Verifies with security-focused tests"
+    - step: 3
+      identity: "cypher"
+      action: "Re-audits the fix"
+    - step: 4
+      identity: "neo"
+      action: "Reviews and merges"
+
+# GitHub Issue Body (Markdown for rendering)
+body_markdown: |
+  ## Context
+
+  From Construct review of `matrix` project. Cypher identified critical security vulnerability during Phase 5 (Security Review).
+
+  **Source:** `~/.claude/cache/construct/matrix/security-findings.md`
+
+  ## Problem
+
+  `cmd/matrix/balance_checker.go:187-295` executes shell commands from markdown `[verify:]` directives without sanitization.
+
+  ```go
+  // Current vulnerable code pattern
+  directive := extractVerifyDirective(line)  // e.g., "[verify:rm -rf /]"
+  cmd := exec.Command("sh", "-c", directive)
+  output, _ := cmd.Output()
+  ```
+
+  An attacker with write access to markdown files in `~/.claude/ram/` could execute arbitrary commands.
+
+  ## Solution
+
+  **Option A: Remove the feature entirely**
+  - Delete `[verify:]` directive handling
+  - Simplest, eliminates attack surface completely
+
+  **Option B: Implement command allowlist**
+  - Only permit: `grep`, `find`, `test`, `[`, `cat`, `head`, `wc`
+  - Validate command before execution
+  - Log rejected attempts
+
+  **Recommendation:** Option B - the verification feature is useful, just needs guardrails.
+
+  ## Implementation Steps
+
+  1. Create `isAllowedCommand(cmd string) bool` function
+  2. Parse directive to extract base command
+  3. Check against allowlist before execution
+  4. Return clear error for rejected commands
+  5. Add tests for both allowed and rejected cases
+
+  ## Acceptance Criteria
+
+  - [ ] No arbitrary command execution possible
+  - [ ] Allowlisted commands work as before
+  - [ ] Rejected commands return helpful error message
+  - [ ] Unit tests cover allowlist validation
+  - [ ] Cypher re-audits after fix
+
+  ## Handoff
+
+  After Smith implements:
+  1. Deus verifies with security-focused tests
+  2. Cypher re-audits the fix
+  3. Neo reviews and merges

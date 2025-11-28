@@ -1,0 +1,240 @@
+title: Create ADR template for Architect outputs
+type: issue
+labels:
+- enhancement
+- documentation
+- identity:architect
+body: '## Problem
+
+
+  Architect outputs are freeform. No standard template for Architectural Decision
+  Records (ADRs).
+
+
+  ## Source
+
+
+  Identified in Architect''s identity review during Construct audit (P1 priority).
+
+
+  ## Proposed Solution
+
+
+  Create `~/.claude/ram/architect/adr-template.md` with standard sections:
+
+
+  ```markdown
+
+  # ADR: [Title]
+
+
+  **Date:** YYYY-MM-DD
+
+  **Status:** Proposed | Accepted | Deprecated | Superseded
+
+
+  ## Context
+
+
+  What is the issue that we''re seeing that is motivating this decision?
+
+
+  ## Options Considered
+
+
+  ### Option 1: [Name]
+
+  - Pros:
+
+  - Cons:
+
+
+  ### Option 2: [Name]
+
+  - Pros:
+
+  - Cons:
+
+
+  ## Constraints
+
+
+  - Performance requirements
+
+  - Coupling considerations
+
+  - Cost implications
+
+  - Team familiarity
+
+
+  ## Decision
+
+
+  We will use [option] because [reasoning].
+
+
+  ## Consequences
+
+
+  - What becomes easier?
+
+  - What becomes harder?
+
+  - What are the risks?
+
+
+  ## Related
+
+
+  - Links to related ADRs, issues, or documentation
+
+  ```
+
+
+  ## Benefits
+
+
+  - Consistency across architectural decisions
+
+  - Long-term context retention
+
+  - Clear decision audit trail
+
+  - Easier onboarding for new contributors
+
+
+  ## Files to Create
+
+
+  - `~/.claude/ram/architect/adr-template.md`
+
+
+  ## Files to Update
+
+
+  - `~/.claude/identities/architect.md` - reference the template
+
+  '
+metadata:
+  github_issue_number: 35
+  last_synced:
+    title: Create ADR template for Architect outputs
+    body: '## Problem
+
+
+      Architect outputs are freeform. No standard template for Architectural Decision
+      Records (ADRs).
+
+
+      ## Source
+
+
+      Identified in Architect''s identity review during Construct audit (P1 priority).
+
+
+      ## Proposed Solution
+
+
+      Create `~/.claude/ram/architect/adr-template.md` with standard sections:
+
+
+      ```markdown
+
+      # ADR: [Title]
+
+
+      **Date:** YYYY-MM-DD
+
+      **Status:** Proposed | Accepted | Deprecated | Superseded
+
+
+      ## Context
+
+
+      What is the issue that we''re seeing that is motivating this decision?
+
+
+      ## Options Considered
+
+
+      ### Option 1: [Name]
+
+      - Pros:
+
+      - Cons:
+
+
+      ### Option 2: [Name]
+
+      - Pros:
+
+      - Cons:
+
+
+      ## Constraints
+
+
+      - Performance requirements
+
+      - Coupling considerations
+
+      - Cost implications
+
+      - Team familiarity
+
+
+      ## Decision
+
+
+      We will use [option] because [reasoning].
+
+
+      ## Consequences
+
+
+      - What becomes easier?
+
+      - What becomes harder?
+
+      - What are the risks?
+
+
+      ## Related
+
+
+      - Links to related ADRs, issues, or documentation
+
+      ```
+
+
+      ## Benefits
+
+
+      - Consistency across architectural decisions
+
+      - Long-term context retention
+
+      - Clear decision audit trail
+
+      - Easier onboarding for new contributors
+
+
+      ## Files to Create
+
+
+      - `~/.claude/ram/architect/adr-template.md`
+
+
+      ## Files to Update
+
+
+      - `~/.claude/identities/architect.md` - reference the template
+
+      '
+    labels:
+    - documentation
+    - enhancement
+    - identity:architect
+    github_updated_at: '2025-11-27T02:11:51Z'
+    assignees: []

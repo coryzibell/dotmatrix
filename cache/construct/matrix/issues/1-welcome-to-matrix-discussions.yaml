@@ -1,0 +1,52 @@
+metadata:
+  title: Welcome to matrix Discussions!
+  type: idea
+  labels: &id001 []
+  category: Announcements
+  github_discussion_id: D_kwDOQdnjVM4AjB39
+  github_discussion_number: 1
+  github_updated_at: '2025-11-26T21:09:54Z'
+  last_synced:
+    title: Welcome to matrix Discussions!
+    body: "<!--\r\n    \u270F\uFE0F Optional: Customize the content below to let your\
+      \ community know what you intend to use Discussions for.\r\n-->\r\n## \U0001F44B\
+      \ Welcome!\r\n  We\u2019re using Discussions as a place to connect with other\
+      \ members of our community. We hope that you:\r\n  * Ask questions you\u2019\
+      re wondering about.\r\n  * Share ideas.\r\n  * Engage with other community members.\r\
+      \n  * Welcome others and are open-minded. Remember that this is a community\
+      \ we\r\n  build together \U0001F4AA.\r\n\r\n  To get started, comment below\
+      \ with an introduction of yourself and tell us about what you do with this community.\r\
+      \n\r\n<!--\r\n  For the maintainers, here are some tips \U0001F4A1 for getting\
+      \ started with Discussions. We'll leave these in Markdown comments for now,\
+      \ but feel free to take out the comments for all maintainers to see.\r\n\r\n\
+      \  \U0001F4E2 **Announce to your community** that Discussions is available!\
+      \ Go ahead and send that tweet, post, or link it from the website to drive traffic\
+      \ here.\r\n\r\n  \U0001F517 If you use issue templates, **link any relevant\
+      \ issue templates** such as questions and community conversations to Discussions.\
+      \ Declutter your issues by driving community content to where they belong in\
+      \ Discussions. If you need help, here's a [link to the documentation](https://docs.github.com/github/building-a-strong-community/configuring-issue-templates-for-your-repository#configuring-the-template-chooser).\r\
+      \n\r\n  \u27A1\uFE0F You can **convert issues to discussions** either individually\
+      \ or bulk by labels. Looking at you, issues labeled \u201Cquestion\u201D or\
+      \ \u201Cdiscussion\u201D.\r\n-->\r\n"
+    labels: *id001
+    updated_at: '2025-11-26T21:09:54Z'
+body_markdown: "<!--\r\n    \u270F\uFE0F Optional: Customize the content below to\
+  \ let your community know what you intend to use Discussions for.\r\n-->\r\n## \U0001F44B\
+  \ Welcome!\r\n  We\u2019re using Discussions as a place to connect with other members\
+  \ of our community. We hope that you:\r\n  * Ask questions you\u2019re wondering\
+  \ about.\r\n  * Share ideas.\r\n  * Engage with other community members.\r\n  *\
+  \ Welcome others and are open-minded. Remember that this is a community we\r\n \
+  \ build together \U0001F4AA.\r\n\r\n  To get started, comment below with an introduction\
+  \ of yourself and tell us about what you do with this community.\r\n\r\n<!--\r\n\
+  \  For the maintainers, here are some tips \U0001F4A1 for getting started with Discussions.\
+  \ We'll leave these in Markdown comments for now, but feel free to take out the\
+  \ comments for all maintainers to see.\r\n\r\n  \U0001F4E2 **Announce to your community**\
+  \ that Discussions is available! Go ahead and send that tweet, post, or link it\
+  \ from the website to drive traffic here.\r\n\r\n  \U0001F517 If you use issue templates,\
+  \ **link any relevant issue templates** such as questions and community conversations\
+  \ to Discussions. Declutter your issues by driving community content to where they\
+  \ belong in Discussions. If you need help, here's a [link to the documentation](https://docs.github.com/github/building-a-strong-community/configuring-issue-templates-for-your-repository#configuring-the-template-chooser).\r\
+  \n\r\n  \u27A1\uFE0F You can **convert issues to discussions** either individually\
+  \ or bulk by labels. Looking at you, issues labeled \u201Cquestion\u201D or \u201C\
+  discussion\u201D.\r\n-->\r\n"
+comments: []

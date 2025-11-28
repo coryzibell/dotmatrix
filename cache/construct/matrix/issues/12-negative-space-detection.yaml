@@ -1,0 +1,198 @@
+metadata:
+  title: Add negative space detection
+  type: idea
+  labels:
+  - identity:oracle
+  - idea
+  assignees: []
+  milestone: null
+  github_discussion_id: D_kwDOQdnjVM4AjB4o
+  last_synced:
+    title: Add negative space detection (Test)
+    body: '# Add negative space detection
+
+
+
+
+
+
+
+      From Construct review of `matrix` project. Oracle identified unseen paths during
+      perspectives phase.
+
+
+      **Source:** Oracle''s unseen doors review
+
+
+      ## Idea
+
+
+      Detect what ISN''T happening:
+
+
+      ```bash
+
+      matrix silence           # which identities haven''t logged anything recently?
+
+      matrix gaps              # what areas have no coverage?
+
+      matrix forgotten         # stale tasks, abandoned threads
+
+      ```
+
+
+      ## Benefits
+
+
+      - Surface blind spots
+
+      - Find dropped balls before they matter
+
+      - Identify underutilized identities
+
+      - Prevent things from falling through cracks
+
+
+      ## Questions to Consider
+
+
+      - How to define "should be happening"?
+
+      - False positives (silence might be intentional)?
+
+      - How far back to look?
+
+
+      ## Implementation Steps
+
+
+      1. Define "expected activity" baselines
+
+      2. Track last-activity timestamps per identity
+
+      3. Identify gaps in coverage areas
+
+      4. Surface stale/abandoned items
+
+      5. Add silence/gaps/forgotten commands
+
+
+      ## Acceptance Criteria
+
+
+      - [ ] Detect identities with no recent activity
+
+      - [ ] Surface stale tasks (configurable threshold)
+
+      - [ ] Identify coverage gaps
+
+      - [ ] Distinguish intentional silence from neglect
+
+      - [ ] Actionable output (not just lists)
+
+
+      ## Handoff
+
+
+      1. Oracle defines what "negative space" means practically
+
+      2. Smith implements detection logic
+
+      3. Persephone ensures output is actionable, not anxiety-inducing'
+    labels:
+    - identity:oracle
+    updated_at: '2025-11-26T21:44:38Z'
+  category: Ideas
+  github_updated_at: '2025-11-26T21:44:38Z'
+  github_discussion_number: 26
+body_markdown: '# Add negative space detection
+
+
+
+
+
+
+
+  From Construct review of `matrix` project. Oracle identified unseen paths during
+  perspectives phase.
+
+
+  **Source:** Oracle''s unseen doors review
+
+
+  ## Idea
+
+
+  Detect what ISN''T happening:
+
+
+  ```bash
+
+  matrix silence           # which identities haven''t logged anything recently?
+
+  matrix gaps              # what areas have no coverage?
+
+  matrix forgotten         # stale tasks, abandoned threads
+
+  ```
+
+
+  ## Benefits
+
+
+  - Surface blind spots
+
+  - Find dropped balls before they matter
+
+  - Identify underutilized identities
+
+  - Prevent things from falling through cracks
+
+
+  ## Questions to Consider
+
+
+  - How to define "should be happening"?
+
+  - False positives (silence might be intentional)?
+
+  - How far back to look?
+
+
+  ## Implementation Steps
+
+
+  1. Define "expected activity" baselines
+
+  2. Track last-activity timestamps per identity
+
+  3. Identify gaps in coverage areas
+
+  4. Surface stale/abandoned items
+
+  5. Add silence/gaps/forgotten commands
+
+
+  ## Acceptance Criteria
+
+
+  - [ ] Detect identities with no recent activity
+
+  - [ ] Surface stale tasks (configurable threshold)
+
+  - [ ] Identify coverage gaps
+
+  - [ ] Distinguish intentional silence from neglect
+
+  - [ ] Actionable output (not just lists)
+
+
+  ## Handoff
+
+
+  1. Oracle defines what "negative space" means practically
+
+  2. Smith implements detection logic
+
+  3. Persephone ensures output is actionable, not anxiety-inducing'
+comments: []

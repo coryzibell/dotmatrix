@@ -1,0 +1,61 @@
+metadata:
+  title: Refactor command switch statement to map-based dispatch
+  type: issue
+  labels:
+  - identity:ramakandra
+  - improvement
+  - tech-debt
+  assignees: []
+  milestone: null
+  github_issue_number: 19
+  state: open
+  github_updated_at: '2025-11-26T21:21:15Z'
+  last_synced:
+    title: Refactor command switch statement to map-based dispatch
+    body: "# Refactor command switch statement to map-based dispatch\n\n\n\n\n\n\n\
+      From Construct review of `matrix` project. Sati identified code smell during\
+      \ fresh-eyes review.\n\n**Source:** Sati's first-look review\n\n## Problem\n\
+      \nThe main command dispatcher uses a 200-line switch statement. This is:\n-\
+      \ Hard to maintain\n- Prone to errors when adding commands\n- Makes it difficult\
+      \ to introspect available commands\n\n## Solution\n\nReplace switch statement\
+      \ with `map[string]handler` pattern:\n\n```go\ntype CommandHandler func(args\
+      \ []string) error\n\nvar commands = map[string]CommandHandler{\n    \"garden-paths\"\
+      : gardenPathsCmd,\n    \"tension-map\":  tensionMapCmd,\n    // ...\n}\n\nfunc\
+      \ dispatch(cmd string, args []string) error {\n    handler, ok := commands[cmd]\n\
+      \    if !ok {\n        return fmt.Errorf(\"unknown command: %s\", cmd)\n   \
+      \ }\n    return handler(args)\n}\n```\n\nThis enables:\n- Easy command introspection\
+      \ for help generation\n- Cleaner addition of new commands\n- Potential for plugin\
+      \ system later\n\n## Implementation Steps\n\n1. Define `CommandHandler` type\n\
+      2. Create commands map with all handlers\n3. Replace switch with map lookup\n\
+      4. Update help generation to use map keys\n5. Verify all commands still work\n\
+      \n## Acceptance Criteria\n\n- [ ] No switch statement for command dispatch\n\
+      - [ ] All 24 commands work as before\n- [ ] Help text generated from map keys\n\
+      - [ ] Tests pass\n- [ ] Code is more maintainable\n\n## Handoff\n\n1. Ramakandra\
+      \ refactors the dispatch logic\n2. Deus verifies all commands still work\n3.\
+      \ Neo reviews and merges"
+    labels:
+    - identity:ramakandra
+    - improvement
+    - tech-debt
+    updated_at: '2025-11-26T21:21:15Z'
+body_markdown: "# Refactor command switch statement to map-based dispatch\n\n\n\n\n\
+  \n\nFrom Construct review of `matrix` project. Sati identified code smell during\
+  \ fresh-eyes review.\n\n**Source:** Sati's first-look review\n\n## Problem\n\nThe\
+  \ main command dispatcher uses a 200-line switch statement. This is:\n- Hard to\
+  \ maintain\n- Prone to errors when adding commands\n- Makes it difficult to introspect\
+  \ available commands\n\n## Solution\n\nReplace switch statement with `map[string]handler`\
+  \ pattern:\n\n```go\ntype CommandHandler func(args []string) error\n\nvar commands\
+  \ = map[string]CommandHandler{\n    \"garden-paths\": gardenPathsCmd,\n    \"tension-map\"\
+  :  tensionMapCmd,\n    // ...\n}\n\nfunc dispatch(cmd string, args []string) error\
+  \ {\n    handler, ok := commands[cmd]\n    if !ok {\n        return fmt.Errorf(\"\
+  unknown command: %s\", cmd)\n    }\n    return handler(args)\n}\n```\n\nThis enables:\n\
+  - Easy command introspection for help generation\n- Cleaner addition of new commands\n\
+  - Potential for plugin system later\n\n## Implementation Steps\n\n1. Define `CommandHandler`\
+  \ type\n2. Create commands map with all handlers\n3. Replace switch with map lookup\n\
+  4. Update help generation to use map keys\n5. Verify all commands still work\n\n\
+  ## Acceptance Criteria\n\n- [ ] No switch statement for command dispatch\n- [ ]\
+  \ All 24 commands work as before\n- [ ] Help text generated from map keys\n- [ ]\
+  \ Tests pass\n- [ ] Code is more maintainable\n\n## Handoff\n\n1. Ramakandra refactors\
+  \ the dispatch logic\n2. Deus verifies all commands still work\n3. Neo reviews and\
+  \ merges"
+comments: []

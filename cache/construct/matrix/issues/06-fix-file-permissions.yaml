@@ -1,0 +1,141 @@
+metadata:
+  title: Fix file permissions from 0644 to 0600
+  type: issue
+  labels:
+  - identity:smith
+  - improvement
+  - security
+  assignees: []
+  milestone: null
+  github_issue_number: 20
+  state: open
+  github_updated_at: '2025-11-26T21:21:16Z'
+  last_synced:
+    title: Fix file permissions from 0644 to 0600
+    body: '# Fix file permissions from 0644 to 0600
+
+
+
+
+
+
+
+      From Construct review of `matrix` project. Cypher identified minor security
+      issue during security audit.
+
+
+      **Source:** Cypher''s security audit
+
+
+      ## Problem
+
+
+      Files written by matrix use permissions `0644` (world-readable). Since these
+      files may contain sensitive information in `~/.claude/ram/`, they should be
+      `0600` (owner-only).
+
+
+      ## Solution
+
+
+      Change all `os.WriteFile` and file creation calls to use `0600` permissions.
+
+
+      ## Implementation Steps
+
+
+      1. Grep for all `0644` in codebase
+
+      2. Change to `0600`
+
+      3. Verify file creation still works
+
+      4. Check no tests depend on specific permissions
+
+
+      ## Acceptance Criteria
+
+
+      - [ ] All new files created with `0600` permissions
+
+      - [ ] No `0644` permissions in codebase
+
+      - [ ] Tests pass
+
+      - [ ] Existing functionality unchanged
+
+
+      ## Handoff
+
+
+      1. Smith makes the change
+
+      2. Deus verifies tests pass
+
+      3. Neo reviews and merges'
+    labels:
+    - identity:smith
+    - security
+    - improvement
+    updated_at: '2025-11-26T21:21:16Z'
+body_markdown: '# Fix file permissions from 0644 to 0600
+
+
+
+
+
+
+
+  From Construct review of `matrix` project. Cypher identified minor security issue
+  during security audit.
+
+
+  **Source:** Cypher''s security audit
+
+
+  ## Problem
+
+
+  Files written by matrix use permissions `0644` (world-readable). Since these files
+  may contain sensitive information in `~/.claude/ram/`, they should be `0600` (owner-only).
+
+
+  ## Solution
+
+
+  Change all `os.WriteFile` and file creation calls to use `0600` permissions.
+
+
+  ## Implementation Steps
+
+
+  1. Grep for all `0644` in codebase
+
+  2. Change to `0600`
+
+  3. Verify file creation still works
+
+  4. Check no tests depend on specific permissions
+
+
+  ## Acceptance Criteria
+
+
+  - [ ] All new files created with `0600` permissions
+
+  - [ ] No `0644` permissions in codebase
+
+  - [ ] Tests pass
+
+  - [ ] Existing functionality unchanged
+
+
+  ## Handoff
+
+
+  1. Smith makes the change
+
+  2. Deus verifies tests pass
+
+  3. Neo reviews and merges'
+comments: []

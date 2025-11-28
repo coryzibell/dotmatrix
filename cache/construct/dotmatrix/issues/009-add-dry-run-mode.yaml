@@ -1,0 +1,43 @@
+title: "Add --dry-run mode to sync scripts"
+type: issue
+labels:
+  - enhancement
+  - dx
+  - identity:smith
+body: |
+  ## Summary
+
+  All sync scripts modify GitHub state without preview capability. Add `--dry-run` flag to show what WOULD happen without making changes.
+
+  ## Scripts To Update
+
+  - `sync_labels.py` - Show labels that would be created/updated
+  - `sync_github.py` - Show issues/discussions that would be created/updated
+  - `sync_wiki.py` - Show files that would be pushed
+  - `pull_github.py` - Show files that would be created/overwritten
+
+  ## Implementation
+
+  ```python
+  # Add to argparse or manual check
+  dry_run = "--dry-run" in sys.argv
+
+  # Before API calls
+  if dry_run:
+      print(f"[DRY RUN] Would create issue: {title}")
+  else:
+      # actual API call
+  ```
+
+  ## Benefit
+
+  - Verify before destructive operations
+  - No test infrastructure needed
+  - Immediate safety improvement
+  - ~50-100 lines per script
+
+  ## From Construct
+
+  Identified by: Deus (test analysis), Seraph (devex review)
+
+  > "Immediate safety improvement. Users can verify before running."

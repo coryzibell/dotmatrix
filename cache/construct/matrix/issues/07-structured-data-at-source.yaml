@@ -1,0 +1,59 @@
+metadata:
+  title: Structure data at source with YAML frontmatter
+  type: idea
+  labels:
+  - identity:spoon
+  - idea
+  assignees: []
+  milestone: null
+  github_discussion_id: D_kwDOQdnjVM4AjB4j
+  last_synced:
+    title: Structure data at source with YAML frontmatter
+    body: "# Structure data at source with YAML frontmatter\n\n\n\n\n\n\nFrom Construct\
+      \ review of `matrix` project. Spoon reframed the problem during perspectives\
+      \ phase.\n\n**Source:** Spoon's reframing\n\n## Problem\n\nMatrix has 24 parsers\
+      \ for 24 commands, each extracting data from markdown files in different ways.\
+      \ This is the assumption that created complexity.\n\n## Reframe\n\nWhat if the\
+      \ data was structured at the source?\n\nIf RAM files used YAML frontmatter,\
+      \ one query engine could replace 24 parsers:\n\n```markdown\n---\nidentity:\
+      \ smith\nstatus: in_progress\ntags: [security, blocker]\nmentions: [cypher,\
+      \ deus]\ncreated: 2025-11-26\n---\n\n# Task content here...\n```\n\nThen commands\
+      \ become queries:\n- `matrix velocity` \u2192 query frontmatter for status fields\n\
+      - `matrix tension-map` \u2192 query for conflicting tags\n- `matrix garden-paths`\
+      \ \u2192 query mentions field\n\n## Questions to Consider\n\n- Is this solving\
+      \ the right problem?\n- Would structured frontmatter feel bureaucratic?\n- Does\
+      \ the freeform nature of RAM files have value?\n\n## Implementation Steps\n\n\
+      1. Define frontmatter schema\n2. Update RAM file templates (garden-seeds)\n\
+      3. Build unified query engine\n4. Migrate existing commands to use queries\n\
+      5. Deprecate individual parsers\n\n## Acceptance Criteria\n\n- [ ] Frontmatter\
+      \ schema defined\n- [ ] Query engine handles all current command needs\n- [\
+      \ ] Existing commands work with new approach\n- [ ] RAM files remain human-readable\n\
+      \n## Handoff\n\n1. Spoon validates this is the right reframe\n2. Architect designs\
+      \ the schema and query engine\n3. Smith implements"
+    labels:
+    - identity:spoon
+    updated_at: '2025-11-26T21:21:21Z'
+  category: Ideas
+  github_updated_at: '2025-11-26T21:21:21Z'
+  github_discussion_number: 21
+body_markdown: "# Structure data at source with YAML frontmatter\n\n\n\n\n\n\nFrom\
+  \ Construct review of `matrix` project. Spoon reframed the problem during perspectives\
+  \ phase.\n\n**Source:** Spoon's reframing\n\n## Problem\n\nMatrix has 24 parsers\
+  \ for 24 commands, each extracting data from markdown files in different ways. This\
+  \ is the assumption that created complexity.\n\n## Reframe\n\nWhat if the data was\
+  \ structured at the source?\n\nIf RAM files used YAML frontmatter, one query engine\
+  \ could replace 24 parsers:\n\n```markdown\n---\nidentity: smith\nstatus: in_progress\n\
+  tags: [security, blocker]\nmentions: [cypher, deus]\ncreated: 2025-11-26\n---\n\n\
+  # Task content here...\n```\n\nThen commands become queries:\n- `matrix velocity`\
+  \ \u2192 query frontmatter for status fields\n- `matrix tension-map` \u2192 query\
+  \ for conflicting tags\n- `matrix garden-paths` \u2192 query mentions field\n\n\
+  ## Questions to Consider\n\n- Is this solving the right problem?\n- Would structured\
+  \ frontmatter feel bureaucratic?\n- Does the freeform nature of RAM files have value?\n\
+  \n## Implementation Steps\n\n1. Define frontmatter schema\n2. Update RAM file templates\
+  \ (garden-seeds)\n3. Build unified query engine\n4. Migrate existing commands to\
+  \ use queries\n5. Deprecate individual parsers\n\n## Acceptance Criteria\n\n- [\
+  \ ] Frontmatter schema defined\n- [ ] Query engine handles all current command needs\n\
+  - [ ] Existing commands work with new approach\n- [ ] RAM files remain human-readable\n\
+  \n## Handoff\n\n1. Spoon validates this is the right reframe\n2. Architect designs\
+  \ the schema and query engine\n3. Smith implements"
+comments: []

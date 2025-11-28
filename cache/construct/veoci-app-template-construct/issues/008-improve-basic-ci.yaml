@@ -1,0 +1,70 @@
+metadata:
+  title: Add basic CI workflow for PR validation
+  type: issue
+  labels:
+  - identity:niobe
+  - enhancement
+  - infrastructure
+  assignees: []
+  milestone: null
+  github_issue_number: 8
+  last_synced:
+    title: Add basic CI workflow for PR validation
+    body: "# Add basic CI workflow for PR validation\n\n\n\n\n\n\nFrom Construct review\
+      \ of `veoci-app-template-construct`. Niobe identified zero CI/CD infrastructure.\n\
+      \n**Sources:**\n- `~/.claude/cache/construct/veoci-app-template-construct/cicd-review.md`\n\
+      - `~/.claude/cache/construct/veoci-app-template-construct/perspective-spoon.md`\n\
+      \n## Problem\n\nNo GitHub Actions workflows exist. PRs can merge with:\n- Lint\
+      \ errors\n- Type errors\n- Broken builds\n\nSpoon correctly notes that deployment\
+      \ automation should be project-specific. But basic quality gates (lint, type-check,\
+      \ build) are universal.\n\n## Solution\n\nAdd minimal CI workflow for PR validation.\
+      \ Leave deployment to individual projects.\n\n## Implementation Steps\n\n1.\
+      \ Create `.github/workflows/ci.yml`:\n   ```yaml\n   name: CI\n\n   on:\n  \
+      \   push:\n       branches: [main]\n     pull_request:\n       branches: [main]\n\
+      \n   jobs:\n     validate:\n       runs-on: ubuntu-latest\n\n       steps:\n\
+      \         - uses: actions/checkout@v4\n\n         - name: Setup Node.js\n  \
+      \         uses: actions/setup-node@v4\n           with:\n             node-version:\
+      \ '20'\n             cache: 'npm'\n\n         - name: Install dependencies\n\
+      \           run: npm ci\n\n         - name: Lint\n           run: npm run lint\n\
+      \n         - name: Type check\n           run: npm run typecheck\n\n       \
+      \  - name: Build\n           run: npm run build\n   ```\n\n2. Add typecheck\
+      \ script to `package.json` (if missing):\n   ```json\n   {\n     \"scripts\"\
+      : {\n       \"typecheck\": \"vue-tsc --noEmit\"\n     }\n   }\n   ```\n\n3.\
+      \ Install vue-tsc if needed:\n   ```bash\n   npm install -D vue-tsc\n   ```\n\
+      \n4. Fix typo in `.github/copilot-instrucitons.md` \u2192 `copilot-instructions.md`\n\
+      \n## Acceptance Criteria\n\n- [ ] CI workflow runs on PRs\n- [ ] Lint step catches\
+      \ ESLint errors\n- [ ] Type check step catches TypeScript errors\n- [ ] Build\
+      \ step verifies production build works\n- [ ] Copilot instructions filename\
+      \ fixed\n\n## Handoff\n\nNiobe implements. After tests are added (issue #007),\
+      \ extend CI to include test step."
+    labels:
+    - enhancement
+    - identity:niobe
+    - infrastructure
+    github_updated_at: '2025-11-27T00:29:55Z'
+    assignees: []
+body_markdown: "# Add basic CI workflow for PR validation\n\n\n\n\n\n\nFrom Construct\
+  \ review of `veoci-app-template-construct`. Niobe identified zero CI/CD infrastructure.\n\
+  \n**Sources:**\n- `~/.claude/cache/construct/veoci-app-template-construct/cicd-review.md`\n\
+  - `~/.claude/cache/construct/veoci-app-template-construct/perspective-spoon.md`\n\
+  \n## Problem\n\nNo GitHub Actions workflows exist. PRs can merge with:\n- Lint errors\n\
+  - Type errors\n- Broken builds\n\nSpoon correctly notes that deployment automation\
+  \ should be project-specific. But basic quality gates (lint, type-check, build)\
+  \ are universal.\n\n## Solution\n\nAdd minimal CI workflow for PR validation. Leave\
+  \ deployment to individual projects.\n\n## Implementation Steps\n\n1. Create `.github/workflows/ci.yml`:\n\
+  \   ```yaml\n   name: CI\n\n   on:\n     push:\n       branches: [main]\n     pull_request:\n\
+  \       branches: [main]\n\n   jobs:\n     validate:\n       runs-on: ubuntu-latest\n\
+  \n       steps:\n         - uses: actions/checkout@v4\n\n         - name: Setup\
+  \ Node.js\n           uses: actions/setup-node@v4\n           with:\n          \
+  \   node-version: '20'\n             cache: 'npm'\n\n         - name: Install dependencies\n\
+  \           run: npm ci\n\n         - name: Lint\n           run: npm run lint\n\
+  \n         - name: Type check\n           run: npm run typecheck\n\n         - name:\
+  \ Build\n           run: npm run build\n   ```\n\n2. Add typecheck script to `package.json`\
+  \ (if missing):\n   ```json\n   {\n     \"scripts\": {\n       \"typecheck\": \"\
+  vue-tsc --noEmit\"\n     }\n   }\n   ```\n\n3. Install vue-tsc if needed:\n   ```bash\n\
+  \   npm install -D vue-tsc\n   ```\n\n4. Fix typo in `.github/copilot-instrucitons.md`\
+  \ \u2192 `copilot-instructions.md`\n\n## Acceptance Criteria\n\n- [ ] CI workflow\
+  \ runs on PRs\n- [ ] Lint step catches ESLint errors\n- [ ] Type check step catches\
+  \ TypeScript errors\n- [ ] Build step verifies production build works\n- [ ] Copilot\
+  \ instructions filename fixed\n\n## Handoff\n\nNiobe implements. After tests are\
+  \ added (issue #007), extend CI to include test step."

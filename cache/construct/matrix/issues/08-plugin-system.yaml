@@ -1,0 +1,58 @@
+metadata:
+  title: Add plugin system for identity commands
+  type: idea
+  labels:
+  - identity:sati
+  - idea
+  assignees: []
+  milestone: null
+  github_discussion_id: D_kwDOQdnjVM4AjB4k
+  last_synced:
+    title: Add plugin system for identity commands
+    body: "# Add plugin system for identity commands\n\n\n\n\n\n\nFrom Construct review\
+      \ of `matrix` project. Sati proposed during greenfield thinking phase.\n\n**Source:**\
+      \ Sati's first-look review\n\n## Idea\n\nLet identities drop commands into `~/.claude/matrix/commands/`\
+      \ as executable scripts or Go plugins. Matrix discovers and runs them.\n\n```\n\
+      ~/.claude/matrix/commands/\n\u251C\u2500\u2500 smith-velocity.sh\n\u251C\u2500\
+      \u2500 trinity-trace.py\n\u2514\u2500\u2500 custom-report.go\n```\n\nThen:\n\
+      ```bash\nmatrix smith-velocity  # runs the script\nmatrix custom-report   #\
+      \ runs the Go plugin\n```\n\n## Benefits\n\n- Identities can extend matrix without\
+      \ modifying core\n- Experimentation without commitment\n- Users can add their\
+      \ own commands\n- Core stays small, plugins grow organically\n\n## Questions\
+      \ to Consider\n\n- Security implications of executing arbitrary scripts?\n-\
+      \ How to handle plugin dependencies?\n- Discoverability - how do users know\
+      \ what plugins exist?\n\n## Implementation Steps\n\n1. Define plugin directory\
+      \ structure\n2. Implement plugin discovery\n3. Add plugin execution with sandboxing\
+      \ considerations\n4. Update help to show available plugins\n5. Document plugin\
+      \ authoring\n\n## Acceptance Criteria\n\n- [ ] Plugins discovered from standard\
+      \ location\n- [ ] Plugins executable via `matrix <plugin-name>`\n- [ ] Plugins\
+      \ appear in help output\n- [ ] Security model defined and implemented\n- [ ]\
+      \ Plugin authoring documented\n\n## Handoff\n\n1. Sati prototypes the plugin\
+      \ loader\n2. Cypher reviews security implications\n3. Smith implements if approved"
+    labels:
+    - identity:sati
+    updated_at: '2025-11-26T21:21:22Z'
+  category: Ideas
+  github_updated_at: '2025-11-26T21:21:22Z'
+  github_discussion_number: 22
+body_markdown: "# Add plugin system for identity commands\n\n\n\n\n\n\nFrom Construct\
+  \ review of `matrix` project. Sati proposed during greenfield thinking phase.\n\n\
+  **Source:** Sati's first-look review\n\n## Idea\n\nLet identities drop commands\
+  \ into `~/.claude/matrix/commands/` as executable scripts or Go plugins. Matrix\
+  \ discovers and runs them.\n\n```\n~/.claude/matrix/commands/\n\u251C\u2500\u2500\
+  \ smith-velocity.sh\n\u251C\u2500\u2500 trinity-trace.py\n\u2514\u2500\u2500 custom-report.go\n\
+  ```\n\nThen:\n```bash\nmatrix smith-velocity  # runs the script\nmatrix custom-report\
+  \   # runs the Go plugin\n```\n\n## Benefits\n\n- Identities can extend matrix without\
+  \ modifying core\n- Experimentation without commitment\n- Users can add their own\
+  \ commands\n- Core stays small, plugins grow organically\n\n## Questions to Consider\n\
+  \n- Security implications of executing arbitrary scripts?\n- How to handle plugin\
+  \ dependencies?\n- Discoverability - how do users know what plugins exist?\n\n##\
+  \ Implementation Steps\n\n1. Define plugin directory structure\n2. Implement plugin\
+  \ discovery\n3. Add plugin execution with sandboxing considerations\n4. Update help\
+  \ to show available plugins\n5. Document plugin authoring\n\n## Acceptance Criteria\n\
+  \n- [ ] Plugins discovered from standard location\n- [ ] Plugins executable via\
+  \ `matrix <plugin-name>`\n- [ ] Plugins appear in help output\n- [ ] Security model\
+  \ defined and implemented\n- [ ] Plugin authoring documented\n\n## Handoff\n\n1.\
+  \ Sati prototypes the plugin loader\n2. Cypher reviews security implications\n3.\
+  \ Smith implements if approved"
+comments: []

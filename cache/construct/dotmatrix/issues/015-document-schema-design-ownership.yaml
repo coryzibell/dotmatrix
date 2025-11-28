@@ -1,0 +1,142 @@
+title: Document schema design ownership between Architect and Merovingian
+type: issue
+labels:
+- documentation
+- architecture
+- identity:architect
+- identity:merovingian
+body: '## Problem
+
+
+  Database schema design sits ambiguously between two identities:
+
+
+  - **Architect**: System structure, data model as architecture
+
+  - **Merovingian**: API contracts, schema as contract between app and database
+
+
+  Currently no explicit documentation on who owns what.
+
+
+  ## Source
+
+
+  Identified independently by both Architect and Merovingian during Construct identity
+  reviews.
+
+
+  ## Proposed Resolution
+
+
+  From Merovingian''s review:
+
+
+  > - Architect designs *conceptual* data model (entities, relationships, domains)
+
+  > - Merovingian translates to *physical* schema (DDL, constraints, indexes)
+
+
+  ## Files to Update
+
+
+  - `~/.claude/identities/architect.md` - clarify conceptual data modeling scope
+
+  - `~/.claude/identities/merovingian.md` - add physical schema design to role
+
+  - `~/.claude/orchestration.md` - document the handoff pattern
+
+
+  ## Example Scenarios
+
+
+  | Task | Owner | Reason |
+
+  |------|-------|--------|
+
+  | "What entities do we need for user management?" | Architect | Conceptual modeling
+  |
+
+  | "Design the users table DDL with constraints" | Merovingian | Physical schema
+  |
+
+  | "How should user-service relate to auth-service data?" | Architect | System integration
+  |
+
+  | "Define the foreign key relationships in the schema" | Merovingian | Schema contract
+  |
+
+  '
+metadata:
+  github_issue_number: 34
+  last_synced:
+    title: Document schema design ownership between Architect and Merovingian
+    body: '## Problem
+
+
+      Database schema design sits ambiguously between two identities:
+
+
+      - **Architect**: System structure, data model as architecture
+
+      - **Merovingian**: API contracts, schema as contract between app and database
+
+
+      Currently no explicit documentation on who owns what.
+
+
+      ## Source
+
+
+      Identified independently by both Architect and Merovingian during Construct
+      identity reviews.
+
+
+      ## Proposed Resolution
+
+
+      From Merovingian''s review:
+
+
+      > - Architect designs *conceptual* data model (entities, relationships, domains)
+
+      > - Merovingian translates to *physical* schema (DDL, constraints, indexes)
+
+
+      ## Files to Update
+
+
+      - `~/.claude/identities/architect.md` - clarify conceptual data modeling scope
+
+      - `~/.claude/identities/merovingian.md` - add physical schema design to role
+
+      - `~/.claude/orchestration.md` - document the handoff pattern
+
+
+      ## Example Scenarios
+
+
+      | Task | Owner | Reason |
+
+      |------|-------|--------|
+
+      | "What entities do we need for user management?" | Architect | Conceptual modeling
+      |
+
+      | "Design the users table DDL with constraints" | Merovingian | Physical schema
+      |
+
+      | "How should user-service relate to auth-service data?" | Architect | System
+      integration |
+
+      | "Define the foreign key relationships in the schema" | Merovingian | Schema
+      contract |
+
+      '
+    labels:
+    - architecture
+    - documentation
+    - identity:architect
+    - identity:merovingian
+    github_updated_at: '2025-11-27T02:11:50Z'
+    assignees: []

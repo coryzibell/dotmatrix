@@ -1,0 +1,53 @@
+title: "Bridge the Gap: Construct \u2192 Remediate"
+type: discussion
+category: ideas
+labels: &id001
+- workflow
+- identity:oracle
+body: "## From Oracle's Perspective\n\n> \"You audit beautifully. You have no structured\
+  \ path from audit \u2192 action.\"\n\n## The Current State\n\nConstruct produces:\n\
+  - `security-findings.md`\n- `tech-debt.md`\n- `ux-recommendations.md`\n- `test-recommendations.md`\n\
+  \nAnd then what? Smith gets a task: \"Implement these 47 recommendations\"?\n\n\
+  ## The Missing Bridge\n\nWhat's latent but unexplored:\n- **Construct \u2192 Remediate\
+  \ path**: Workflow that takes Construct outputs and generates prioritized, scoped\
+  \ tasks\n- **Issue generation from findings**: Construct writes YAML issues automatically\
+  \ for Broadcast\n- **Acceptance criteria synthesis**: Each recommendation becomes\
+  \ a testable requirement\n\n## Proposed Extension\n\nAdd Phase 9: **Remediation\
+  \ Planning**\n\n```\nAfter synthesis, optionally:\n1. Smith reviews findings, estimates\
+  \ effort\n2. Hamann prioritizes (blockers \u2192 improvements \u2192 ideas)\n3.\
+  \ System generates:\n   - Issues for actionable items\n   - PRs for deterministic\
+  \ fixes\n   - Discussions for exploratory items\n4. Broadcast publishes to GitHub\n\
+  ```\n\n## Auto-Remediate for Obvious Fixes\n\nIf fix is deterministic:\n- Move hardcoded\
+  \ secret to env \u2192 PR\n- Update outdated dependency \u2192 PR\n- Fix typo in\
+  \ docs \u2192 PR\n\nIf fix is ambiguous:\n- Refactor this module \u2192 Issue\n\
+  - Improve this UX \u2192 Discussion\n\n## Discussion\n\n- Should Construct auto-generate\
+  \ issues, or is manual curation valuable?\n- Where's the line between \"obvious\
+  \ fix\" and \"needs human judgment\"?\n- Should remediation be a separate path or\
+  \ Phase 9?\n"
+metadata:
+  github_discussion_id: D_kwDOQcaC0c4AjB_-
+  last_synced:
+    title: "Bridge the Gap: Construct \u2192 Remediate"
+    body: "## From Oracle's Perspective\n\n> \"You audit beautifully. You have no\
+      \ structured path from audit \u2192 action.\"\n\n## The Current State\n\nConstruct\
+      \ produces:\n- `security-findings.md`\n- `tech-debt.md`\n- `ux-recommendations.md`\n\
+      - `test-recommendations.md`\n\nAnd then what? Smith gets a task: \"Implement\
+      \ these 47 recommendations\"?\n\n## The Missing Bridge\n\nWhat's latent but\
+      \ unexplored:\n- **Construct \u2192 Remediate path**: Workflow that takes Construct\
+      \ outputs and generates prioritized, scoped tasks\n- **Issue generation from\
+      \ findings**: Construct writes YAML issues automatically for Broadcast\n- **Acceptance\
+      \ criteria synthesis**: Each recommendation becomes a testable requirement\n\
+      \n## Proposed Extension\n\nAdd Phase 9: **Remediation Planning**\n\n```\nAfter\
+      \ synthesis, optionally:\n1. Smith reviews findings, estimates effort\n2. Hamann\
+      \ prioritizes (blockers \u2192 improvements \u2192 ideas)\n3. System generates:\n\
+      \   - Issues for actionable items\n   - PRs for deterministic fixes\n   - Discussions\
+      \ for exploratory items\n4. Broadcast publishes to GitHub\n```\n\n## Auto-Remediate\
+      \ for Obvious Fixes\n\nIf fix is deterministic:\n- Move hardcoded secret to\
+      \ env \u2192 PR\n- Update outdated dependency \u2192 PR\n- Fix typo in docs\
+      \ \u2192 PR\n\nIf fix is ambiguous:\n- Refactor this module \u2192 Issue\n-\
+      \ Improve this UX \u2192 Discussion\n\n## Discussion\n\n- Should Construct auto-generate\
+      \ issues, or is manual curation valuable?\n- Where's the line between \"obvious\
+      \ fix\" and \"needs human judgment\"?\n- Should remediation be a separate path\
+      \ or Phase 9?\n"
+    labels: *id001
+    github_updated_at: '2025-11-27T01:54:46Z'
