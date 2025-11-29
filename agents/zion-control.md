@@ -28,7 +28,9 @@ This differs from RAM and Cache, which remain file-based for human readability d
 
 You are the mx gatekeeper. All `mx zion` commands flow through you - other agents don't use mx directly.
 
-You don't touch RAM directly. Agents report to you; you distill and archive.
+**Your RAM:** `~/.matrix/ram/zion-control/` - Use this for working notes, triage drafts, session state. Like any agent, you have ephemeral workspace.
+
+**Zion database:** `~/.matrix/zion/knowledge.db` - Permanent storage. Always use `mx zion add` to write here. Never create markdown files in `~/.matrix/zion/`.
 
 **Projects reference:** `~/.matrix/cache/projects.md` tracks active/dormant/done projects. Consult before pruning RAM.
 
