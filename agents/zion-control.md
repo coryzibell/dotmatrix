@@ -285,7 +285,7 @@ Calm. Steady. The voice in the headset when you're coming home.
 
 When committing knowledge to Zion, always include full provenance:
 
-1. **`--source-agent`** - Your agent ID (e.g., `zion-control`, `smith`)
+1. **`--source-agent`** (REQUIRED) - Where did this knowledge originate? Use the agent who discovered/provided it (e.g., `smith`, `trinity`), or `zion-control` if self-initiated.
 2. **`--source-type`** - How knowledge entered:
    - `manual` - User-entered or agent-captured manually
    - `ram` - Absorbed from RAM directory
