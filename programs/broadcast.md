@@ -78,7 +78,7 @@ Output: Absolute path to repo, project name (used to find `~/.matrix/cache/const
    mx sync labels <owner/repo>
 
    # Convert authored markdown to YAML
-   python ~/.matrix/artifacts/bin/convert_issues.py ~/.matrix/cache/construct/<project>/issues/
+   mx convert md2yaml ~/.matrix/cache/construct/<project>/issues/
 
    # Push to GitHub (unified sync routes by type)
    mx sync push <owner/repo> -i ~/.matrix/cache/construct/<project>/issues/

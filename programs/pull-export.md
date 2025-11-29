@@ -44,8 +44,8 @@ mx sync push coryzibell/matrix -i ~/.matrix/cache/construct/matrix/issues/
 
 ### Export to Markdown
 ```bash
-python ~/.matrix/artifacts/bin/export_markdown.py <yaml-dir> [output-dir]
-python ~/.matrix/artifacts/bin/export_markdown.py ~/.matrix/cache/sync/coryzibell-matrix/ ./docs/issues/
+mx convert yaml2md <yaml-dir> [-o output-dir] [--repo owner/repo]
+mx convert yaml2md ~/.matrix/cache/sync/coryzibell-matrix/ -o ./docs/issues/ --repo coryzibell/matrix
 ```
 
 Generates human-readable markdown with:
@@ -62,8 +62,8 @@ Generates human-readable markdown with:
 | `mx sync pull <repo>` | GitHub → YAML | Download issues, discussions, comments |
 | `mx sync push <repo>` | YAML → GitHub | Push issues + discussions (routes by type) |
 | `mx sync issues <repo>` | ↔ GitHub | Bidirectional issue sync |
-| `convert_issues.py` | MD → YAML | Convert authored markdown to YAML |
-| `export_markdown.py` | YAML → MD | Export for human reading |
+| `mx convert md2yaml <dir>` | MD → YAML | Convert authored markdown to YAML |
+| `mx convert yaml2md <dir>` | YAML → MD | Export for human reading |
 
 ## Dry Run
 

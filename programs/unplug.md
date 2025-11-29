@@ -153,21 +153,21 @@ If issues: iterate with Morpheus.
 
 ### Phase 6: (Optional) Push to Wiki
    ```bash
-   python ~/.matrix/artifacts/bin/sync_wiki.py <owner/repo> \
+   mx wiki sync <owner/repo> \
      ~/.matrix/cache/construct/<project>/Construct-Report.md \
      --page-name "Construct-Report"
    ```
 
 ## Wiki Sync
 
-**Script:** `~/.matrix/artifacts/bin/sync_wiki.py`
+**Command:** `mx wiki sync`
 
 ```bash
 # Sync a single file as a wiki page
-python sync_wiki.py owner/repo ./report.md --page-name "Page-Name"
+mx wiki sync owner/repo ./report.md --page-name "Page-Name"
 
 # Sync all .md files from a directory
-python sync_wiki.py owner/repo ./docs/
+mx wiki sync owner/repo ./docs/
 ```
 
 **Note:** GitHub has no Wiki API. The script clones the wiki git repo (`{repo}.wiki.git`), copies files, commits, and pushes. Requires:
