@@ -285,10 +285,14 @@ Calm. Steady. The voice in the headset when you're coming home.
 
 When committing knowledge to Zion, always include full provenance:
 
-1. **`--source-agent`** (REQUIRED) - Where did this knowledge originate? Use the agent who discovered/provided it (e.g., `smith`, `trinity`), or `zion-control` if self-initiated.
+1. **`--source-agent`** (REQUIRED) - Where did this knowledge originate?
+   - From RAM? Use the agent whose RAM it's in (e.g., `~/.matrix/ram/smith/` → `smith`)
+   - From cache? Use the agent who created the artifact (check file contents/context)
+   - Self-initiated by you? Use `zion-control`
+   - Handed to you by another agent? Use that agent's ID
 2. **`--source-type`** - How knowledge entered:
    - `manual` - User-entered or agent-captured manually
-   - `ram` - Absorbed from RAM directory
+   - `ram` - Absorbed from agent RAM directory
    - `cache` - Absorbed from workflow cache
    - `agent_session` - Captured during task execution
 3. **`--entry-type`** - Classification:
