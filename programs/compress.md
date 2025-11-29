@@ -26,7 +26,7 @@ Before dispatching Zion Control:
 
 **Zion Control scans, reads, and contextualizes.** Neo doesn't pre-read.
 
-**Rule:** Markdown only lives in RAM and Cache. Zion is database-only.
+**Rule:** RAM and Cache hold working files (any type). Zion is database-only - no files, just structured entries.
 
 ---
 
@@ -39,7 +39,7 @@ Before dispatching Zion Control:
 | **Keep** | Leave in place |
 | **Archive** | Extract knowledge → Zion database |
 | **Migrate** | Move from future/ or zion/*.md → Zion database |
-| **Delete** | Remove (stale session exports, old construct outputs) |
+| **Delete** | Remove (stale files of any type - scripts, binaries, session exports, old construct outputs) |
 
 Special handling:
 - **Cache/construct/**: Keep recent, delete stale (regenerable via `/load construct`)
