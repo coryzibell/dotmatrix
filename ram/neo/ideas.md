@@ -1,5 +1,22 @@
 # Ideas
 
+## Agent Audio Cues
+
+### Matrix Sound Effects on Dispatch
+- **Concept:** Play film audio clips when agents are dispatched
+- **Examples:**
+  - Spoon: *"There is no spoon"*
+  - Tank: *"Operator"*
+  - Morpheus: *"Free your mind"*
+  - Trinity: *"Dodge this"*
+- **Implementation Options:**
+  - `rodio` crate - native Rust, but needs `libasound.so` at runtime on Linux
+  - Shell out to `ffplay`/`aplay`/`afplay` - more portable, external dependency
+  - Consider: hook into Claude Code's hook system? Or mx CLI?
+- **Research:** See `ram/tank/rust-audio-playback-research.md`
+
+---
+
 ## Zion Enhancements
 
 ### Project Status Field

@@ -1,0 +1,15 @@
+Lines to remove from large.rs (base32 methods now in base32.rs):
+
+191-261: encode_neon_base32
+388-408: encode_scalar_base32
+481-565: encode_ssse3_range_reduction_5bit
+696-760: encode_avx512_vbmi_base32
+859-879: encode_scalar_base32_x86
+962-969: is_rfc4648_base32
+1031-1070: decode_ssse3_multi_range_5bit
+1169-1201: unpack_5bit_ssse3
+1206-1274: decode_ssse3_base32_rfc4648
+1279-1344: decode_neon_base32_rfc4648
+
+Also need to update validate_and_translate_multi_range signature (shared with base64)
+And decode_scalar signature (shared with base64)

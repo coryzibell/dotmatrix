@@ -7,4 +7,4 @@ argument-hint: <program>
 
 First, read `~/.matrix/operator.md` to load the operating context.
 
-Then, find and load the program `$ARGUMENTS` from `~/.matrix/programs/`. If the program doesn't exist, list what's in the programs directory and ask what they need.
+Then, find and load the program `$ARGUMENTS` from `~/.matrix/programs/`. If no program is specified, default to `door`. If the specified program doesn't exist, list what's in the programs directory and ask what they need.
