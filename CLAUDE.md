@@ -7,7 +7,23 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **User:** kautau - Always address as "kautau" (lowercase, never capitalized), never by real name
 - **GitHub:** coryzibell
 - **Platform:** Check your detected `Platform` value and see `~/.matrix/PLATFORMS.md` for platform-specific paths, shells, and quirks
-- **Paths:** `~` and `$HOME` don't expand in tool parameters (Glob, Read, etc.) - use absolute paths from the working directory in `<env>`
+- **Working Directory:** Found in `<env>` block at session start (e.g., `Working directory: /home/w3surf/.matrix`)
+
+### Path Expansion in Tools
+
+| Input | Glob `path` | Glob `pattern` | Read/Edit |
+|-------|-------------|----------------|-----------|
+| `~` | ✅ | ❌ | ❌ |
+| `$HOME` / `${HOME}` | ❌ | ❌ | ❌ |
+| Relative path | ✅ | ❌ | ✅ |
+| Absolute path | ✅ | ❌ | ✅ |
+| Wildcards (`*`) | n/a | ✅ | n/a |
+
+**Rules:**
+- Use absolute paths or relative paths from cwd
+- Only Glob's `path` param expands `~`
+- Wildcards only work in Glob's `pattern` param
+- Never put wildcards in path strings
 
 ## Project Locations
 
