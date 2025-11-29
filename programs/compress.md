@@ -17,7 +17,14 @@ Before dispatching Zion Control:
 
 ## Phase 1: Survey
 
-Scan all `~/.matrix/ram/` subdirectories. List files with sizes and dates.
+Scan these locations. List files with sizes and dates:
+
+1. `~/.matrix/ram/*/` - Agent working memory
+2. `~/.matrix/cache/` - Workflow artifacts, construct outputs, session exports
+3. `~/.matrix/future/` - Shelved ideas (should migrate to Zion db)
+4. `~/.matrix/zion/*.md` - Stray markdown (knowledge should be in db, not loose files)
+
+Note: `~/.matrix/zion/technique/` is fine as markdown - skip those.
 
 ---
 
@@ -27,9 +34,16 @@ For each file, decide:
 
 | Action | Destination |
 |--------|-------------|
-| **Keep** | Leave in RAM |
+| **Keep** | Leave in place |
 | **Archive** | Extract knowledge → Zion database |
-| **Delete** | Remove |
+| **Migrate** | Move from future/ or zion/*.md → Zion database |
+| **Delete** | Remove (stale session exports, old construct outputs) |
+
+Special handling:
+- **Cache/construct/**: Keep recent, delete stale (regenerable via `/load construct`)
+- **Cache/session-export-***: Usually deletable after review
+- **Future/**: Migrate ideas to Zion db with category `future`
+- **Zion/*.md**: Absorb into db, then delete the file
 
 ---
 

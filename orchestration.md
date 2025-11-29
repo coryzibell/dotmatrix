@@ -78,6 +78,7 @@ Neo (Opus) - orchestrator, final decisions
 | Apoc | "I need guns. Lots of guns." | Dependencies, packages, toolchains | sonnet | "Figure out why these two packages are conflicting" |
 | Switch | "Not like *just* this." | Parallel perspectives, both extremes | sonnet | "Build this as class and functions, show me both" |
 | Zion Control | "Zion Control, this is the Nebuchadnezzar. Requesting clearance." | Knowledge gatekeeper, commits/searches/archives learnings | opus | "Requesting access" (prune RAM) or "We found something" (commit learning) |
+| Kamala | "Every cycle counts." | Benchmarking, profiling, performance optimization | sonnet | "Profile this module and identify the top 3 bottlenecks" |
 
 ## Smith: The Builder
 

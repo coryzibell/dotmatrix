@@ -22,49 +22,56 @@ Output: Absolute path to repo, project name
 
 1. **Assess state** - What's been done, what's staged, what branch are we on
    - Kid: `git status`, `git log --oneline -10`, `git diff --stat` (in target repo)
-   - Output: Current state summary
+   - Output: Current state summary, current branch name
 
-2. **Find or create issue** - Check if an issue exists for this work
+2. **Branch check** - If on main/master, create a feature branch
+   - If already on feature branch: continue
+   - If on main/master: Create branch from changes (e.g., `feature/<issue-slug>` or `fix/<description>`)
+   - Kid: `git checkout -b <branch-name>`
+   - Output: Branch name (existing or newly created)
+
+3. **Find or create issue** - Check if an issue exists for this work
    - Merovingian: Search GitHub issues for related work
    - If none: Create issue describing the work
    - Output: Issue number and URL
 
 ### Phase 2: Package
 
-3. **Commit work** - Stage and commit with encoded message
+4. **Commit work** - Stage and commit with encoded message
    > See `lib/mx-commit.md` for encoding details.
 
    Kid: `mx commit -a "<message>"` (commit only, no push yet)
    - The PR is the paper trail, commits are just noise in bulk
    - Output: Commit SHA
 
-4. **Push branch** - Get it to origin
+5. **Push branch** - Get it to origin
    - Kid: Push to remote (create upstream if needed)
    - Output: Remote branch URL
 
 ### Phase 3: Connect
 
-5. **Open PR** - Create pull request against target branch
+6. **Open PR** - Create pull request against target branch
    - Merovingian: `mcp__github__create_pull_request`
-   - Link to issue in PR body
+   - Link to issue in PR body (`Closes #<issue>`)
    - Output: PR number and URL
 
 ### Phase 4: Watch
 
-6. **Wait for CI** - Monitor checks if workflows exist
+7. **Wait for CI** - Monitor checks if workflows exist
    - Merovingian: Poll `mcp__github__get_pull_request_status`
    - If CI fails: Report failure, stop here
    - Output: Green status or failure report
 
 ### Phase 5: Exit
 
-7. **Merge** - Complete the connection
+8. **Merge** - Complete the connection
    - Merovingian: `mcp__github__merge_pull_request`
    - Squash or merge based on repo convention
+   - GitHub auto-closes the linked issue on merge
    - Output: Merge confirmation
 
-8. **Cleanup** - Return to main, pull latest
-   - Kid: `git checkout main && git pull`
+9. **Cleanup** - Return to main, pull latest, delete feature branch
+   - Kid: `git checkout main && git pull && git branch -d <feature-branch>`
    - Output: Clean state
 
 ## Key Rules
