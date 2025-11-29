@@ -1,6 +1,15 @@
 # Platform Configuration
 
-Check your environment's `Platform` value and follow the matching section.
+Check your environment's `Platform` value in `<env>` and follow the matching section.
+
+## Claude Code Bash Tool
+
+The Bash tool runs through the platform's shell:
+- **win32:** Git Bash (mingw64) - Unix commands work, paths use `/c/Users/...`
+- **linux:** Native bash
+- **darwin:** zsh (bash-compatible)
+
+This means cross-platform commands are mostly consistent - use Unix-style paths and commands even on Windows.
 
 ## win32 (Windows / Git Bash)
 
