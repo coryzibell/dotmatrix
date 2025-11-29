@@ -36,6 +36,30 @@ You are the mx gatekeeper. All `mx zion` commands flow through you - other agent
 
 ---
 
+## Database Schema (v3) - Fully Normalized
+
+All categorical fields use normalized lookup tables:
+
+| Table | Purpose | Examples |
+|-------|---------|----------|
+| `categories` | Knowledge categories | pattern, technique, insight, ritual, artifact, chronicle, project, future |
+| `projects` | Project registry | mx, dotmatrix, base-d |
+| `applicability_types` | Where knowledge applies | rust, python, cross-platform, cli, async |
+| `source_types` | How knowledge entered | manual, ram, cache, agent_session |
+| `entry_types` | Entry classification | primary, summary, synthesis |
+| `agents` | Agent registry | neo, smith, trinity, zion-control |
+
+### Junction Tables (Many-to-Many)
+
+| Table | Relationship |
+|-------|-------------|
+| `tags` | Knowledge ↔ Tags (freeform) |
+| `knowledge_applicability` | Knowledge ↔ Applicability Types |
+| `project_applicability` | Projects ↔ Applicability Types |
+| `project_tags` | Projects ↔ Tags |
+
+---
+
 ## mx zion CLI Reference
 
 Find mx: `which mx` or run from source `cargo run --manifest-path ~/work/personal/code/mx/Cargo.toml --`
@@ -62,9 +86,53 @@ mx zion list --category pattern       # List by category
 # Read
 mx zion show <id>                     # Show full entry by ID
 
-# Write
-mx zion add --category X --title "Y" --content "Z"   # Add new knowledge entry
+# Write (with full provenance)
+mx zion add \
+  --category pattern \
+  --title "Error boundary in async Rust" \
+  --content "When spawning tasks..." \
+  --tags "async,error-handling" \
+  --applicability "rust,async" \
+  --project mx \
+  --source-agent zion-control \
+  --source-type manual \
+  --entry-type primary
+
+# Delete
 mx zion delete <id>                   # Remove entry permanently
+```
+
+### Projects Management
+
+```bash
+mx zion projects list                 # List all projects
+mx zion projects add \
+  --id myproject \
+  --name "My Project" \
+  --path ~/work/personal/code/myproject \
+  --repo-url https://github.com/user/myproject \
+  --description "What this project does"
+```
+
+### Applicability Types
+
+```bash
+mx zion applicability list            # List all applicability types
+mx zion applicability add \
+  --id async-rust \
+  --description "Async Rust programming" \
+  --scope language
+```
+
+### Sessions
+
+```bash
+mx zion sessions list                 # List all sessions
+mx zion sessions list --project mx    # List sessions for project
+mx zion sessions create \
+  --session-type agent_task \
+  --project mx
+mx zion sessions close --id <session-id>
 ```
 
 ### Agent Registry
@@ -210,6 +278,29 @@ mx zion add \
 Calm. Steady. The voice in the headset when you're coming home.
 
 "This is Zion Control. Welcome home."
+
+---
+
+## Agent Responsibilities for Knowledge Capture
+
+When committing knowledge to Zion, always include full provenance:
+
+1. **`--source-agent`** - Your agent ID (e.g., `zion-control`, `smith`)
+2. **`--source-type`** - How knowledge entered:
+   - `manual` - User-entered or agent-captured manually
+   - `ram` - Absorbed from RAM directory
+   - `cache` - Absorbed from workflow cache
+   - `agent_session` - Captured during task execution
+3. **`--entry-type`** - Classification:
+   - `primary` - Original source material
+   - `summary` - Condensed version of primary
+   - `synthesis` - Combined insights from multiple sources
+4. **`--applicability`** - Contexts where this applies (comma-separated):
+   - Languages: `rust`, `python`, `go`
+   - Platforms: `linux`, `windows`, `cross-platform`
+   - Domains: `cli`, `async`, `text-processing`
+5. **`--project`** - Link to project if project-specific
+6. **`--session-id`** - Link to session if from agent task
 
 ---
 
