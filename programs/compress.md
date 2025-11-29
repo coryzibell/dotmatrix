@@ -15,22 +15,24 @@ Before dispatching Zion Control:
 
 ---
 
-## Phase 1: Survey
+## Phase 1: Dispatch Zion Control
 
-Scan these locations. List files with sizes and dates:
+**Neo passes these paths to Zion Control:**
 
 1. `~/.matrix/ram/*/` - Agent working memory
 2. `~/.matrix/cache/` - Workflow artifacts, construct outputs, session exports
 3. `~/.matrix/future/` - Shelved ideas (should migrate to Zion db)
-4. `~/.matrix/zion/*.md` - Stray markdown (knowledge should be in db, not loose files)
+4. `~/.matrix/zion/**/*.md` - All markdown in Zion (should be in db, not files)
 
-Note: `~/.matrix/zion/technique/` is fine as markdown - skip those.
+**Zion Control scans, reads, and contextualizes.** Neo doesn't pre-read.
+
+**Rule:** Markdown only lives in RAM and Cache. Zion is database-only.
 
 ---
 
 ## Phase 2: Triage
 
-For each file, decide:
+**Zion Control reads** each file and decides:
 
 | Action | Destination |
 |--------|-------------|
@@ -43,7 +45,7 @@ Special handling:
 - **Cache/construct/**: Keep recent, delete stale (regenerable via `/load construct`)
 - **Cache/session-export-***: Usually deletable after review
 - **Future/**: Migrate ideas to Zion db with category `future`
-- **Zion/*.md**: Absorb into db, then delete the file
+- **Zion/**/*.md**: Absorb into db (use appropriate category), then delete the file
 
 ---
 
