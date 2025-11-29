@@ -158,7 +158,7 @@ def parse_identity_colors() -> Dict[str, Tuple[str, str]]:
     Returns:
         Dict mapping identity name to (hex_color, rationale) tuple
     """
-    base_path = Path.home() / ".claude" / "artifacts" / "etc"
+    base_path = Path.home() / ".matrix" / "artifacts" / "etc"
     yaml_file = base_path / "identity-colors.yaml"
     md_file = base_path / "identity-colors.md"
 
@@ -186,7 +186,7 @@ def parse_category_colors() -> Dict[str, Tuple[str, str]]:
     Returns:
         Dict mapping label name to (hex_color, description) tuple
     """
-    yaml_file = Path.home() / ".claude" / "artifacts" / "etc" / "category-colors.yaml"
+    yaml_file = Path.home() / ".matrix" / "artifacts" / "etc" / "category-colors.yaml"
 
     if not yaml_file.exists():
         print(f"Warning: {yaml_file} not found, skipping category labels")

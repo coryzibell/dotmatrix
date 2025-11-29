@@ -37,11 +37,11 @@ Output: Absolute path to repo, project name, owner/repo
 
 - Color palette is pre-defined in artifacts - Merovingian reads it, doesn't decide colors
 - Merovingian owns the API interactions (label creation/verification)
-- Use the sync script: `python ~/.matrix/artifacts/bin/sync_labels.py <owner/repo>`
-- Don't duplicate existing labels - script handles idempotency
+- Use mx: `mx sync labels <owner/repo>`
+- Don't duplicate existing labels - mx handles idempotency
 
 ## Example Execution
 
 ```bash
-python ~/.matrix/artifacts/bin/sync_labels.py coryzibell/matrix
+mx sync labels coryzibell/matrix
 ```

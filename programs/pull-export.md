@@ -4,10 +4,12 @@
 
 **Purpose:** Download issues and discussions from GitHub to local YAML, optionally export to human-readable markdown.
 
-## Scripts
+## Commands
 
-- `pull_github.py` - GitHub → YAML (issues, discussions, comments)
-- `export_markdown.py` - YAML → Markdown (human-readable docs)
+- `mx sync pull` - GitHub → YAML (issues, discussions, comments)
+- `mx sync push` - YAML → GitHub (issues, discussions)
+- `mx sync labels` - Sync identity labels to repo
+- `mx sync issues` - Bidirectional issue sync
 
 ## Steps
 
@@ -19,24 +21,31 @@ Output: Absolute path to repo, project name, owner/repo
 
 ### Pull from GitHub
 ```bash
-python ~/.matrix/artifacts/bin/pull_github.py <owner/repo> <output-dir>
-python ~/.matrix/artifacts/bin/pull_github.py coryzibell/matrix ~/.matrix/cache/construct/matrix/issues/
+mx sync pull <owner/repo>
+mx sync pull coryzibell/matrix -o ~/.matrix/cache/construct/matrix/issues/
 ```
 
 Downloads:
 - All open issues with comments
 - All discussions with comments
 - Stores in YAML format with `last_synced` snapshot
+- Default output: `~/.matrix/cache/sync/<owner>-<repo>/`
 
 Merge behavior on pull:
 - If local YAML has changes (differs from `last_synced`), warns and skips field update
 - If local unchanged, updates from remote
 - Comments always updated (remote-authoritative)
 
+### Push to GitHub
+```bash
+mx sync push <owner/repo>
+mx sync push coryzibell/matrix -i ~/.matrix/cache/construct/matrix/issues/
+```
+
 ### Export to Markdown
 ```bash
 python ~/.matrix/artifacts/bin/export_markdown.py <yaml-dir> [output-dir]
-python ~/.matrix/artifacts/bin/export_markdown.py ~/.matrix/cache/construct/matrix/issues/ ./docs/issues/
+python ~/.matrix/artifacts/bin/export_markdown.py ~/.matrix/cache/sync/coryzibell-matrix/ ./docs/issues/
 ```
 
 Generates human-readable markdown with:
@@ -47,17 +56,19 @@ Generates human-readable markdown with:
 
 ## Full Sync Toolchain
 
-| Script | Direction | Purpose |
-|--------|-----------|---------|
-| `sync_labels.py` | → GitHub | Create identity/category labels on repo |
+| Command | Direction | Purpose |
+|---------|-----------|---------|
+| `mx sync labels <repo>` | → GitHub | Create identity/category labels on repo |
+| `mx sync pull <repo>` | GitHub → YAML | Download issues, discussions, comments |
+| `mx sync push <repo>` | YAML → GitHub | Push issues + discussions (routes by type) |
+| `mx sync issues <repo>` | ↔ GitHub | Bidirectional issue sync |
 | `convert_issues.py` | MD → YAML | Convert authored markdown to YAML |
-| `sync_github.py` | YAML → GitHub | Push issues + discussions (routes by type) |
-| `pull_github.py` | GitHub → YAML | Download issues, discussions, comments |
 | `export_markdown.py` | YAML → MD | Export for human reading |
-| `sync_wiki.py` | MD → Wiki | Push markdown to GitHub wiki (via git) |
 
-## Deprecated
+## Dry Run
 
-Kept for reference:
-- `sync_issues.py` - Replaced by `sync_github.py`
-- `sync_discussions.py` - Replaced by `sync_github.py`
+All sync commands support `--dry-run` to preview changes:
+```bash
+mx sync pull coryzibell/matrix --dry-run
+mx sync labels coryzibell/matrix --dry-run
+```

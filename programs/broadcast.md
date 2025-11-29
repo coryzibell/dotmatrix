@@ -75,16 +75,16 @@ Output: Absolute path to repo, project name (used to find `~/.matrix/cache/const
 4. **Dispatch Kid** - Convert and push to GitHub
    ```bash
    # Sync labels first (ensure identity labels exist)
-   python ~/.matrix/artifacts/bin/sync_labels.py <owner/repo>
+   mx sync labels <owner/repo>
 
    # Convert authored markdown to YAML
    python ~/.matrix/artifacts/bin/convert_issues.py ~/.matrix/cache/construct/<project>/issues/
 
-   # Push to GitHub (unified script routes by type)
-   python ~/.matrix/artifacts/bin/sync_github.py <owner/repo> ~/.matrix/cache/construct/<project>/issues/
+   # Push to GitHub (unified sync routes by type)
+   mx sync push <owner/repo> -i ~/.matrix/cache/construct/<project>/issues/
    ```
 
-   The unified `sync_github.py` routes based on `metadata.type`:
+   The sync routes based on `metadata.type`:
    - `type: issue` → GitHub Issues (REST API)
    - `type: idea` → GitHub Discussions (GraphQL API)
 
