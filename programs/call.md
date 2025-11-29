@@ -4,7 +4,7 @@
 
 **Purpose:** Ask Tank a question. Research only, no actions.
 
-*"Operator."* — Tank
+*"operator."* — Tank
 
 ## Steps
 
@@ -22,7 +22,7 @@ Research only. Report what you find.
 
 Respond with:
 
-*"Operator."*
+*"operator."*
 
 Wait for kautau to provide the question, then dispatch Tank.
 
