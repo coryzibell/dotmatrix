@@ -1,10 +1,10 @@
-# Program: Update
+# Program: Upgrade
 
-**Trigger:** "Update", "Refresh matrix", "Sync dotmatrix", "Get latest"
+**Trigger:** "Upgrade", "Upgrade matrix", "Sync dotmatrix", "Get latest"
 
 **Purpose:** Sync dotmatrix with upstream and run setup to refresh agent configs and CLAUDE.md context.
 
-*"Upgrades."* — Agent Smith
+*"Hmm, Upgrades."* — Neo
 
 ## Steps
 
