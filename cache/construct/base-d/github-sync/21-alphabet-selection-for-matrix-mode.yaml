@@ -1,0 +1,78 @@
+metadata:
+  title: Alphabet selection for Matrix mode
+  type: issue
+  labels: &id001
+  - enhancement
+  - feature
+  assignees: []
+  state: open
+  github_issue_number: 21
+  github_updated_at: '2025-11-23T17:11:07Z'
+  last_synced:
+    title: Alphabet selection for Matrix mode
+    body: "## Feature Request\n\nAllow users to choose which alphabet to use in --neo\
+      \ Matrix mode, not just base256_matrix.\n\n## Proposed Usage\n\n\\\\\\\bash\n\
+      base-d --neo                           # Default: base256_matrix\nbase-d --neo\
+      \ --alphabet base64         # Matrix mode with base64 chars\nbase-d --neo --alphabet\
+      \ emoji_faces    # Emoji Matrix!\nbase-d --neo --alphabet hieroglyphs    # Ancient\
+      \ Matrix\nbase-d --neo --alphabet base1024       # Dense CJK Matrix\nbase-d\
+      \ --neo --alphabet cards          # Playing card Matrix\nbase-d --neo -e hex\
+      \                    # Shorthand using existing -e flag\n\\\\\\\n\n## Benefits\n\
+      \n- **Variety**: 35 different visual styles\n- **Theme matching**: Choose alphabet\
+      \ that fits your aesthetic\n- **Debugging**: Test how different alphabets render\
+      \ in your terminal\n- **Fun**: Emoji Matrix, Hieroglyph Matrix, Card Matrix,\
+      \ etc.\n- **Educational**: See different encoding densities in real-time\n\n\
+      ## Examples\n\n### Emoji Matrix\n\\\\\\\n\U0001F600\U0001F601\U0001F602\U0001F923\
+      \U0001F603\U0001F604\U0001F605\U0001F606\U0001F609\U0001F60A\U0001F60B\U0001F60E\
+      \U0001F60D\U0001F618\U0001F970\U0001F617\U0001F619\U0001F61A\u263A\uFE0F\U0001F642\
+      \U0001F917\U0001F929\U0001F914\U0001F928\U0001F610\U0001F611\U0001F636\U0001F644\
+      \U0001F60F\U0001F623\U0001F625\U0001F62E\U0001F910\U0001F62F\U0001F62A\U0001F62B\
+      \U0001F971\U0001F634\U0001F60C\n\\\\\\\n\n### Hieroglyph Matrix\n\\\\\\\n\U00013000\
+      \U00013001\U00013002\U00013003\U00013004\U00013005\U00013006\U00013007\U00013008\
+      \U00013009\U0001300A\U0001300B\U0001300C\U0001300D\U0001300E\U0001300F\U00013010\
+      \U00013011\U00013012\U00013013\U00013014\U00013015\U00013016\U00013017\U00013018\
+      \U00013019\U0001301A\U0001301B\U0001301C\U0001301D\U0001301E\U0001301F\U00013020\
+      \U00013021\U00013022\U00013023\n\\\\\\\n\n### Card Matrix\n\\\\\\\n\U0001F0A1\
+      \U0001F0A2\U0001F0A3\U0001F0A4\U0001F0A5\U0001F0A6\U0001F0A7\U0001F0A8\U0001F0A9\
+      \U0001F0AA\U0001F0AB\U0001F0AD\U0001F0AE\U0001F0B1\U0001F0B2\U0001F0B3\U0001F0B4\
+      \U0001F0B5\U0001F0B6\U0001F0B7\U0001F0B8\U0001F0B9\U0001F0BA\U0001F0BB\U0001F0BD\
+      \U0001F0BE\U0001F0C1\U0001F0C2\U0001F0C3\U0001F0C4\U0001F0C5\U0001F0C6\U0001F0C7\
+      \U0001F0C8\U0001F0C9\U0001F0CA\U0001F0CB\U0001F0CD\U0001F0CE\n\\\\\\\n\n## Implementation\n\
+      \n- Use existing alphabet loading system\n- Validate alphabet supports encoding\
+      \ (has characters)\n- Default to base256_matrix for best visual effect\n- Show\
+      \ alphabet name in startup message\n\n## Related\n\n- Extends --neo feature\
+      \ (#18)\n- Works with future theme support (#19)"
+    labels: *id001
+    updated_at: '2025-11-23T17:11:07Z'
+body_markdown: "## Feature Request\n\nAllow users to choose which alphabet to use\
+  \ in --neo Matrix mode, not just base256_matrix.\n\n## Proposed Usage\n\n\\\\\\\b\
+  ash\nbase-d --neo                           # Default: base256_matrix\nbase-d --neo\
+  \ --alphabet base64         # Matrix mode with base64 chars\nbase-d --neo --alphabet\
+  \ emoji_faces    # Emoji Matrix!\nbase-d --neo --alphabet hieroglyphs    # Ancient\
+  \ Matrix\nbase-d --neo --alphabet base1024       # Dense CJK Matrix\nbase-d --neo\
+  \ --alphabet cards          # Playing card Matrix\nbase-d --neo -e hex         \
+  \           # Shorthand using existing -e flag\n\\\\\\\n\n## Benefits\n\n- **Variety**:\
+  \ 35 different visual styles\n- **Theme matching**: Choose alphabet that fits your\
+  \ aesthetic\n- **Debugging**: Test how different alphabets render in your terminal\n\
+  - **Fun**: Emoji Matrix, Hieroglyph Matrix, Card Matrix, etc.\n- **Educational**:\
+  \ See different encoding densities in real-time\n\n## Examples\n\n### Emoji Matrix\n\
+  \\\\\\\n\U0001F600\U0001F601\U0001F602\U0001F923\U0001F603\U0001F604\U0001F605\U0001F606\
+  \U0001F609\U0001F60A\U0001F60B\U0001F60E\U0001F60D\U0001F618\U0001F970\U0001F617\
+  \U0001F619\U0001F61A\u263A\uFE0F\U0001F642\U0001F917\U0001F929\U0001F914\U0001F928\
+  \U0001F610\U0001F611\U0001F636\U0001F644\U0001F60F\U0001F623\U0001F625\U0001F62E\
+  \U0001F910\U0001F62F\U0001F62A\U0001F62B\U0001F971\U0001F634\U0001F60C\n\\\\\\\n\
+  \n### Hieroglyph Matrix\n\\\\\\\n\U00013000\U00013001\U00013002\U00013003\U00013004\
+  \U00013005\U00013006\U00013007\U00013008\U00013009\U0001300A\U0001300B\U0001300C\
+  \U0001300D\U0001300E\U0001300F\U00013010\U00013011\U00013012\U00013013\U00013014\
+  \U00013015\U00013016\U00013017\U00013018\U00013019\U0001301A\U0001301B\U0001301C\
+  \U0001301D\U0001301E\U0001301F\U00013020\U00013021\U00013022\U00013023\n\\\\\\\n\
+  \n### Card Matrix\n\\\\\\\n\U0001F0A1\U0001F0A2\U0001F0A3\U0001F0A4\U0001F0A5\U0001F0A6\
+  \U0001F0A7\U0001F0A8\U0001F0A9\U0001F0AA\U0001F0AB\U0001F0AD\U0001F0AE\U0001F0B1\
+  \U0001F0B2\U0001F0B3\U0001F0B4\U0001F0B5\U0001F0B6\U0001F0B7\U0001F0B8\U0001F0B9\
+  \U0001F0BA\U0001F0BB\U0001F0BD\U0001F0BE\U0001F0C1\U0001F0C2\U0001F0C3\U0001F0C4\
+  \U0001F0C5\U0001F0C6\U0001F0C7\U0001F0C8\U0001F0C9\U0001F0CA\U0001F0CB\U0001F0CD\
+  \U0001F0CE\n\\\\\\\n\n## Implementation\n\n- Use existing alphabet loading system\n\
+  - Validate alphabet supports encoding (has characters)\n- Default to base256_matrix\
+  \ for best visual effect\n- Show alphabet name in startup message\n\n## Related\n\
+  \n- Extends --neo feature (#18)\n- Works with future theme support (#19)"
+comments: []

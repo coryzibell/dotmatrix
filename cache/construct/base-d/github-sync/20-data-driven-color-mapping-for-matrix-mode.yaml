@@ -1,0 +1,56 @@
+metadata:
+  title: Data-driven color mapping for Matrix mode
+  type: issue
+  labels: &id001
+  - enhancement
+  - feature
+  assignees: []
+  state: open
+  github_issue_number: 20
+  github_updated_at: '2025-11-23T17:10:39Z'
+  last_synced:
+    title: Data-driven color mapping for Matrix mode
+    body: "## Feature Request\n\nMap incoming data bytes to colors dynamically, creating\
+      \ a visual representation of the data stream.\n\n## Concept\n\nInstead of uniform\
+      \ color, each character's color represents the underlying byte value:\n\n- **Byte\
+      \ ranges map to hues**: 0-63 = red, 64-127 = yellow, 128-191 = cyan, 192-255\
+      \ = blue\n- **Brightness from byte value**: Higher values = brighter\n- **Color\
+      \ gradients**: Smooth transitions between values\n- **Heat map style**: Hot\
+      \ colors (red/yellow) for high values, cool colors (blue/cyan) for low\n\n##\
+      \ Example Use Cases\n\n1. **Visualize entropy**: Random data = full color spectrum,\
+      \ structured data = patterns\n2. **Debug binary files**: See patterns in compiled\
+      \ code or images\n3. **Network traffic**: Visualize packet data in real-time\n\
+      4. **File analysis**: Different file types create different visual signatures\n\
+      \n## Proposed Usage\n\n\\\\\\\bash\nbase-d --neo --color-map               \
+      \     # Enable color mapping\nbase-d --neo --color-map --file data.bin    #\
+      \ Visualize file data\nbase-d --neo --color-map rainbow            # Full spectrum\n\
+      base-d --neo --color-map heat               # Heat map style\nbase-d --neo --color-map\
+      \ gradient           # Smooth gradient\n\\\\\\\n\n## Implementation\n\n- Use\
+      \ ANSI 256-color mode or true color (24-bit)\n- Map byte value \u2192 color\
+      \ index\n- Pre-compute color palette for performance\n- Option to disable for\
+      \ terminals without color support\n\n## Benefits\n\n- Information visualization\n\
+      - Pattern recognition in binary data\n- Educational tool for understanding data\n\
+      - Unique aesthetic appeal"
+    labels: *id001
+    updated_at: '2025-11-23T17:10:39Z'
+body_markdown: "## Feature Request\n\nMap incoming data bytes to colors dynamically,\
+  \ creating a visual representation of the data stream.\n\n## Concept\n\nInstead\
+  \ of uniform color, each character's color represents the underlying byte value:\n\
+  \n- **Byte ranges map to hues**: 0-63 = red, 64-127 = yellow, 128-191 = cyan, 192-255\
+  \ = blue\n- **Brightness from byte value**: Higher values = brighter\n- **Color\
+  \ gradients**: Smooth transitions between values\n- **Heat map style**: Hot colors\
+  \ (red/yellow) for high values, cool colors (blue/cyan) for low\n\n## Example Use\
+  \ Cases\n\n1. **Visualize entropy**: Random data = full color spectrum, structured\
+  \ data = patterns\n2. **Debug binary files**: See patterns in compiled code or images\n\
+  3. **Network traffic**: Visualize packet data in real-time\n4. **File analysis**:\
+  \ Different file types create different visual signatures\n\n## Proposed Usage\n\
+  \n\\\\\\\bash\nbase-d --neo --color-map                    # Enable color mapping\n\
+  base-d --neo --color-map --file data.bin    # Visualize file data\nbase-d --neo\
+  \ --color-map rainbow            # Full spectrum\nbase-d --neo --color-map heat\
+  \               # Heat map style\nbase-d --neo --color-map gradient           #\
+  \ Smooth gradient\n\\\\\\\n\n## Implementation\n\n- Use ANSI 256-color mode or true\
+  \ color (24-bit)\n- Map byte value \u2192 color index\n- Pre-compute color palette\
+  \ for performance\n- Option to disable for terminals without color support\n\n##\
+  \ Benefits\n\n- Information visualization\n- Pattern recognition in binary data\n\
+  - Educational tool for understanding data\n- Unique aesthetic appeal"
+comments: []

@@ -1,0 +1,39 @@
+metadata:
+  title: Theme support for Matrix mode
+  type: issue
+  labels: &id001
+  - enhancement
+  - feature
+  assignees: []
+  state: open
+  github_issue_number: 19
+  github_updated_at: '2025-11-23T17:10:11Z'
+  last_synced:
+    title: Theme support for Matrix mode
+    body: "## Feature Request\n\nAdd theme/color customization for the --neo Matrix\
+      \ mode.\n\n## Proposed Options\n\n\\\\\\\bash\nbase-d --neo --theme green  \
+      \    # Classic Matrix green (default)\nbase-d --neo --theme red        # Red\
+      \ pill\nbase-d --neo --theme blue       # Blue pill\nbase-d --neo --theme rainbow\
+      \    # Cycle through colors\nbase-d --neo --theme amber      # Retro terminal\
+      \ amber\nbase-d --neo --theme cyan       # Cyberpunk cyan\n\\\\\\\n\n## Implementation\
+      \ Ideas\n\n- Use ANSI color codes (already using \\x1b[32m for green)\n- Color\
+      \ palette stored in config or hardcoded\n- Support both foreground and background\
+      \ colors\n- Optional: Allow custom RGB/hex colors\n\n## Related\n\n- Enhances\
+      \ the --neo feature (#18)\n- Could work with different alphabets too\n\n## Benefits\n\
+      \n- More visual customization\n- Different moods/aesthetics\n- Accessibility\
+      \ (some users prefer different colors)\n- Fun factor +"
+    labels: *id001
+    updated_at: '2025-11-23T17:10:11Z'
+body_markdown: "## Feature Request\n\nAdd theme/color customization for the --neo\
+  \ Matrix mode.\n\n## Proposed Options\n\n\\\\\\\bash\nbase-d --neo --theme green\
+  \      # Classic Matrix green (default)\nbase-d --neo --theme red        # Red pill\n\
+  base-d --neo --theme blue       # Blue pill\nbase-d --neo --theme rainbow    # Cycle\
+  \ through colors\nbase-d --neo --theme amber      # Retro terminal amber\nbase-d\
+  \ --neo --theme cyan       # Cyberpunk cyan\n\\\\\\\n\n## Implementation Ideas\n\
+  \n- Use ANSI color codes (already using \\x1b[32m for green)\n- Color palette stored\
+  \ in config or hardcoded\n- Support both foreground and background colors\n- Optional:\
+  \ Allow custom RGB/hex colors\n\n## Related\n\n- Enhances the --neo feature (#18)\n\
+  - Could work with different alphabets too\n\n## Benefits\n\n- More visual customization\n\
+  - Different moods/aesthetics\n- Accessibility (some users prefer different colors)\n\
+  - Fun factor +"
+comments: []

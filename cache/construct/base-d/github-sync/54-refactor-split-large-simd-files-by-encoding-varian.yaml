@@ -1,0 +1,47 @@
+metadata:
+  title: 'refactor: split large SIMD files by encoding variant (R7)'
+  type: issue
+  labels: &id001
+  - enhancement
+  - simd
+  - identity:ramakandra
+  - P3
+  - refactoring
+  assignees: []
+  state: open
+  github_issue_number: 54
+  github_updated_at: '2025-11-27T16:53:39Z'
+  last_synced:
+    title: 'refactor: split large SIMD files by encoding variant (R7)'
+    body: "## Context\n\n`simd/lut/large.rs` is 3,169 lines - creating maintenance\
+      \ burden, difficult code review, and potential compile-time bottleneck.\n\n\
+      The file contains all variants (base16/32/64) for both x86 and aarch64 in a\
+      \ single monolithic file.\n\n## Proposed Structure\n\n```\nsimd/lut/\n\u251C\
+      \u2500\u2500 large/\n\u2502   \u251C\u2500\u2500 mod.rs           - Public API,\
+      \ codec struct\n\u2502   \u251C\u2500\u2500 base16.rs        - Base16 LUT implementation\n\
+      \u2502   \u251C\u2500\u2500 base32.rs        - Base32 LUT implementation\n\u2502\
+      \   \u2514\u2500\u2500 base64.rs        - Base64 LUT implementation\n\u2514\u2500\
+      \u2500 small/\n    \u2514\u2500\u2500 (similar structure)\n```\n\n## Benefits\n\
+      \n- Improved navigability\n- Easier code review\n- Parallel compilation may\
+      \ improve build times\n- Reduced cognitive overhead\n\n## Risk\n\nSignificant\
+      \ churn. Requires careful refactoring to avoid breaking internal APIs.\n\n##\
+      \ Acceptance Criteria\n\n- [ ] Split `simd/lut/large.rs` by encoding variant\n\
+      - [ ] Split `simd/lut/small.rs` similarly\n- [ ] Update module structure\n-\
+      \ [ ] All tests pass (229 tests)\n- [ ] No performance regression"
+    labels: *id001
+    updated_at: '2025-11-27T16:53:39Z'
+body_markdown: "## Context\n\n`simd/lut/large.rs` is 3,169 lines - creating maintenance\
+  \ burden, difficult code review, and potential compile-time bottleneck.\n\nThe file\
+  \ contains all variants (base16/32/64) for both x86 and aarch64 in a single monolithic\
+  \ file.\n\n## Proposed Structure\n\n```\nsimd/lut/\n\u251C\u2500\u2500 large/\n\u2502\
+  \   \u251C\u2500\u2500 mod.rs           - Public API, codec struct\n\u2502   \u251C\
+  \u2500\u2500 base16.rs        - Base16 LUT implementation\n\u2502   \u251C\u2500\
+  \u2500 base32.rs        - Base32 LUT implementation\n\u2502   \u2514\u2500\u2500\
+  \ base64.rs        - Base64 LUT implementation\n\u2514\u2500\u2500 small/\n    \u2514\
+  \u2500\u2500 (similar structure)\n```\n\n## Benefits\n\n- Improved navigability\n\
+  - Easier code review\n- Parallel compilation may improve build times\n- Reduced\
+  \ cognitive overhead\n\n## Risk\n\nSignificant churn. Requires careful refactoring\
+  \ to avoid breaking internal APIs.\n\n## Acceptance Criteria\n\n- [ ] Split `simd/lut/large.rs`\
+  \ by encoding variant\n- [ ] Split `simd/lut/small.rs` similarly\n- [ ] Update module\
+  \ structure\n- [ ] All tests pass (229 tests)\n- [ ] No performance regression"
+comments: []

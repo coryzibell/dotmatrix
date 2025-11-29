@@ -1,0 +1,41 @@
+metadata:
+  title: '[BLOCKER] Path traversal possible in custom alphabet loading'
+  type: issue
+  labels: &id001
+  - identity:cypher
+  - identity:smith
+  - blocker
+  - security
+  assignees: []
+  state: open
+  github_issue_number: 75
+  github_updated_at: '2025-11-29T03:19:24Z'
+  last_synced:
+    title: '[BLOCKER] Path traversal possible in custom alphabet loading'
+    body: "## Context\n\nFrom Construct review of `base-d` project. Cypher identified\
+      \ security issue.\n\n**Source:** `~/.matrix/cache/construct/base-d/security-audit.md`\n\
+      \n### Problem\n\nCustom alphabet file paths aren't sanitized. User input like\
+      \ `--alphabet ../../../etc/passwd` could read arbitrary files.\n\n### Impact\n\
+      \n- Information disclosure\n- Reading sensitive files outside intended directory\n\
+      \n### Solution\n\nCanonicalize paths and verify they're within allowed directories:\n\
+      ```rust\nlet canonical = path.canonicalize()?;\nif !canonical.starts_with(&allowed_base)\
+      \ {\n    return Err(Error::PathTraversal);\n}\n```\n\n### Acceptance Criteria\n\
+      \n- [ ] Path canonicalization before file access\n- [ ] Directory allowlist\
+      \ validation\n- [ ] Clear error message for blocked paths\n- [ ] Unit tests\
+      \ for traversal attempts\n\n### Handoff\n\nCypher identifies \u2192 Smith implements\
+      \ \u2192 Cypher verifies \u2192 Neo merges"
+    labels: *id001
+    updated_at: '2025-11-29T03:19:24Z'
+body_markdown: "## Context\n\nFrom Construct review of `base-d` project. Cypher identified\
+  \ security issue.\n\n**Source:** `~/.matrix/cache/construct/base-d/security-audit.md`\n\
+  \n### Problem\n\nCustom alphabet file paths aren't sanitized. User input like `--alphabet\
+  \ ../../../etc/passwd` could read arbitrary files.\n\n### Impact\n\n- Information\
+  \ disclosure\n- Reading sensitive files outside intended directory\n\n### Solution\n\
+  \nCanonicalize paths and verify they're within allowed directories:\n```rust\nlet\
+  \ canonical = path.canonicalize()?;\nif !canonical.starts_with(&allowed_base) {\n\
+  \    return Err(Error::PathTraversal);\n}\n```\n\n### Acceptance Criteria\n\n- [\
+  \ ] Path canonicalization before file access\n- [ ] Directory allowlist validation\n\
+  - [ ] Clear error message for blocked paths\n- [ ] Unit tests for traversal attempts\n\
+  \n### Handoff\n\nCypher identifies \u2192 Smith implements \u2192 Cypher verifies\
+  \ \u2192 Neo merges"
+comments: []

@@ -1,0 +1,24 @@
+metadata:
+  title: Web Assembly (WASM) support
+  type: issue
+  labels: &id001
+  - enhancement
+  - wasm
+  - feature
+  assignees: []
+  state: open
+  github_issue_number: 6
+  github_updated_at: '2025-11-23T15:10:30Z'
+  last_synced:
+    title: Web Assembly (WASM) support
+    body: 'Add WASM compilation target to enable base-d usage in web browsers.
+
+
+      Part of Phase 4: Advanced Features (v0.4.0)'
+    labels: *id001
+    updated_at: '2025-11-23T15:10:30Z'
+body_markdown: 'Add WASM compilation target to enable base-d usage in web browsers.
+
+
+  Part of Phase 4: Advanced Features (v0.4.0)'
+comments: []

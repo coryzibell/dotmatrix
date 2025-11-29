@@ -13,6 +13,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - `~/work/personal/code/` - Code repositories (Claude projects)
 - `~/source/repos/` - Legacy/other repositories
+- `~/.matrix` - **This directory IS the dotmatrix repo** (both live working directory and git repo - changes here are committed directly)
 
 ## Storage Tiers
 

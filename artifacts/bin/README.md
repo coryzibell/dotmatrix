@@ -1,43 +1,50 @@
 # Matrix Artifacts - Bin
 
-Python scripts used as backends for `mx` commands and standalone utilities.
+All scripts have been migrated to pure Rust in the `mx` CLI.
 
-## GitHub Sync (mx backends)
+## Available Commands
 
-These scripts are called by `mx sync` subcommands:
+### GitHub Sync
+```bash
+mx sync pull <repo>      # Download issues/discussions to YAML
+mx sync push <repo>      # Push YAML changes to GitHub
+mx sync labels <repo>    # Sync identity labels
+mx sync issues <repo>    # Bidirectional sync
+```
 
-| Script | mx command | Purpose |
-|--------|------------|---------|
-| `pull_github.py` | `mx sync pull` | Download issues/discussions from GitHub to YAML |
-| `sync_github.py` | `mx sync push` | Push YAML changes to GitHub |
-| `sync_labels.py` | `mx sync labels` | Sync identity labels to repo |
-| `sync_issues.py` | `mx sync issues` | Bidirectional issue sync |
+### GitHub Operations
+```bash
+mx github cleanup <repo> --issues 1,2 --discussions 3,4
+mx github comment issue <repo> <number> <message> [--identity NAME]
+mx github comment discussion <repo> <number> <message> [--identity NAME]
+```
 
-## Standalone Utilities
+### Conversion Tools
+```bash
+mx convert md2yaml <input> [-o output]
+mx convert yaml2md <input> [-o output] [--repo owner/repo]
+```
 
-| Script | Purpose | Usage |
-|--------|---------|-------|
-| `convert_issues.py` | Convert authored markdown to YAML | `python convert_issues.py <dir>` |
-| `export_markdown.py` | Export YAML to human-readable markdown | `python export_markdown.py <yaml-dir> [output]` |
-| `sync_wiki.py` | Push markdown to GitHub wiki | `python sync_wiki.py <repo> <dir>` |
-| `cleanup_github.py` | Clean up GitHub artifacts | `python cleanup_github.py <repo>` |
+### Wiki
+```bash
+mx wiki sync <repo> <source> [--page-name NAME] [--dry-run]
+```
 
-## Session Tools
+### Session & Diagnostics
+```bash
+mx session export [path] [-o output]
+mx doctor
+```
 
-| Script | Purpose | Usage |
-|--------|---------|-------|
-| `extract-session.py` | Export Claude Code session to markdown | `python extract-session.py [session.jsonl]` |
-
-## Matrix Tools
-
-| Script | Purpose |
-|--------|---------|
-| `matrix_client.py` | GitHub App client for dotmatrix bot |
-| `health_check.py` | System health checks |
+### Zion Knowledge
+```bash
+mx zion search <query>
+mx zion add --category <cat> --title <title>
+mx zion list [--category <cat>]
+```
 
 ## Notes
 
-- Scripts are executable (`chmod +x`)
-- Require Python 3.11+
-- GitHub tools need `GITHUB_TOKEN` env var or `~/.claude.json`
-- Prefer using `mx sync` commands over calling scripts directly
+- All commands are native Rust - no Python required
+- GitHub tools use token from `~/.claude.json`
+- Run `mx --help` for full command reference

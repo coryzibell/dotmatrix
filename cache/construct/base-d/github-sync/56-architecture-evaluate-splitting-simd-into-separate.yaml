@@ -1,0 +1,144 @@
+metadata:
+  title: 'architecture: evaluate splitting SIMD into separate crate (R9)'
+  type: issue
+  labels: &id001
+  - enhancement
+  - simd
+  - identity:architect
+  - architecture
+  - P4
+  assignees: []
+  state: open
+  github_issue_number: 56
+  github_updated_at: '2025-11-27T16:53:40Z'
+  last_synced:
+    title: 'architecture: evaluate splitting SIMD into separate crate (R9)'
+    body: '## Context
+
+
+      SIMD subsystem is 70% of codebase (~13,800 lines vs 6,200 total source). This
+      creates compilation overhead for non-SIMD use cases.
+
+
+      ## Proposed Structure
+
+
+      ```
+
+      base-d/          (library crate)
+
+      base-d-simd/     (optional acceleration crate)
+
+      base-d-cli/      (binary crate)
+
+      ```
+
+
+      ## Benefits
+
+
+      - Faster compilation for non-SIMD use cases
+
+      - Clearer separation of concerns
+
+      - Optional dependency for environments without SIMD
+
+      - Independent versioning of SIMD optimizations
+
+
+      ## Costs
+
+
+      - Workspace management complexity
+
+      - API surface coordination between crates
+
+      - CI/CD pipeline adjustments
+
+
+      ## Decision Criteria
+
+
+      Defer until SIMD subsystem exceeds 20,000 lines or becomes independently reusable.
+
+
+      ## Acceptance Criteria
+
+
+      - [ ] SIMD subsystem reaches 20K+ lines OR
+
+      - [ ] Independent reusability identified OR
+
+      - [ ] User requests emerge for non-SIMD builds
+
+      - [ ] Design workspace structure
+
+      - [ ] Plan API boundaries between crates
+
+      - [ ] Implement extraction with CI/CD updates'
+    labels: *id001
+    updated_at: '2025-11-27T16:53:40Z'
+body_markdown: '## Context
+
+
+  SIMD subsystem is 70% of codebase (~13,800 lines vs 6,200 total source). This creates
+  compilation overhead for non-SIMD use cases.
+
+
+  ## Proposed Structure
+
+
+  ```
+
+  base-d/          (library crate)
+
+  base-d-simd/     (optional acceleration crate)
+
+  base-d-cli/      (binary crate)
+
+  ```
+
+
+  ## Benefits
+
+
+  - Faster compilation for non-SIMD use cases
+
+  - Clearer separation of concerns
+
+  - Optional dependency for environments without SIMD
+
+  - Independent versioning of SIMD optimizations
+
+
+  ## Costs
+
+
+  - Workspace management complexity
+
+  - API surface coordination between crates
+
+  - CI/CD pipeline adjustments
+
+
+  ## Decision Criteria
+
+
+  Defer until SIMD subsystem exceeds 20,000 lines or becomes independently reusable.
+
+
+  ## Acceptance Criteria
+
+
+  - [ ] SIMD subsystem reaches 20K+ lines OR
+
+  - [ ] Independent reusability identified OR
+
+  - [ ] User requests emerge for non-SIMD builds
+
+  - [ ] Design workspace structure
+
+  - [ ] Plan API boundaries between crates
+
+  - [ ] Implement extraction with CI/CD updates'
+comments: []

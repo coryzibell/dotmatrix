@@ -1,0 +1,39 @@
+metadata:
+  title: Add rust-cache to CI for faster builds
+  type: issue
+  labels: &id001
+  - identity:niobe
+  - ci
+  - high-priority
+  assignees: []
+  state: open
+  github_issue_number: 82
+  github_updated_at: '2025-11-29T03:20:19Z'
+  last_synced:
+    title: Add rust-cache to CI for faster builds
+    body: "## Context\n\nFrom Construct review of `base-d` project. Niobe identified\
+      \ CI optimization.\n\n**Source:** `~/.matrix/cache/construct/base-d/cicd-review.md`\n\
+      \n### Problem\n\nCI builds don't cache Rust dependencies, rebuilding everything\
+      \ from scratch each time. This adds ~2-3 minutes per workflow run.\n\n### Solution\n\
+      \nAdd `Swatinem/rust-cache@v2` action to CI workflows.\n\n### Implementation\
+      \ Steps\n\n1. Add rust-cache action after rust toolchain setup:\n   ```yaml\n\
+      \   - uses: Swatinem/rust-cache@v2\n   ```\n2. Apply to all workflow files:\n\
+      \   - `pr-checks.yml`\n   - `the-matrix-has-you.yml`\n   - Any other CI workflows\n\
+      3. Verify cache hits in subsequent runs\n\n### Acceptance Criteria\n\n- [ ]\
+      \ rust-cache added to all workflows\n- [ ] Second run shows cache hit\n- [ ]\
+      \ ~50% build time reduction\n\n### Handoff\n\nNiobe implements \u2192 verify\
+      \ cache hits \u2192 Neo merges"
+    labels: *id001
+    updated_at: '2025-11-29T03:20:19Z'
+body_markdown: "## Context\n\nFrom Construct review of `base-d` project. Niobe identified\
+  \ CI optimization.\n\n**Source:** `~/.matrix/cache/construct/base-d/cicd-review.md`\n\
+  \n### Problem\n\nCI builds don't cache Rust dependencies, rebuilding everything\
+  \ from scratch each time. This adds ~2-3 minutes per workflow run.\n\n### Solution\n\
+  \nAdd `Swatinem/rust-cache@v2` action to CI workflows.\n\n### Implementation Steps\n\
+  \n1. Add rust-cache action after rust toolchain setup:\n   ```yaml\n   - uses: Swatinem/rust-cache@v2\n\
+  \   ```\n2. Apply to all workflow files:\n   - `pr-checks.yml`\n   - `the-matrix-has-you.yml`\n\
+  \   - Any other CI workflows\n3. Verify cache hits in subsequent runs\n\n### Acceptance\
+  \ Criteria\n\n- [ ] rust-cache added to all workflows\n- [ ] Second run shows cache\
+  \ hit\n- [ ] ~50% build time reduction\n\n### Handoff\n\nNiobe implements \u2192\
+  \ verify cache hits \u2192 Neo merges"
+comments: []

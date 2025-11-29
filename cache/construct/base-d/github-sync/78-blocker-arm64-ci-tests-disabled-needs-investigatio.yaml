@@ -1,0 +1,39 @@
+metadata:
+  title: '[BLOCKER] ARM64 CI tests disabled - needs investigation'
+  type: issue
+  labels: &id001
+  - identity:niobe
+  - identity:trinity
+  - blocker
+  - arm64
+  - ci
+  assignees: []
+  state: open
+  github_issue_number: 78
+  github_updated_at: '2025-11-29T03:19:32Z'
+  last_synced:
+    title: '[BLOCKER] ARM64 CI tests disabled - needs investigation'
+    body: "## Context\n\nFrom Construct review of `base-d` project. Niobe identified\
+      \ CI gap.\n\n**Source:** `~/.matrix/cache/construct/base-d/cicd-review.md`\n\
+      \n### Problem\n\nARM64 tests are commented out in CI with `# TODO: fix ARM64\
+      \ tests`. This means ARM64 SIMD code is shipping without CI verification.\n\n\
+      ### Impact\n\n- ARM64 bugs ship undetected\n- Platform parity not verified\n\
+      - False confidence in release quality\n\n### Solution\n\n1. Investigate why\
+      \ tests were disabled\n2. Fix underlying issue\n3. Re-enable ARM64 CI matrix\n\
+      \n### Acceptance Criteria\n\n- [ ] ARM64 tests passing in CI\n- [ ] CI matrix\
+      \ includes both x86_64 and ARM64\n- [ ] SIMD tests run on both platforms\n-\
+      \ [ ] No `TODO: fix` comments remain\n\n### Handoff\n\nNiobe investigates \u2192\
+      \ Trinity debugs if needed \u2192 Neo merges"
+    labels: *id001
+    updated_at: '2025-11-29T03:19:32Z'
+body_markdown: "## Context\n\nFrom Construct review of `base-d` project. Niobe identified\
+  \ CI gap.\n\n**Source:** `~/.matrix/cache/construct/base-d/cicd-review.md`\n\n###\
+  \ Problem\n\nARM64 tests are commented out in CI with `# TODO: fix ARM64 tests`.\
+  \ This means ARM64 SIMD code is shipping without CI verification.\n\n### Impact\n\
+  \n- ARM64 bugs ship undetected\n- Platform parity not verified\n- False confidence\
+  \ in release quality\n\n### Solution\n\n1. Investigate why tests were disabled\n\
+  2. Fix underlying issue\n3. Re-enable ARM64 CI matrix\n\n### Acceptance Criteria\n\
+  \n- [ ] ARM64 tests passing in CI\n- [ ] CI matrix includes both x86_64 and ARM64\n\
+  - [ ] SIMD tests run on both platforms\n- [ ] No `TODO: fix` comments remain\n\n\
+  ### Handoff\n\nNiobe investigates \u2192 Trinity debugs if needed \u2192 Neo merges"
+comments: []

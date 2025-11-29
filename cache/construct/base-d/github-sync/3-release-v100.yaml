@@ -1,0 +1,42 @@
+metadata:
+  title: Release v1.0.0
+  type: issue
+  labels: &id001
+  - release
+  assignees: []
+  state: open
+  github_issue_number: 3
+  github_updated_at: '2025-11-23T15:10:30Z'
+  last_synced:
+    title: Release v1.0.0
+    body: 'Prepare and release v1.0.0:
+
+      - Complete all Phase 5 tasks
+
+      - Final testing
+
+      - Update changelog
+
+      - Create release notes
+
+      - Publish to crates.io
+
+
+      Part of Phase 5: Polish (v1.0.0)'
+    labels: *id001
+    updated_at: '2025-11-23T15:10:30Z'
+body_markdown: 'Prepare and release v1.0.0:
+
+  - Complete all Phase 5 tasks
+
+  - Final testing
+
+  - Update changelog
+
+  - Create release notes
+
+  - Publish to crates.io
+
+
+  Part of Phase 5: Polish (v1.0.0)'
+comments: []

@@ -1,0 +1,36 @@
+metadata:
+  title: Multiple output formats
+  type: issue
+  labels: &id001
+  - enhancement
+  - future
+  - feature
+  assignees: []
+  state: open
+  github_issue_number: 15
+  github_updated_at: '2025-11-23T15:10:30Z'
+  last_synced:
+    title: Multiple output formats
+    body: 'Support multiple output formats including:
+
+      - Hexadecimal
+
+      - Binary
+
+      - Various encodings
+
+
+      Part of Future Considerations'
+    labels: *id001
+    updated_at: '2025-11-23T15:10:30Z'
+body_markdown: 'Support multiple output formats including:
+
+  - Hexadecimal
+
+  - Binary
+
+  - Various encodings
+
+
+  Part of Future Considerations'
+comments: []

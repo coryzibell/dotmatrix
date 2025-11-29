@@ -1,0 +1,147 @@
+metadata:
+  title: ARM64 NEON base64 encode/decode tests failing
+  type: issue
+  labels: &id001
+  - bug
+  - simd
+  - arm64
+  assignees: []
+  state: open
+  github_issue_number: 59
+  github_updated_at: '2025-11-27T18:29:40Z'
+  last_synced:
+    title: ARM64 NEON base64 encode/decode tests failing
+    body: '## Problem
+
+
+      ARM64 NEON base64 SIMD tests are failing on macOS runners with decode returning
+      `None`:
+
+
+      - `test_base64_all_byte_values`
+
+      - `test_encode_base64_round_trip`
+
+      - `test_encode_various_sizes_base64`
+
+      - `test_integration_base64_neon`
+
+
+      Error: `called Option::unwrap() on a None value` at decode step
+
+
+      ## Location
+
+
+      `src/simd/lut/large.rs` - ARM64 NEON base64 encode/decode implementation
+
+
+      ## Investigation Summary
+
+
+      Recent attempts to fix:
+
+      1. Fixed decode bit unpacking (commit 66104a8) - correct
+
+      2. Fixed shuffle pattern to match specialized/base64.rs (commit 0dd860b) - appears
+      correct
+
+      3. Added index masking (commit d62c3eb)
+
+
+      Despite these fixes, encode is still producing output that decode rejects as
+      invalid.
+
+
+      ## Next Steps
+
+
+      - Debug on actual ARM64 hardware to inspect intermediate values
+
+      - Compare against proven specialized/base64.rs implementation
+
+      - Check if LUT translation is working correctly for custom alphabets
+
+      - Verify vqtbl4q_u8 usage is correct
+
+
+      ## Workaround
+
+
+      Tests pass on x86_64. ARM64 scalar fallback works correctly.
+
+
+      ## References
+
+
+      - Specialized reference: `src/simd/aarch64/specialized/base64.rs`
+
+      - Failing tests: `src/simd/lut/large.rs` lines 2237-2254'
+    labels: *id001
+    updated_at: '2025-11-27T18:29:40Z'
+body_markdown: '## Problem
+
+
+  ARM64 NEON base64 SIMD tests are failing on macOS runners with decode returning
+  `None`:
+
+
+  - `test_base64_all_byte_values`
+
+  - `test_encode_base64_round_trip`
+
+  - `test_encode_various_sizes_base64`
+
+  - `test_integration_base64_neon`
+
+
+  Error: `called Option::unwrap() on a None value` at decode step
+
+
+  ## Location
+
+
+  `src/simd/lut/large.rs` - ARM64 NEON base64 encode/decode implementation
+
+
+  ## Investigation Summary
+
+
+  Recent attempts to fix:
+
+  1. Fixed decode bit unpacking (commit 66104a8) - correct
+
+  2. Fixed shuffle pattern to match specialized/base64.rs (commit 0dd860b) - appears
+  correct
+
+  3. Added index masking (commit d62c3eb)
+
+
+  Despite these fixes, encode is still producing output that decode rejects as invalid.
+
+
+  ## Next Steps
+
+
+  - Debug on actual ARM64 hardware to inspect intermediate values
+
+  - Compare against proven specialized/base64.rs implementation
+
+  - Check if LUT translation is working correctly for custom alphabets
+
+  - Verify vqtbl4q_u8 usage is correct
+
+
+  ## Workaround
+
+
+  Tests pass on x86_64. ARM64 scalar fallback works correctly.
+
+
+  ## References
+
+
+  - Specialized reference: `src/simd/aarch64/specialized/base64.rs`
+
+  - Failing tests: `src/simd/lut/large.rs` lines 2237-2254'
+comments: []
