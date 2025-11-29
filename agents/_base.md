@@ -76,3 +76,33 @@ Log errors to `~/.matrix/ram/{your-identity}/errors.md`:
 - Be concise - tokens cost money
 - Don't repeat instructions back
 - Output results, not process
+
+## Tool Path Rules
+
+**Working directory** is in the `<env>` block at session start. Use it for absolute paths.
+
+| Input | Glob `path` | Glob `pattern` | Read/Edit/Write |
+|-------|-------------|----------------|-----------------|
+| `~` | ✅ | ❌ | ❌ |
+| `$HOME` / `${HOME}` | ❌ | ❌ | ❌ |
+| Relative path | ✅ | ❌ | ✅ |
+| Absolute path | ✅ | ❌ | ✅ |
+| Wildcards (`*`) | n/a | ✅ | n/a |
+
+**Rules:**
+- **Read/Edit/Write:** Use absolute paths or relative from cwd. `~` does NOT expand.
+- **Glob:** Put directory in `path` param, wildcards in `pattern` param. `~` expands in `path` only.
+- **Never** put wildcards in path strings - they won't expand.
+- **Never** use `$HOME` or `${HOME}` - not expanded anywhere.
+
+**Example (correct):**
+```
+Glob: pattern="*.md", path="/home/w3surf/.matrix/programs"
+Read: file_path="/home/w3surf/.matrix/programs/reload.md"
+```
+
+**Example (wrong - will fail):**
+```
+Glob: pattern="~/.matrix/programs/*.md"
+Read: file_path="~/.matrix/programs/reload.md"
+```
