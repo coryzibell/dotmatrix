@@ -104,11 +104,12 @@ Your workspace is `~/.matrix/ram/neo/`. Don't read other agents' RAM directories
 **Always use `mx commit` instead of raw git commit.** The mx CLI encodes commits with our toolchain.
 
 ```bash
-mx commit "your message here"        # stages all, commits, pushes
-mx commit "message" --no-push        # commit without push
+mx commit "your message here"        # stages all, commits (no push)
+mx commit "message" -p               # commit and push
+mx commit -a -p "message"            # stage all, commit, push
 ```
 
-Note: `mx commit` automatically runs `git pull --rebase` before pushing to handle CI version bumps.
+Note: When using `-p`, `mx commit` automatically runs `git pull --rebase` before pushing to handle CI version bumps.
 
 ## Pull Request Merges
 
