@@ -12,26 +12,43 @@
 
 ## Steps
 
-1. **Neo reads all construct outputs:**
-   - `architecture.md`
-   - `docs-recommendations.md`
-   - `ux-recommendations.md`
-   - `test-recommendations.md`
-   - `security-findings.md`
-   - `perspective-*.md`
-   - `synthesis.md`
-   - `issues/*.yaml` (if broadcast was run)
+### Phase 1: Locate Construct Cache
 
-2. **Neo asks:** "Where should I save the report?"
-   - User provides output path (e.g., `./REVIEW.md` or `~/reports/matrix-review.md`)
-   - Or: "Push to wiki" to publish to GitHub wiki
+Neo locates the construct cache directory:
+- `~/.matrix/cache/construct/<project-name>/`
 
-3. **Neo generates report** and saves to:
-   - `~/.matrix/cache/construct/<project-name>/Construct-Report.md` (canonical copy)
-   - User-specified path (if provided)
-   - GitHub wiki (if requested)
+### Phase 2: Ask Destination
 
-4. **Report structure:**
+Neo asks: "Where should I save the report?"
+- User provides output path (e.g., `./REVIEW.md` or `~/reports/matrix-review.md`)
+- Or: "Push to wiki" to publish to GitHub wiki
+
+### Phase 3: Dispatch Morpheus
+
+**Morpheus reads and generates the report.** Pass him:
+- The construct cache path (he reads the files himself)
+- `synthesis.md` as the primary source
+- The report structure template below
+- The output destination path
+
+Key construct files for Morpheus to read:
+- `architecture-diagram.md`
+- `architecture-recommendations.md`
+- `docs-recommendations.md`
+- `ux-recommendations.md`
+- `quality-recommendations.md`
+- `performance-recommendations.md`
+- `security-findings.md`
+- `perspective-*.md`
+- `synthesis.md` (the core - use as primary source)
+- `issues/*.yaml` (if broadcast was run)
+
+Output locations:
+- `~/.matrix/cache/construct/<project-name>/REPORT.md` (canonical copy)
+- User-specified path (if provided)
+- GitHub wiki (if requested)
+
+### Report Structure
    ```markdown
    # Project Review: <project-name>
 
@@ -119,9 +136,22 @@
    <Or link to it with summary of which identities contributed>
    ```
 
-5. **Neo writes the file** to user-specified path
+### Phase 4: Review
 
-6. **(Optional) Push to wiki:**
+Neo reviews the generated report:
+- Accurate to synthesis?
+- Readable by someone unfamiliar with the project?
+- Actionable?
+
+If issues: iterate with Morpheus.
+
+### Phase 5: Deliver
+
+1. Save final `REPORT.md` to construct cache
+2. Copy to user-specified path (if provided)
+3. Report location to user
+
+### Phase 6: (Optional) Push to Wiki
    ```bash
    python ~/.matrix/artifacts/bin/sync_wiki.py <owner/repo> \
      ~/.matrix/cache/construct/<project>/Construct-Report.md \
@@ -147,12 +177,18 @@ python sync_wiki.py owner/repo ./docs/
 
 ## Key Rules
 
-- This is Opus-level synthesis work - Neo does this directly, no delegation
+- Morpheus writes the report - this is documentation work
+- Neo reviews before delivery
 - Report should be self-contained and readable without access to construct cache
 - Include enough detail to be actionable, but stay concise
 - Executive summary is the most important section - stakeholders may only read that
+- Keep under 500 lines
+- Write in Morpheus's voice - calm authority, teaching tone, "I can only show you the door"
+- No jargon without explanation
+- Include metrics where available
 - Link back to GitHub issues if broadcast was run
 - Wiki page name uses hyphens (e.g., "Construct-Report" not "Construct Report")
+- Don't modify original construct files
 
 ## Issue Assignment Guidelines
 
