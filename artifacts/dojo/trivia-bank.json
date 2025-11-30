@@ -1,0 +1,1264 @@
+{
+  "questions": [
+    {
+      "category": "history",
+      "difficulty": "medium",
+      "question": "What was the shortest war in recorded history?",
+      "answer": "The Anglo-Zanzibar War (38-45 minutes)"
+    },
+    {
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which ancient library was said to have been burned multiple times, including by Julius Caesar?",
+      "answer": "The Library of Alexandria"
+    },
+    {
+      "category": "history",
+      "difficulty": "easy",
+      "question": "What year did the Berlin Wall fall?",
+      "answer": "1989"
+    },
+    {
+      "category": "history",
+      "difficulty": "medium",
+      "question": "Which empire was ruled by Suleiman the Magnificent?",
+      "answer": "The Ottoman Empire"
+    },
+    {
+      "category": "history",
+      "difficulty": "hard",
+      "question": "What was the name of the ship that brought the Pilgrims to America?",
+      "answer": "The Mayflower"
+    },
+    {
+      "category": "history",
+      "difficulty": "medium",
+      "question": "Who was the first woman to win a Nobel Prize?",
+      "answer": "Marie Curie"
+    },
+    {
+      "category": "history",
+      "difficulty": "easy",
+      "question": "In which year did Christopher Columbus first reach the Americas?",
+      "answer": "1492"
+    },
+    {
+      "category": "history",
+      "difficulty": "hard",
+      "question": "What Byzantine empress was known for her influence during the Iconoclast controversy?",
+      "answer": "Empress Irene"
+    },
+    {
+      "category": "history",
+      "difficulty": "medium",
+      "question": "Which ancient wonder of the world still stands today?",
+      "answer": "The Great Pyramid of Giza"
+    },
+    {
+      "category": "history",
+      "difficulty": "easy",
+      "question": "What disease did the first vaccine protect against?",
+      "answer": "Smallpox"
+    },
+    {
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Who was the first ruler of the Mongol Empire?",
+      "answer": "Genghis Khan"
+    },
+    {
+      "category": "history",
+      "difficulty": "medium",
+      "question": "What treaty ended World War I?",
+      "answer": "The Treaty of Versailles"
+    },
+    {
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which US president is on the $100 bill?",
+      "answer": "Benjamin Franklin (note: he was never president)"
+    },
+    {
+      "category": "history",
+      "difficulty": "hard",
+      "question": "What was the capital of the Inca Empire?",
+      "answer": "Cusco"
+    },
+    {
+      "category": "history",
+      "difficulty": "medium",
+      "question": "Which pharaoh's tomb was discovered nearly intact in 1922?",
+      "answer": "Tutankhamun (King Tut)"
+    },
+    {
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What is the chemical symbol for gold?",
+      "answer": "Au"
+    },
+    {
+      "category": "science",
+      "difficulty": "medium",
+      "question": "What is the only metal that is liquid at room temperature?",
+      "answer": "Mercury"
+    },
+    {
+      "category": "science",
+      "difficulty": "hard",
+      "question": "What is the name of the effect where light bends as it passes through a gravitational field?",
+      "answer": "Gravitational lensing"
+    },
+    {
+      "category": "science",
+      "difficulty": "easy",
+      "question": "How many bones does an adult human have?",
+      "answer": "206"
+    },
+    {
+      "category": "science",
+      "difficulty": "medium",
+      "question": "What is the most abundant gas in Earth's atmosphere?",
+      "answer": "Nitrogen"
+    },
+    {
+      "category": "science",
+      "difficulty": "hard",
+      "question": "What particle is responsible for mass according to the Standard Model?",
+      "answer": "The Higgs boson"
+    },
+    {
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What planet is known as the Red Planet?",
+      "answer": "Mars"
+    },
+    {
+      "category": "science",
+      "difficulty": "medium",
+      "question": "What is the powerhouse of the cell?",
+      "answer": "Mitochondria"
+    },
+    {
+      "category": "science",
+      "difficulty": "hard",
+      "question": "What is the name of the boundary around a black hole beyond which nothing can escape?",
+      "answer": "The event horizon"
+    },
+    {
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What is the speed of light in a vacuum?",
+      "answer": "299,792,458 meters per second (or approximately 300,000 km/s)"
+    },
+    {
+      "category": "science",
+      "difficulty": "medium",
+      "question": "What type of bond involves the sharing of electron pairs between atoms?",
+      "answer": "Covalent bond"
+    },
+    {
+      "category": "science",
+      "difficulty": "hard",
+      "question": "What phenomenon causes the Northern and Southern Lights?",
+      "answer": "Solar wind particles interacting with Earth's magnetosphere"
+    },
+    {
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What is the largest organ in the human body?",
+      "answer": "The skin"
+    },
+    {
+      "category": "science",
+      "difficulty": "medium",
+      "question": "What is the study of fungi called?",
+      "answer": "Mycology"
+    },
+    {
+      "category": "science",
+      "difficulty": "hard",
+      "question": "What scientist is credited with discovering radioactivity?",
+      "answer": "Henri Becquerel"
+    },
+    {
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "What is the capital of Australia?",
+      "answer": "Canberra"
+    },
+    {
+      "category": "geography",
+      "difficulty": "medium",
+      "question": "Which country has the most natural lakes?",
+      "answer": "Canada"
+    },
+    {
+      "category": "geography",
+      "difficulty": "hard",
+      "question": "What is the only sea with no coastline?",
+      "answer": "The Sargasso Sea"
+    },
+    {
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "What is the longest river in the world?",
+      "answer": "The Nile River"
+    },
+    {
+      "category": "geography",
+      "difficulty": "medium",
+      "question": "Which African country was formerly known as Abyssinia?",
+      "answer": "Ethiopia"
+    },
+    {
+      "category": "geography",
+      "difficulty": "hard",
+      "question": "What is the smallest country in the world by area?",
+      "answer": "Vatican City"
+    },
+    {
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "What is the largest desert in the world?",
+      "answer": "Antarctica (the Sahara is the largest hot desert)"
+    },
+    {
+      "category": "geography",
+      "difficulty": "medium",
+      "question": "Which mountain range separates Europe from Asia?",
+      "answer": "The Ural Mountains"
+    },
+    {
+      "category": "geography",
+      "difficulty": "hard",
+      "question": "What is the deepest point in Earth's oceans?",
+      "answer": "The Mariana Trench (Challenger Deep)"
+    },
+    {
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "How many continents are there?",
+      "answer": "Seven"
+    },
+    {
+      "category": "geography",
+      "difficulty": "medium",
+      "question": "Which US state has the most active volcanoes?",
+      "answer": "Alaska"
+    },
+    {
+      "category": "geography",
+      "difficulty": "hard",
+      "question": "What country has the most time zones?",
+      "answer": "France (due to overseas territories)"
+    },
+    {
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "What is the largest island in the world?",
+      "answer": "Greenland"
+    },
+    {
+      "category": "geography",
+      "difficulty": "medium",
+      "question": "Which two countries share the longest international border?",
+      "answer": "Canada and the United States"
+    },
+    {
+      "category": "geography",
+      "difficulty": "hard",
+      "question": "What is the only country that borders both the Atlantic and Indian Oceans?",
+      "answer": "South Africa"
+    },
+    {
+      "category": "art",
+      "difficulty": "easy",
+      "question": "Who painted the Mona Lisa?",
+      "answer": "Leonardo da Vinci"
+    },
+    {
+      "category": "art",
+      "difficulty": "medium",
+      "question": "What art movement is Salvador Dali associated with?",
+      "answer": "Surrealism"
+    },
+    {
+      "category": "art",
+      "difficulty": "hard",
+      "question": "What is the technique of creating images by arranging small pieces of colored glass or stone?",
+      "answer": "Mosaic"
+    },
+    {
+      "category": "art",
+      "difficulty": "easy",
+      "question": "Who cut off his own ear?",
+      "answer": "Vincent van Gogh"
+    },
+    {
+      "category": "art",
+      "difficulty": "medium",
+      "question": "What museum houses the Mona Lisa?",
+      "answer": "The Louvre"
+    },
+    {
+      "category": "art",
+      "difficulty": "hard",
+      "question": "Which artist is known for painting Campbell's Soup Cans?",
+      "answer": "Andy Warhol"
+    },
+    {
+      "category": "art",
+      "difficulty": "easy",
+      "question": "What is the art of beautiful handwriting called?",
+      "answer": "Calligraphy"
+    },
+    {
+      "category": "art",
+      "difficulty": "medium",
+      "question": "Who sculpted 'The Thinker'?",
+      "answer": "Auguste Rodin"
+    },
+    {
+      "category": "art",
+      "difficulty": "hard",
+      "question": "What painting technique involves applying wet plaster to walls?",
+      "answer": "Fresco"
+    },
+    {
+      "category": "art",
+      "difficulty": "easy",
+      "question": "What are the primary colors?",
+      "answer": "Red, blue, and yellow"
+    },
+    {
+      "category": "art",
+      "difficulty": "medium",
+      "question": "Which Dutch artist is famous for his use of light and shadow, particularly in 'The Night Watch'?",
+      "answer": "Rembrandt"
+    },
+    {
+      "category": "art",
+      "difficulty": "hard",
+      "question": "What is the name of Picasso's famous anti-war painting depicting the bombing of a Basque town?",
+      "answer": "Guernica"
+    },
+    {
+      "category": "art",
+      "difficulty": "easy",
+      "question": "What is a painting of a person called?",
+      "answer": "A portrait"
+    },
+    {
+      "category": "art",
+      "difficulty": "medium",
+      "question": "Which Renaissance artist painted the ceiling of the Sistine Chapel?",
+      "answer": "Michelangelo"
+    },
+    {
+      "category": "art",
+      "difficulty": "hard",
+      "question": "What art style is characterized by small, visible brush strokes and emphasis on light?",
+      "answer": "Impressionism"
+    },
+    {
+      "category": "music",
+      "difficulty": "easy",
+      "question": "How many strings does a standard guitar have?",
+      "answer": "Six"
+    },
+    {
+      "category": "music",
+      "difficulty": "medium",
+      "question": "What is the highest male singing voice?",
+      "answer": "Countertenor (or Tenor for common voices)"
+    },
+    {
+      "category": "music",
+      "difficulty": "hard",
+      "question": "What composer continued to compose music after becoming completely deaf?",
+      "answer": "Ludwig van Beethoven"
+    },
+    {
+      "category": "music",
+      "difficulty": "easy",
+      "question": "What instrument has 88 keys?",
+      "answer": "Piano"
+    },
+    {
+      "category": "music",
+      "difficulty": "medium",
+      "question": "What music genre originated in New Orleans in the early 20th century?",
+      "answer": "Jazz"
+    },
+    {
+      "category": "music",
+      "difficulty": "hard",
+      "question": "What is the name of the interval spanning eight notes?",
+      "answer": "An octave"
+    },
+    {
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which band was Freddie Mercury the lead singer of?",
+      "answer": "Queen"
+    },
+    {
+      "category": "music",
+      "difficulty": "medium",
+      "question": "What does 'tempo' refer to in music?",
+      "answer": "The speed or pace of the music"
+    },
+    {
+      "category": "music",
+      "difficulty": "hard",
+      "question": "What woodwind instrument is often considered the most difficult to play?",
+      "answer": "The oboe"
+    },
+    {
+      "category": "music",
+      "difficulty": "easy",
+      "question": "What is the symbol at the beginning of a staff that indicates pitch?",
+      "answer": "A clef"
+    },
+    {
+      "category": "music",
+      "difficulty": "medium",
+      "question": "Which composer wrote 'The Four Seasons'?",
+      "answer": "Antonio Vivaldi"
+    },
+    {
+      "category": "music",
+      "difficulty": "hard",
+      "question": "What is the term for gradually getting louder in music?",
+      "answer": "Crescendo"
+    },
+    {
+      "category": "music",
+      "difficulty": "easy",
+      "question": "What is the lowest female singing voice?",
+      "answer": "Contralto (or Alto)"
+    },
+    {
+      "category": "music",
+      "difficulty": "medium",
+      "question": "What percussion instrument consists of wooden bars struck with mallets?",
+      "answer": "Xylophone (or Marimba)"
+    },
+    {
+      "category": "music",
+      "difficulty": "hard",
+      "question": "What opera features the 'Ride of the Valkyries'?",
+      "answer": "Die Walküre (by Wagner)"
+    },
+    {
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Who wrote 'Romeo and Juliet'?",
+      "answer": "William Shakespeare"
+    },
+    {
+      "category": "literature",
+      "difficulty": "medium",
+      "question": "What is the first book of the Bible?",
+      "answer": "Genesis"
+    },
+    {
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'One Hundred Years of Solitude'?",
+      "answer": "Gabriel García Márquez"
+    },
+    {
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "What is the name of Harry Potter's owl?",
+      "answer": "Hedwig"
+    },
+    {
+      "category": "literature",
+      "difficulty": "medium",
+      "question": "Who wrote '1984'?",
+      "answer": "George Orwell"
+    },
+    {
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "What is the longest novel ever written?",
+      "answer": "In Search of Lost Time (by Marcel Proust)"
+    },
+    {
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "What type of poem has 14 lines?",
+      "answer": "A sonnet"
+    },
+    {
+      "category": "literature",
+      "difficulty": "medium",
+      "question": "Who wrote 'The Great Gatsby'?",
+      "answer": "F. Scott Fitzgerald"
+    },
+    {
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "What ancient Greek poet is credited with writing the Iliad and the Odyssey?",
+      "answer": "Homer"
+    },
+    {
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "What is Dr. Seuss's real name?",
+      "answer": "Theodor Seuss Geisel"
+    },
+    {
+      "category": "literature",
+      "difficulty": "medium",
+      "question": "In what dystopian novel do people burn books?",
+      "answer": "Fahrenheit 451"
+    },
+    {
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'The Divine Comedy'?",
+      "answer": "Dante Alighieri"
+    },
+    {
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "What is the name of Sherlock Holmes's assistant?",
+      "answer": "Dr. Watson"
+    },
+    {
+      "category": "literature",
+      "difficulty": "medium",
+      "question": "Who wrote 'Pride and Prejudice'?",
+      "answer": "Jane Austen"
+    },
+    {
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "What literary technique gives human characteristics to non-human things?",
+      "answer": "Personification"
+    },
+    {
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "How many players are on a soccer team on the field?",
+      "answer": "11"
+    },
+    {
+      "category": "sports",
+      "difficulty": "medium",
+      "question": "What is the only sport to have been played on the moon?",
+      "answer": "Golf"
+    },
+    {
+      "category": "sports",
+      "difficulty": "hard",
+      "question": "What is the maximum number of games in a World Series?",
+      "answer": "Seven"
+    },
+    {
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "How many rings are on the Olympic flag?",
+      "answer": "Five"
+    },
+    {
+      "category": "sports",
+      "difficulty": "medium",
+      "question": "In tennis, what is a score of zero called?",
+      "answer": "Love"
+    },
+    {
+      "category": "sports",
+      "difficulty": "hard",
+      "question": "What country has won the most World Cup titles in soccer?",
+      "answer": "Brazil"
+    },
+    {
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "What sport is known as 'the beautiful game'?",
+      "answer": "Soccer (Football)"
+    },
+    {
+      "category": "sports",
+      "difficulty": "medium",
+      "question": "How many points is a touchdown worth in American football?",
+      "answer": "Six"
+    },
+    {
+      "category": "sports",
+      "difficulty": "hard",
+      "question": "What is the term for three strikes in a row in bowling?",
+      "answer": "A turkey"
+    },
+    {
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "What sport does LeBron James play?",
+      "answer": "Basketball"
+    },
+    {
+      "category": "sports",
+      "difficulty": "medium",
+      "question": "What country has never missed a Summer Olympics?",
+      "answer": "Greece"
+    },
+    {
+      "category": "sports",
+      "difficulty": "hard",
+      "question": "In what sport would you perform a 'Fosbury Flop'?",
+      "answer": "High jump"
+    },
+    {
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "How many holes are played in an average round of golf?",
+      "answer": "18"
+    },
+    {
+      "category": "sports",
+      "difficulty": "medium",
+      "question": "What is the diameter of a basketball hoop in inches?",
+      "answer": "18 inches"
+    },
+    {
+      "category": "sports",
+      "difficulty": "hard",
+      "question": "What Grand Slam tennis tournament is played on grass?",
+      "answer": "Wimbledon"
+    },
+    {
+      "category": "food",
+      "difficulty": "easy",
+      "question": "What is the main ingredient in guacamole?",
+      "answer": "Avocado"
+    },
+    {
+      "category": "food",
+      "difficulty": "medium",
+      "question": "What is the most expensive spice in the world by weight?",
+      "answer": "Saffron"
+    },
+    {
+      "category": "food",
+      "difficulty": "hard",
+      "question": "What fruit is dried to make prunes?",
+      "answer": "Plums"
+    },
+    {
+      "category": "food",
+      "difficulty": "easy",
+      "question": "What nut is used to make marzipan?",
+      "answer": "Almonds"
+    },
+    {
+      "category": "food",
+      "difficulty": "medium",
+      "question": "What country did pizza originate in?",
+      "answer": "Italy"
+    },
+    {
+      "category": "food",
+      "difficulty": "hard",
+      "question": "What is the primary ingredient in the Middle Eastern dish falafel?",
+      "answer": "Chickpeas (or fava beans)"
+    },
+    {
+      "category": "food",
+      "difficulty": "easy",
+      "question": "What is the only fruit with seeds on the outside?",
+      "answer": "Strawberry"
+    },
+    {
+      "category": "food",
+      "difficulty": "medium",
+      "question": "What is the national dish of Spain?",
+      "answer": "Paella"
+    },
+    {
+      "category": "food",
+      "difficulty": "hard",
+      "question": "What vegetable was originally purple before selective breeding?",
+      "answer": "Carrot"
+    },
+    {
+      "category": "food",
+      "difficulty": "easy",
+      "question": "What bean is used to make tofu?",
+      "answer": "Soybean"
+    },
+    {
+      "category": "food",
+      "difficulty": "medium",
+      "question": "What is the main ingredient in hummus?",
+      "answer": "Chickpeas"
+    },
+    {
+      "category": "food",
+      "difficulty": "hard",
+      "question": "What is the fermented Korean dish made from cabbage called?",
+      "answer": "Kimchi"
+    },
+    {
+      "category": "food",
+      "difficulty": "easy",
+      "question": "What is the hottest part of a chili pepper?",
+      "answer": "The seeds and white membrane"
+    },
+    {
+      "category": "food",
+      "difficulty": "medium",
+      "question": "What type of pastry are éclairs made from?",
+      "answer": "Choux pastry"
+    },
+    {
+      "category": "food",
+      "difficulty": "hard",
+      "question": "What is the name of the Japanese art of growing miniature trees?",
+      "answer": "Bonsai"
+    },
+    {
+      "category": "animals",
+      "difficulty": "easy",
+      "question": "What is the largest land animal?",
+      "answer": "The African elephant"
+    },
+    {
+      "category": "animals",
+      "difficulty": "medium",
+      "question": "What is the only mammal capable of true flight?",
+      "answer": "Bats"
+    },
+    {
+      "category": "animals",
+      "difficulty": "hard",
+      "question": "What animal has the longest gestation period?",
+      "answer": "The African elephant (22 months)"
+    },
+    {
+      "category": "animals",
+      "difficulty": "easy",
+      "question": "What is a group of lions called?",
+      "answer": "A pride"
+    },
+    {
+      "category": "animals",
+      "difficulty": "medium",
+      "question": "What is the fastest land animal?",
+      "answer": "The cheetah"
+    },
+    {
+      "category": "animals",
+      "difficulty": "hard",
+      "question": "What bird can fly backwards?",
+      "answer": "Hummingbird"
+    },
+    {
+      "category": "animals",
+      "difficulty": "easy",
+      "question": "What do pandas mainly eat?",
+      "answer": "Bamboo"
+    },
+    {
+      "category": "animals",
+      "difficulty": "medium",
+      "question": "What is the largest species of penguin?",
+      "answer": "Emperor penguin"
+    },
+    {
+      "category": "animals",
+      "difficulty": "hard",
+      "question": "What animal has the highest blood pressure?",
+      "answer": "The giraffe"
+    },
+    {
+      "category": "animals",
+      "difficulty": "easy",
+      "question": "What is the tallest animal in the world?",
+      "answer": "The giraffe"
+    },
+    {
+      "category": "animals",
+      "difficulty": "medium",
+      "question": "What is the only continent where giraffes live in the wild?",
+      "answer": "Africa"
+    },
+    {
+      "category": "animals",
+      "difficulty": "hard",
+      "question": "What animal has three hearts?",
+      "answer": "The octopus"
+    },
+    {
+      "category": "animals",
+      "difficulty": "easy",
+      "question": "What is the largest ocean animal?",
+      "answer": "The blue whale"
+    },
+    {
+      "category": "animals",
+      "difficulty": "medium",
+      "question": "What is the smallest mammal in the world?",
+      "answer": "The bumblebee bat"
+    },
+    {
+      "category": "animals",
+      "difficulty": "hard",
+      "question": "What animal can survive being frozen solid?",
+      "answer": "The wood frog"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "easy",
+      "question": "Who is the king of the gods in Greek mythology?",
+      "answer": "Zeus"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "medium",
+      "question": "What creature has the body of a lion and the head of an eagle?",
+      "answer": "A griffin"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "hard",
+      "question": "Who is the Norse god of thunder?",
+      "answer": "Thor"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "easy",
+      "question": "What is a half-human, half-horse creature called?",
+      "answer": "A centaur"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "medium",
+      "question": "Who flew too close to the sun with wax wings?",
+      "answer": "Icarus"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "hard",
+      "question": "What is the name of Odin's eight-legged horse in Norse mythology?",
+      "answer": "Sleipnir"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "easy",
+      "question": "What creature has the head of a bull and the body of a man?",
+      "answer": "The Minotaur"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "medium",
+      "question": "Who is the Egyptian god of the dead?",
+      "answer": "Anubis (or Osiris)"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "hard",
+      "question": "What is the name of the Norse apocalypse?",
+      "answer": "Ragnarok"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "easy",
+      "question": "What is the Roman name for the Greek god Zeus?",
+      "answer": "Jupiter"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "medium",
+      "question": "Who was cursed to turn everything she touched into gold?",
+      "answer": "King Midas (turned everything he touched to gold)"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "hard",
+      "question": "What is the name of the world tree in Norse mythology?",
+      "answer": "Yggdrasil"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "easy",
+      "question": "What creature has snakes for hair?",
+      "answer": "Medusa (a Gorgon)"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "medium",
+      "question": "Who is the Greek goddess of wisdom?",
+      "answer": "Athena"
+    },
+    {
+      "category": "mythology",
+      "difficulty": "hard",
+      "question": "What river must souls cross to enter the Greek underworld?",
+      "answer": "The River Styx"
+    },
+    {
+      "category": "language",
+      "difficulty": "easy",
+      "question": "What is the most spoken language in the world?",
+      "answer": "English (by total speakers including non-native) or Mandarin Chinese (by native speakers)"
+    },
+    {
+      "category": "language",
+      "difficulty": "medium",
+      "question": "What is a word that reads the same forwards and backwards called?",
+      "answer": "A palindrome"
+    },
+    {
+      "category": "language",
+      "difficulty": "hard",
+      "question": "What is the only letter that doesn't appear in any US state name?",
+      "answer": "Q"
+    },
+    {
+      "category": "language",
+      "difficulty": "easy",
+      "question": "How many letters are in the English alphabet?",
+      "answer": "26"
+    },
+    {
+      "category": "language",
+      "difficulty": "medium",
+      "question": "What language has the most native speakers?",
+      "answer": "Mandarin Chinese"
+    },
+    {
+      "category": "language",
+      "difficulty": "hard",
+      "question": "What is the shortest complete sentence in English?",
+      "answer": "I am. (or Go!)"
+    },
+    {
+      "category": "language",
+      "difficulty": "easy",
+      "question": "What does the Latin phrase 'et cetera' mean?",
+      "answer": "And so forth (or and the rest)"
+    },
+    {
+      "category": "language",
+      "difficulty": "medium",
+      "question": "What is the study of word origins called?",
+      "answer": "Etymology"
+    },
+    {
+      "category": "language",
+      "difficulty": "hard",
+      "question": "What is the longest word in the English dictionary?",
+      "answer": "Pneumonoultramicroscopicsilicovolcanoconiosis"
+    },
+    {
+      "category": "language",
+      "difficulty": "easy",
+      "question": "What punctuation mark is used to show possession?",
+      "answer": "Apostrophe"
+    },
+    {
+      "category": "language",
+      "difficulty": "medium",
+      "question": "What language is the root of most European languages?",
+      "answer": "Latin (or Proto-Indo-European)"
+    },
+    {
+      "category": "language",
+      "difficulty": "hard",
+      "question": "What is a sentence that contains every letter of the alphabet called?",
+      "answer": "A pangram"
+    },
+    {
+      "category": "language",
+      "difficulty": "easy",
+      "question": "What does 'ASAP' stand for?",
+      "answer": "As Soon As Possible"
+    },
+    {
+      "category": "language",
+      "difficulty": "medium",
+      "question": "What is the dot over the letter 'i' called?",
+      "answer": "A tittle"
+    },
+    {
+      "category": "language",
+      "difficulty": "hard",
+      "question": "What is the fear of long words called?",
+      "answer": "Hippopotomonstrosesquippedaliophobia"
+    },
+    {
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "What movie features a boy who sees dead people?",
+      "answer": "The Sixth Sense"
+    },
+    {
+      "category": "movies",
+      "difficulty": "medium",
+      "question": "What was the first feature-length animated movie?",
+      "answer": "Snow White and the Seven Dwarfs"
+    },
+    {
+      "category": "movies",
+      "difficulty": "hard",
+      "question": "What is the highest-grossing R-rated movie of all time?",
+      "answer": "Joker (2019)"
+    },
+    {
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "What movie features a theme park with dinosaurs?",
+      "answer": "Jurassic Park"
+    },
+    {
+      "category": "movies",
+      "difficulty": "medium",
+      "question": "Who directed 'Pulp Fiction'?",
+      "answer": "Quentin Tarantino"
+    },
+    {
+      "category": "movies",
+      "difficulty": "hard",
+      "question": "What is the name of the computer in '2001: A Space Odyssey'?",
+      "answer": "HAL 9000"
+    },
+    {
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "What fictional city does Batman protect?",
+      "answer": "Gotham City"
+    },
+    {
+      "category": "movies",
+      "difficulty": "medium",
+      "question": "What movie won the first ever Academy Award for Best Picture?",
+      "answer": "Wings (1927)"
+    },
+    {
+      "category": "movies",
+      "difficulty": "hard",
+      "question": "What actor plays himself in 'Being John Malkovich'?",
+      "answer": "John Malkovich"
+    },
+    {
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "What is the name of the lion in 'The Lion King'?",
+      "answer": "Simba"
+    },
+    {
+      "category": "movies",
+      "difficulty": "medium",
+      "question": "What movie features the quote 'Here's looking at you, kid'?",
+      "answer": "Casablanca"
+    },
+    {
+      "category": "movies",
+      "difficulty": "hard",
+      "question": "What is the longest movie ever made?",
+      "answer": "The Cure for Insomnia (87 hours)"
+    },
+    {
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "What color is the pill Neo takes in The Matrix?",
+      "answer": "Red"
+    },
+    {
+      "category": "movies",
+      "difficulty": "medium",
+      "question": "What Steven Spielberg movie features a friendly alien?",
+      "answer": "E.T. the Extra-Terrestrial"
+    },
+    {
+      "category": "movies",
+      "difficulty": "hard",
+      "question": "What film won the most Academy Awards ever?",
+      "answer": "Ben-Hur, Titanic, and The Lord of the Rings: The Return of the King (tied at 11)"
+    },
+    {
+      "category": "technology",
+      "difficulty": "easy",
+      "question": "What does 'WWW' stand for?",
+      "answer": "World Wide Web"
+    },
+    {
+      "category": "technology",
+      "difficulty": "medium",
+      "question": "What year was the first iPhone released?",
+      "answer": "2007"
+    },
+    {
+      "category": "technology",
+      "difficulty": "hard",
+      "question": "Who is credited with inventing the World Wide Web?",
+      "answer": "Tim Berners-Lee"
+    },
+    {
+      "category": "technology",
+      "difficulty": "easy",
+      "question": "What does 'USB' stand for?",
+      "answer": "Universal Serial Bus"
+    },
+    {
+      "category": "technology",
+      "difficulty": "medium",
+      "question": "What company created the Android operating system?",
+      "answer": "Google (acquired from Android Inc.)"
+    },
+    {
+      "category": "technology",
+      "difficulty": "hard",
+      "question": "What was the first computer virus called?",
+      "answer": "Creeper"
+    },
+    {
+      "category": "technology",
+      "difficulty": "easy",
+      "question": "What does 'AI' stand for?",
+      "answer": "Artificial Intelligence"
+    },
+    {
+      "category": "technology",
+      "difficulty": "medium",
+      "question": "What was the first video game console?",
+      "answer": "Magnavox Odyssey"
+    },
+    {
+      "category": "technology",
+      "difficulty": "hard",
+      "question": "What programming language is named after a type of Indonesian coffee?",
+      "answer": "Java"
+    },
+    {
+      "category": "technology",
+      "difficulty": "easy",
+      "question": "What social media platform uses a bird as its logo?",
+      "answer": "Twitter (now X)"
+    },
+    {
+      "category": "technology",
+      "difficulty": "medium",
+      "question": "What does 'RAM' stand for?",
+      "answer": "Random Access Memory"
+    },
+    {
+      "category": "technology",
+      "difficulty": "hard",
+      "question": "What is the name of the first electronic general-purpose computer?",
+      "answer": "ENIAC"
+    },
+    {
+      "category": "technology",
+      "difficulty": "easy",
+      "question": "What company makes the Galaxy smartphone?",
+      "answer": "Samsung"
+    },
+    {
+      "category": "technology",
+      "difficulty": "medium",
+      "question": "What does 'VPN' stand for?",
+      "answer": "Virtual Private Network"
+    },
+    {
+      "category": "technology",
+      "difficulty": "hard",
+      "question": "What year was Facebook founded?",
+      "answer": "2004"
+    },
+    {
+      "category": "nature",
+      "difficulty": "easy",
+      "question": "What is the tallest type of tree?",
+      "answer": "Coast redwood (or Sequoia)"
+    },
+    {
+      "category": "nature",
+      "difficulty": "medium",
+      "question": "What is the hardest naturally occurring substance?",
+      "answer": "Diamond"
+    },
+    {
+      "category": "nature",
+      "difficulty": "hard",
+      "question": "What is the only rock that floats in water?",
+      "answer": "Pumice"
+    },
+    {
+      "category": "nature",
+      "difficulty": "easy",
+      "question": "What gas do plants absorb from the atmosphere?",
+      "answer": "Carbon dioxide"
+    },
+    {
+      "category": "nature",
+      "difficulty": "medium",
+      "question": "What is the largest flower in the world?",
+      "answer": "Rafflesia arnoldii"
+    },
+    {
+      "category": "nature",
+      "difficulty": "hard",
+      "question": "What is the scientific name for the process by which plants make their food?",
+      "answer": "Photosynthesis"
+    },
+    {
+      "category": "nature",
+      "difficulty": "easy",
+      "question": "What natural phenomenon is measured by the Richter scale?",
+      "answer": "Earthquakes"
+    },
+    {
+      "category": "nature",
+      "difficulty": "medium",
+      "question": "What is the most common element in the human body?",
+      "answer": "Oxygen"
+    },
+    {
+      "category": "nature",
+      "difficulty": "hard",
+      "question": "What is the smallest unit of life?",
+      "answer": "The cell"
+    },
+    {
+      "category": "nature",
+      "difficulty": "easy",
+      "question": "What is the process of water turning into vapor called?",
+      "answer": "Evaporation"
+    },
+    {
+      "category": "nature",
+      "difficulty": "medium",
+      "question": "What type of animal is a Komodo dragon?",
+      "answer": "A lizard (or reptile)"
+    },
+    {
+      "category": "nature",
+      "difficulty": "hard",
+      "question": "What is the oldest living tree species?",
+      "answer": "Bristlecone pine"
+    },
+    {
+      "category": "nature",
+      "difficulty": "easy",
+      "question": "What is the center of an atom called?",
+      "answer": "The nucleus"
+    },
+    {
+      "category": "nature",
+      "difficulty": "medium",
+      "question": "What is the largest rainforest in the world?",
+      "answer": "The Amazon Rainforest"
+    },
+    {
+      "category": "nature",
+      "difficulty": "hard",
+      "question": "What is the study of earthquakes called?",
+      "answer": "Seismology"
+    }
+  ]
+}

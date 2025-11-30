@@ -1,14 +1,137 @@
 # Dojo Score
 
-**Wins:** 86
-**Losses:** 77
+**Wins:** 160
+**Losses:** 126
 **Draws:** 4
-**Win Rate:** 49% (excluding draws)
+**Win Rate:** 56% (excluding draws)
 
 ## Recent
 
 | Date | Topic | Scope | Result |
 |------|-------|-------|--------|
+| 2025-11-30 | history | global | W |
+| 2025-11-30 | art | global | L |
+| 2025-11-30 | art | global | W |
+| 2025-11-30 | music | global | W |
+| 2025-11-30 | music | global | L |
+| 2025-11-30 | art | global | L |
+| 2025-11-30 | art | global | L |
+| 2025-11-30 | geography | global | L |
+| 2025-11-30 | geography | global | L |
+| 2025-11-30 | art | global | W |
+| 2025-11-30 | art | global | W |
+| 2025-11-30 | geography | global | L |
+| 2025-11-30 | geography | global | L |
+| 2025-11-30 | geography | global | W |
+| 2025-11-30 | science | global | L |
+| 2025-11-30 | science | global | W |
+| 2025-11-30 | science | global | L |
+| 2025-11-30 | geography | global | L |
+| 2025-11-30 | history | global | W |
+| 2025-11-30 | history | global | W |
+| 2025-11-30 | science | global | L |
+| 2025-11-30 | history | global | W |
+| 2025-11-30 | history | global | W |
+| 2025-11-30 | history | global | W |
+| 2025-11-30 | math | global | W |
+| 2025-11-30 | geography | global | W |
+| 2025-11-30 | health | global | W |
+| 2025-11-30 | comics | global | W |
+| 2025-11-30 | math | global | W |
+| 2025-11-30 | tech | global | W |
+| 2025-11-30 | biology | global | W |
+| 2025-11-30 | history | global | W |
+| 2025-11-30 | physics | global | W |
+| 2025-11-30 | animals | global | W |
+| 2025-11-30 | science | global | W |
+| 2025-11-30 | sports | global | L |
+| 2025-11-30 | geography | global | L |
+| 2025-11-30 | anatomy | global | W |
+| 2025-11-30 | art | global | W |
+| 2025-11-30 | geography | global | L |
+| 2025-11-30 | chemistry | global | W |
+| 2025-11-30 | history | global | L |
+| 2025-11-30 | geography | global | W |
+| 2025-11-30 | biology | global | W |
+| 2025-11-30 | mythology | global | W |
+| 2025-11-30 | psychology | global | W |
+| 2025-11-30 | food | global | W |
+| 2025-11-30 | math | global | W |
+| 2025-11-30 | astronomy | global | L |
+| 2025-11-30 | music | global | W |
+| 2025-11-30 | biology | global | W |
+| 2025-11-30 | geography | global | W |
+| 2025-11-30 | literature | global | W |
+| 2025-11-30 | neuroscience | global | L |
+| 2025-11-30 | astronomy | global | W |
+| 2025-11-30 | chemistry | global | W |
+| 2025-11-30 | history | global | W |
+| 2025-11-30 | chess | global | W |
+| 2025-11-30 | physics | global | W |
+| 2025-11-30 | geography | global | W |
+| 2025-11-30 | space | global | W |
+| 2025-11-30 | linguistics | global | W |
+| 2025-11-30 | biology | global | W |
+| 2025-11-30 | anatomy | global | W |
+| 2025-11-30 | history | global | L |
+| 2025-11-30 | trivia | global | L |
+| 2025-11-30 | history | global | W |
+| 2025-11-30 | flags | global | W |
+| 2025-11-30 | trivia | global | L |
+| 2025-11-30 | sports | global | L |
+| 2025-11-30 | geography | global | L |
+| 2025-11-30 | art | global | W |
+| 2025-11-30 | science | global | W |
+| 2025-11-30 | geography | global | W |
+| 2025-11-30 | history | global | L |
+| 2025-11-30 | history | global | L |
+| 2025-11-30 | anatomy | global | L |
+| 2025-11-30 | chemistry | global | W |
+| 2025-11-30 | anatomy | global | W |
+| 2025-11-30 | geology | global | W |
+| 2025-11-30 | trivia | global | L |
+| 2025-11-30 | history | global | L |
+| 2025-11-30 | biology | global | L |
+| 2025-11-30 | geography | global | W |
+| 2025-11-30 | trivia | global | W |
+| 2025-11-30 | anatomy | global | W |
+| 2025-11-30 | trivia | global | W |
+| 2025-11-30 | linguistics | global | W |
+| 2025-11-30 | trivia | global | W |
+| 2025-11-30 | trivia | global | W |
+| 2025-11-30 | biology | global | L |
+| 2025-11-30 | trivia | global | L |
+| 2025-11-30 | culture | global | L |
+| 2025-11-30 | geography | global | W |
+| 2025-11-30 | history | global | L |
+| 2025-11-30 | biology | global | L |
+| 2025-11-30 | astronomy | global | L |
+| 2025-11-30 | tech-history | global | L |
+| 2025-11-30 | history | global | L |
+| 2025-11-30 | chemistry | global | W |
+| 2025-11-30 | history | global | L |
+| 2025-11-30 | trivia | global | W |
+| 2025-11-30 | geography | global | L |
+| 2025-11-30 | trivia | global | W |
+| 2025-11-30 | compilers | global | L |
+| 2025-11-30 | floating-point | global | L |
+| 2025-11-30 | time | global | W |
+| 2025-11-30 | unicode | global | W |
+| 2025-11-30 | sitcoms | global | L |
+| 2025-11-30 | sitcoms | global | L |
+| 2025-11-30 | sitcoms | global | L |
+| 2025-11-30 | sitcoms | global | W |
+| 2025-11-30 | sitcoms | global | L |
+| 2025-11-30 | sitcoms | global | L |
+| 2025-11-30 | sitcoms | global | L |
+| 2025-11-30 | sitcoms | global | L |
+| 2025-11-30 | sitcoms | global | W |
+| 2025-11-30 | sitcoms | global | W |
+| 2025-11-30 | sitcoms | global | W |
+| 2025-11-30 | anime | global | W |
+| 2025-11-30 | anime | global | L |
+| 2025-11-30 | anime | global | W |
+| 2025-11-30 | anime | global | W |
 | 2025-11-30 | anime | global | L |
 | 2025-11-30 | anime | global | W |
 | 2025-11-30 | anime | global | L |
