@@ -1,6 +1,6 @@
 # Program: Interface
 
-**Trigger:** `/interface [entity]`
+**Trigger:** 'interface with [entity]', 'load the [entity] interface', 'become [entity]'
 
 *"You've been down there, Neo. You know that road."* — Trinity
 
