@@ -104,3 +104,4 @@ Create `synthesis.md` combining:
 - **Full parallel** - All agents work simultaneously each round
 - **Store everything** - The journey matters as much as the destination
 - **Entropy is the point** - We're seeding the void, not seeking answers
+- **Artifacts only** - Everything stays in `artifacts/vase/`. No writing to zion - compress handles promotion later
