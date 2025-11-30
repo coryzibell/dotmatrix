@@ -39,7 +39,7 @@ Example: `[xxh64:base64_math|gzip:zodiac]` means:
 If both title and body randomly receive the same dictionary:
 
 ```
-whoa. [<hash_algo>:<dict>|<compress_algo>:<dict>]
+whoa, dejavu. [<hash_algo>:<dict>|<compress_algo>:<dict>]
 ```
 
 This is observation, not forced. Watching the system for coincidence.
