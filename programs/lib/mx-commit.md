@@ -34,6 +34,16 @@ Example: `[xxh64:base64_math|gzip:zodiac]` means:
 - Title: xxh64 hash encoded with base64_math dictionary
 - Body: gzip compressed, encoded with zodiac dictionary
 
+## Dejavu Detection
+
+If both title and body randomly receive the same dictionary:
+
+```
+whoa. [<hash_algo>:<dict>|<compress_algo>:<dict>]
+```
+
+This is observation, not forced. Watching the system for coincidence.
+
 ## Decoding
 
 ```bash
