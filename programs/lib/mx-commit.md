@@ -27,19 +27,12 @@ Run from the target repo directory.
 ```
 Title:  <encoded hash of diff>
 Body:   <encoded compressed message>
-Footer: [<compress_algo>]
+Footer: [<hash_algo>:<hash_dict>|<compress_algo>:<body_dict>]
 ```
 
-## Dejavu Detection
-
-If both title and body randomly receive the same dictionary, footer becomes:
-
-```
-[<compress_algo>]
-whoa. base-d --detect --decompress <compress_algo>
-```
-
-This is observation, not forced. Watching the system for coincidence.
+Example: `[xxh64:base64_math|gzip:zodiac]` means:
+- Title: xxh64 hash encoded with base64_math dictionary
+- Body: gzip compressed, encoded with zodiac dictionary
 
 ## Decoding
 
