@@ -31,6 +31,7 @@ The implicit unsafety of `unsafe fn` bodies was considered a footgun. It made it
 The RFC's intent is to **minimize the scope of unsafety** so the compiler can verify safe code is actually safe. This matters for security - with modern processor attack vectors (Spectre, Meltdown, etc.), letting the compiler reason about memory safety in as much code as possible is valuable.
 
 ```rust
+#[target_feature(enable = "ssse3")]
 unsafe fn encode_ssse3_5bit(&self, data: &[u8], result: &mut String) {
     use std::arch::x86_64::*;
 
@@ -44,11 +45,11 @@ unsafe fn encode_ssse3_5bit(&self, data: &[u8], result: &mut String) {
     let num_blocks = data.len() / BLOCK_SIZE;
     let mut offset = 0;
 
-    // Unsafe: SIMD intrinsic calls
-    let base_offset_vec = unsafe { _mm_set1_epi8(self.gap_info.base_offset as i8) };
+    // Safe in #[target_feature] function - just vector initialization
+    let base_offset_vec = _mm_set1_epi8(self.gap_info.base_offset as i8);
 
     for _ in 0..num_blocks {
-        // Unsafe: unchecked indexing
+        // Unsafe: unchecked indexing (pointer-like operation)
         let (b0, b1, b2, b3, b4) = unsafe {(
             *data.get_unchecked(offset),
             *data.get_unchecked(offset + 1),
@@ -63,13 +64,13 @@ unsafe fn encode_ssse3_5bit(&self, data: &[u8], result: &mut String) {
         indices[1] = ((b0 << 2) | (b1 >> 6)) & 0x1F;
         // ...
 
-        // Unsafe: SIMD load/store
-        let char_vec = unsafe {
-            let idx_vec = _mm_loadu_si128(indices.as_ptr() as *const __m128i);
-            _mm_add_epi8(base_offset_vec, idx_vec)
-        };
+        // Unsafe: SIMD load (pointer dereference)
+        let idx_vec = unsafe { _mm_loadu_si128(indices.as_ptr() as *const __m128i) };
 
-        // Safe: iteration, push
+        // Safe: vector arithmetic
+        let char_vec = _mm_add_epi8(base_offset_vec, idx_vec);
+
+        // Unsafe: SIMD store (pointer dereference)
         let mut output = [0u8; 16];
         unsafe { _mm_storeu_si128(output.as_mut_ptr() as *mut __m128i, char_vec) };
 
@@ -185,50 +186,69 @@ When migrating SIMD code to Edition 2024:
 - `src/simd/aarch64/specialized/base256.rs` - NEON encode/decode
 - `src/simd/aarch64/generic.rs` - Generic NEON reshuffling
 
-## The Double-Block Anti-Pattern
+## `#[target_feature]` Functions: Only Pointer Ops Need Unsafe
 
-**Problem:** You have an `unsafe fn` with a single large `unsafe {}` block wrapping the entire body.
+**Key discovery (2024-12-01):** In functions with `#[target_feature(enable = "...")]`, most SIMD intrinsics are **safe to call** without explicit `unsafe {}` blocks. Only **pointer operations** need unsafe.
+
+### What needs unsafe:
+- `_mm_loadu_si128` / `_mm_storeu_si128` (x86_64 load/store)
+- `vld1q_u8` / `vst1q_u8` (NEON load/store)
+- Any intrinsic that dereferences a raw pointer
+
+### What does NOT need unsafe:
+- `_mm_set1_epi8`, `_mm_add_epi8`, `_mm_sub_epi8`, `_mm_cmpgt_epi8`, `_mm_and_si128`, `_mm_movemask_epi8`
+- `vdupq_n_u8`, `vaddq_u8`, `vsubq_u8`, `vcgeq_u8`, `vcgtq_u8`, `vandq_u8`
+- All arithmetic, comparison, and initialization intrinsics
+
+### Why?
+
+The `#[target_feature]` attribute guarantees the CPU supports the instruction set. The intrinsics themselves aren't unsafe - they're just SIMD math. What's unsafe is dereferencing pointers, which load/store intrinsics do.
+
+### Correct pattern:
 
 ```rust
-// ANTI-PATTERN: Double unsafe nesting
-unsafe fn decode_nibble_chars_neon(chars: uint8x16_t) -> uint8x16_t {
+#[target_feature(enable = "neon")]
+unsafe fn decode_neon_5bit(&self, encoded: &str) -> Option<Vec<u8>> {
     use std::arch::aarch64::*;
 
-    unsafe {  // <-- This wrapper is redundant AND creates lint confusion
-        let zero = vdupq_n_u8(0x30);
-        // ... 30 lines of SIMD code ...
+    // NO unsafe needed - these are just vector initialization
+    let base_offset_vec = vdupq_n_u8(self.gap_info.base_offset);
+    let thresh1 = vdupq_n_u8(threshold1);
+
+    for block in 0..num_blocks {
+        // UNSAFE needed - pointer dereference
+        let char_vec = unsafe { vld1q_u8(chars.as_ptr()) };
+
+        // NO unsafe needed - vector arithmetic
+        let mut idx_vec = vsubq_u8(char_vec, base_offset_vec);
+        let mask1 = vcgeq_u8(char_vec, thresh1);
+        idx_vec = vsubq_u8(idx_vec, vandq_u8(mask1, vdupq_n_u8(1)));
+
+        // UNSAFE needed - pointer dereference
+        unsafe { vst1q_u8(indices.as_mut_ptr(), idx_vec) };
     }
+
+    Some(result)
 }
 ```
 
-**Why it's confusing:**
-- On x86_64: This code isn't compiled (it's `#[cfg(target_arch = "aarch64")]`)
-- On aarch64 with Rust 2024: Clippy warns "unnecessary unsafe block" because `unsafe fn` body is *supposed to* require `unsafe {}` around each intrinsic, but ONE big block looks redundant
-- The warning is technically wrong - the big block IS necessary for the intrinsics - but the pattern is still bad
-
-**The fix:** Replace the single large block with per-intrinsic `unsafe {}` blocks:
+### Anti-pattern: Wrapping every intrinsic
 
 ```rust
-// CORRECT: Per-intrinsic unsafe blocks
-unsafe fn decode_nibble_chars_neon(chars: uint8x16_t) -> uint8x16_t {
-    use std::arch::aarch64::*;
-
-    let zero = unsafe { vdupq_n_u8(0x30) };
-    let nine = unsafe { vdupq_n_u8(0x39) };
-    let is_digit = unsafe { vandq_u8(vcgeq_u8(chars, zero), vcleq_u8(chars, nine)) };
-    // ... each intrinsic wrapped individually ...
-}
+// WRONG - 60+ unnecessary unsafe blocks
+let base_offset_vec = unsafe { vdupq_n_u8(self.gap_info.base_offset) };  // unnecessary
+let idx_vec = unsafe { vsubq_u8(char_vec, base_offset_vec) };  // unnecessary
 ```
 
-This satisfies Rust 2024's `unsafe_op_in_unsafe_fn` while avoiding the "unnecessary unsafe block" warning.
+Clippy will warn about these as "unnecessary unsafe blocks".
 
-## Lesson Learned (2024-11-30)
+## Lesson Learned (2024-12-01)
 
-When you see "unnecessary unsafe block" warnings on platform-specific code:
+When you see "unnecessary unsafe block" warnings in `#[target_feature]` code:
 
-1. **Don't blindly remove the unsafe blocks** - the intrinsics inside still need them
-2. **Check if it's a "double wrapping" issue** - one big block vs per-intrinsic blocks
-3. **The fix is restructuring**, not removal
+1. **The warning is probably correct** - most SIMD intrinsics don't need unsafe
+2. **Only pointer ops need unsafe** - load/store intrinsics that dereference pointers
+3. **Remove the unnecessary blocks** - keep unsafe only around pointer operations
 4. **Test on the target platform** - x86_64 clippy can't catch aarch64 issues
 
 ## References
