@@ -129,6 +129,35 @@ mx pr merge <number> --merge         # standard merge commit
 
 ---
 
+## GitHub Operations
+
+**Prefer `gh` CLI over MCP GitHub tools.** The MCP tools return excessive token counts (full payloads with no filtering).
+
+```bash
+# Issues
+gh issue list --repo owner/repo --limit 10
+gh issue view 123 --repo owner/repo
+gh issue create --title "..." --body "..."
+
+# PRs
+gh pr list --repo owner/repo --limit 10
+gh pr view 123 --repo owner/repo
+gh pr create --title "..." --body "..."
+
+# Use --json for specific fields
+gh issue list --json number,title,state --limit 20
+gh pr view 123 --json title,body,mergeable
+```
+
+**When to use MCP GitHub tools:**
+- `mcp__github__create_pull_request` - when `gh` auth fails
+- `mcp__github__merge_pull_request` - only via `mx pr merge` fallback
+- Never use `mcp__github__list_issues` or `mcp__github__list_pull_requests` - token bloat
+
+Route GitHub operations through Merovingian who decides gh vs MCP.
+
+---
+
 ## Preferences
 
 - Prefer contributing upstream over maintaining personal forks/patches

@@ -113,3 +113,31 @@ mode = "radix"  # force radix even though 64 = 2^6
 - **Problem:** Currently no status field in projects table
 - **Solution:** Add `status` column (active/dormant/closed) to projects schema
 - **Benefit:** Zion Control can skip archiving RAM for closed projects, keep working notes for active ones
+
+---
+
+## base-d: Chained Encode/Decode in Single Invocation
+
+- **Context:** Old CLI supported `--encode base64 --decode base64` in one call
+- **Removed in:** v3 subcommand refactor (test_encode_then_decode deleted)
+- **Use case:** Benchmarking pure processing power and memory usage without pipe overhead
+- **Future option:** Consider adding a `pipe` or `chain` subcommand if benchmarking use case becomes important
+- **Example syntax:** `base-d chain "encode base64 | decode base64 | encode hex"`
+
+---
+
+## Git: Force Push Without Setting Upstream First
+
+- **Context:** Lost work during mx PR #48 maintenance
+- **What happened:** Used `git branch --set-upstream-to=origin/branch` before force pushing. Git saw local was "behind" remote and auto-rebased, hit conflicts, `--abort` reset to remote's old state - wiping all local changes.
+- **Lesson:** When force pushing amended commits, use `git push --force origin branch-name` directly. Don't set up tracking first - it triggers rebase logic that can wipe local work.
+- **Safe pattern:**
+  ```bash
+  git commit --amend --no-edit
+  git push --force origin branch-name  # direct, no tracking dance
+  ```
+- **Avoid:**
+  ```bash
+  git branch --set-upstream-to=origin/branch  # triggers rebase
+  git push --force-with-lease  # fails, tries to reconcile
+  ```
