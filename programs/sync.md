@@ -13,6 +13,7 @@
    - Key decisions made
    - Open questions or blockers
    - Next steps
+   - New projects (add to `~/.matrix/ram/neo/projects.md` if not already tracked)
 
 2. **Write to RAM** - Save to `~/.matrix/ram/neo/`:
    - Filename: `{project}-context.md` or `session-{date}-{nn}.md`

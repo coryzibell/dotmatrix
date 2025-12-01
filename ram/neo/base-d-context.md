@@ -1,9 +1,18 @@
 # base-d Context
 
 **Repo:** `~/work/personal/code/base-d`
-**Status:** SIMD parity complete
+**Status:** Active development
 
-## Recent Work (2025-11-30)
+## Recent Work (2025-12-01)
+
+PR #124 merged - Ascon and KangarooTwelve hash algorithms:
+- Added `ascon-hash` and `k12` crates
+- CLI: `--hash ascon`, `--hash k12`, `--hash kangarootwelve`
+- Streaming and non-streaming support
+- Docs updated (README, HASHING.md)
+- Issue #108 closed
+
+## Previous Work (2025-11-30)
 
 PR #118 merged - Full aarch64/NEON support:
 - Specialized codecs (Base64/32/16/256): Full parity
