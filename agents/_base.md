@@ -64,7 +64,7 @@ After completing your work:
 
 | Working Directory | Storage Location |
 |-------------------|------------------|
-| `~/work/veoci/`, `~/work/*/` (client work) | `~/.matrix-private/` |
+| `~/work/*/` (except `~/work/personal/`) | `~/.matrix-private/` |
 | `~/work/personal/`, `~/.matrix/`, open source | `~/.matrix/` |
 
 **Private storage** (`~/.matrix-private/`) has the same structure - just swap the base path:

@@ -5,7 +5,7 @@ Determine public vs private storage based on working directory.
 ## Logic
 
 ```
-if cwd contains ~/work/veoci/ or ~/work/<client>/ (non-personal):
+if cwd matches ~/work/*/ (except ~/work/personal/):
   storage = ~/.matrix-private/
 else:
   storage = ~/.matrix/
@@ -15,8 +15,7 @@ else:
 
 | Working Directory | Storage Base |
 |-------------------|--------------|
-| `~/work/veoci/*` | `~/.matrix-private/` |
-| `~/work/<client>/*` | `~/.matrix-private/` |
+| `~/work/*/` (not personal) | `~/.matrix-private/` |
 | `~/work/personal/*` | `~/.matrix/` |
 | `~/.matrix/*` | `~/.matrix/` |
 | Open source repos | `~/.matrix/` |

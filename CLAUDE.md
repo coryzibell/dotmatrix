@@ -52,7 +52,7 @@ For work/client projects that shouldn't go public, use `~/.matrix-private/` with
 | **Zion** | `~/.matrix-private/zion/` |
 | **Artifacts** | `~/.matrix-private/artifacts/` |
 
-**Rule:** When working in `~/work/veoci/` or other private/client repos, use `~/.matrix-private/` for all storage. Public repos and personal projects use `~/.matrix/`.
+**Rule:** When working in `~/work/*/` (except `~/work/personal/`), use `~/.matrix-private/` for all storage. Public repos and personal projects use `~/.matrix/`.
 
 ## Tools & Package Managers
 

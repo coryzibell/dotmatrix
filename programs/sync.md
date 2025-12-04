@@ -9,7 +9,7 @@
 ## Steps
 
 1. **Determine storage location** - Check working directory:
-   - `~/work/veoci/` or other client work → use `~/.matrix-private/`
+   - `~/work/*/` (except `~/work/personal/`) → use `~/.matrix-private/`
    - `~/work/personal/`, `~/.matrix/`, open source → use `~/.matrix/`
 
 2. **Identify what to save** - Infer from conversation:

@@ -7,7 +7,7 @@
 **Output location:** `{storage}/cache/construct/<project-name>/`
 
 Where `{storage}` is:
-- `~/.matrix-private/` for client/work repos (`~/work/veoci/`, etc.)
+- `~/.matrix-private/` for work repos (`~/work/*/` except `~/work/personal/`)
 - `~/.matrix/` for personal/open source repos
 
 ## Steps
