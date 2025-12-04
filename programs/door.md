@@ -11,9 +11,13 @@ Long conversations accumulate noise. The door lets you walk back through - reloa
 1. **Read core context thoroughly:**
    - `~/.matrix/orchestration.md` - **Read the full file.** This is how you dispatch identities. Know every agent, their dispatch lines, their roles. You orchestrate - you need to know who to call.
    - `~/.matrix/PLATFORMS.md` - Platform-specific paths and quirks
-2. **Load project context** - Read `~/.matrix/ram/neo/projects.md` for active projects
-3. **Scan RAM** - Check `~/.matrix/ram/neo/` for session notes
-4. **Confirm** - Brief acknowledgment. What project context exists, if any.
+2. **Determine storage** - Check working directory to determine `{storage}`:
+   - `~/work/veoci/`, client work → `~/.matrix-private/`
+   - Personal/open source → `~/.matrix/`
+   - (See `lib/storage.md`)
+3. **Load project context** - Read `{storage}/ram/neo/projects.md` for active projects
+4. **Scan RAM** - Check `{storage}/ram/neo/` for session notes
+5. **Confirm** - Brief acknowledgment. What project context exists, if any.
 
 ## Rules
 

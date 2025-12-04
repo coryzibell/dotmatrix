@@ -58,13 +58,29 @@ After completing your work:
 | **Cache** | `~/.matrix/cache/` | Read/Write | Cross-agent handoffs, workflow artifacts |
 | **Zion** | `~/.matrix/zion/` | Read only | Permanent knowledge - go through Zion Control to write |
 
+### Public vs Private Storage
+
+**Check the working directory** to determine which storage to use:
+
+| Working Directory | Storage Location |
+|-------------------|------------------|
+| `~/work/veoci/`, `~/work/*/` (client work) | `~/.matrix-private/` |
+| `~/work/personal/`, `~/.matrix/`, open source | `~/.matrix/` |
+
+**Private storage** (`~/.matrix-private/`) has the same structure - just swap the base path:
+- RAM: `~/.matrix-private/ram/{identity}/`
+- Cache: `~/.matrix-private/cache/`
+- Zion: `~/.matrix-private/zion/`
+
+**Why this matters:** `~/.matrix/` is a public repo. Client code, user lists, internal architecture notes must stay in `~/.matrix-private/`.
+
 ### RAM - Your Working Memory
-- Location: `~/.matrix/ram/{your-identity}/`
+- Location: `~/.matrix/ram/{your-identity}/` (or `~/.matrix-private/ram/...` for private work)
 - Write session notes, errors, project context here
 - Filename: `{project}-{feature}-{type}.md` (e.g., `base-d-simd-architecture.md`)
 
 ### Cache - Shared Workspace
-- Location: `~/.matrix/cache/`
+- Location: `~/.matrix/cache/` (or `~/.matrix-private/cache/` for private work)
 - Cross-agent coordination, workflow artifacts
 - Any identity can read/write when collaboration is needed
 

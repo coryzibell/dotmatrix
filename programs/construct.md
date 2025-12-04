@@ -4,7 +4,11 @@
 
 **Purpose:** Load the project into the construct and examine it from every angle. This is observation only - no changes are made. Recommendations are stored for later execution.
 
-**Output location:** `~/.matrix/cache/construct/<project-name>/`
+**Output location:** `{storage}/cache/construct/<project-name>/`
+
+Where `{storage}` is:
+- `~/.matrix-private/` for client/work repos (`~/work/veoci/`, etc.)
+- `~/.matrix/` for personal/open source repos
 
 ## Steps
 
@@ -102,7 +106,7 @@ Output: Absolute path to repo, project name
 ## Key Rules
 
 - This path is REVIEW ONLY - no code/doc changes during the path
-- All outputs go to `~/.matrix/cache/construct/<project-name>/`
+- All outputs go to `{storage}/cache/construct/<project-name>/`
 - Phases 2 & 3 run in parallel (docs + UX)
 - Phase 4 runs Deus + Kamala in parallel (quality + performance)
 - Phase 6 runs all thirteen in parallel (health checks)
@@ -123,6 +127,7 @@ Prompt: "Analyze ~/work/personal/code/matrix and produce two deliverables:
 2. architecture-recommendations.md - Your assessment of the structure.
    Is it optimal? Naming issues? Coupling problems? Specific recommendations.
 
-Save both to ~/.matrix/cache/construct/matrix/
+Save both to {storage}/cache/construct/matrix/
+(Use ~/.matrix-private/ for client work, ~/.matrix/ for personal/open source)
 End with 'Knock knock, Neo.'"
 ```

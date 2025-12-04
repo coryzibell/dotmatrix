@@ -41,6 +41,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | **Artifacts** | `~/.matrix/artifacts/` | Permanent tools, scripts, templates, configs | Forever |
 | **Bin** | `~/.matrix/bin/` | Executable scripts and tools | Forever |
 
+### Private Storage
+
+For work/client projects that shouldn't go public, use `~/.matrix-private/` with the same structure:
+
+| Tier | Location |
+|------|----------|
+| **RAM** | `~/.matrix-private/ram/{agent}/` |
+| **Cache** | `~/.matrix-private/cache/` |
+| **Zion** | `~/.matrix-private/zion/` |
+| **Artifacts** | `~/.matrix-private/artifacts/` |
+
+**Rule:** When working in `~/work/veoci/` or other private/client repos, use `~/.matrix-private/` for all storage. Public repos and personal projects use `~/.matrix/`.
+
 ## Tools & Package Managers
 
 - **mise** - Primary tool version manager (use `mise upgrade` to update tools, not `cargo install`)

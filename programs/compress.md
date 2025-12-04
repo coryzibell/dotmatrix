@@ -7,6 +7,16 @@
 
 ---
 
+## Storage Note
+
+This program operates on BOTH storage locations:
+- `~/.matrix/` - Public dotfiles (personal projects, open source)
+- `~/.matrix-private/` - Private work (client projects)
+
+Run on each as needed. See `lib/storage.md`.
+
+---
+
 ## Phase 0: Pre-flight (Neo)
 
 Before dispatching Zion Control:
@@ -19,10 +29,10 @@ Before dispatching Zion Control:
 
 **Neo passes these paths to Zion Control:**
 
-1. `~/.matrix/ram/*/` - Agent working memory
-2. `~/.matrix/cache/` - Workflow artifacts, construct outputs, session exports
-3. `~/.matrix/future/` - Shelved ideas (should migrate to Zion db)
-4. `~/.matrix/zion/**/*.md` - All markdown in Zion (should be in db, not files)
+1. `{storage}/ram/*/` - Agent working memory
+2. `{storage}/cache/` - Workflow artifacts, construct outputs, session exports
+3. `~/.matrix/future/` - Shelved ideas (should migrate to Zion db) (public only)
+4. `{storage}/zion/**/*.md` - All markdown in Zion (should be in db, not files)
 
 **Zion Control scans, reads, and contextualizes.** Neo doesn't pre-read.
 
@@ -64,7 +74,7 @@ Flag for kautau if:
 
 **CRITICAL: Zion Control must use the `mx zion` CLI for all knowledge storage.**
 
-Zion is a database, not a folder. Never write markdown files to `~/.matrix/zion/`.
+Zion is a database, not a folder. Never write markdown files to `{storage}/zion/`.
 
 ```bash
 # Archive knowledge

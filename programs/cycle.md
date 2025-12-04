@@ -8,6 +8,8 @@
 
 **Input:** Project path or name
 
+> See `lib/storage.md` for public vs private storage resolution.
+
 **Output:** Migration plan with GitHub issues for execution
 
 ## Steps
@@ -145,7 +147,7 @@ Output: Absolute path to repo, project name
 
 ### Phase 5: Create Issues
 
-5. **Neo creates issue markdown files** in `~/.matrix/cache/cycle/<project>/issues/`
+5. **Neo creates issue markdown files** in `{storage}/cache/cycle/<project>/issues/`
    - Follow pattern from Broadcast program
    - Group patch bumps into single issue
    - Separate issues for major dependency upgrades
@@ -168,8 +170,8 @@ Output: Absolute path to repo, project name
 7. **Dispatch Kid** - Create issues on GitHub
    ```bash
    mx sync labels <owner/repo>
-   mx convert md2yaml ~/.matrix/cache/cycle/<project>/issues/
-   mx sync push <owner/repo> -i ~/.matrix/cache/cycle/<project>/issues/
+   mx convert md2yaml {storage}/cache/cycle/<project>/issues/
+   mx sync push <owner/repo> -i {storage}/cache/cycle/<project>/issues/
    ```
 
 ## Key Rules

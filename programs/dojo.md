@@ -26,11 +26,12 @@
    - Look for non-obvious facts, edge cases, gotchas, history
 
    **Local scope:**
-   - Search Zion (`~/.matrix/zion/`)
+   - Search Zion (`{storage}/zion/`)
    - Search project codebases (`~/work/personal/code/`)
-   - Search RAM notes (`~/.matrix/ram/`)
+   - Search RAM notes (`{storage}/ram/`)
    - Search artifacts (`~/.matrix/artifacts/`)
    - Look for patterns we've learned, bugs we've fixed, decisions we've made
+   - Note: Use `~/.matrix-private/` for client work, `~/.matrix/` for personal (see `lib/storage.md`)
 
 2. **Tank returns** with:
    - The fact/knowledge

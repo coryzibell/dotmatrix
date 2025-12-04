@@ -10,6 +10,8 @@ Wake up call. Get situational awareness on a project. Updates persistent status 
 
 Like the game of phone - context passes through sessions, things can drift. This syncs you back to reality.
 
+> See `lib/storage.md` for public vs private storage resolution. Use `{storage}` below.
+
 ## Execution
 
 ### 1. Locate
@@ -32,12 +34,12 @@ Output: Absolute path to repo, project name
 - CI status on main
 
 **Context:**
-- Check `~/.matrix/ram/neo/` for session notes
-- Check `~/.matrix/cache/` for workflow artifacts
+- Check `{storage}/ram/neo/` for session notes
+- Check `{storage}/cache/` for workflow artifacts
 
 ### 3. Update Status Doc
 
-Write to `~/.matrix/zion/project/<name>/STATUS.md`:
+Write to `{storage}/zion/project/<name>/STATUS.md`:
 
 ```markdown
 # <Project Name> - Status
@@ -89,7 +91,7 @@ Write to `~/.matrix/zion/project/<name>/STATUS.md`:
 
 ### 4. Update Index
 
-Append/update entry in `~/.matrix/zion/project/INDEX.md`:
+Append/update entry in `{storage}/zion/project/INDEX.md`:
 
 ```markdown
 | Project | Last Sync | State | Notes |

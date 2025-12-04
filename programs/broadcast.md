@@ -4,7 +4,9 @@
 
 **Purpose:** Neo synthesizes construct outputs into actionable GitHub issues, each assigned to the identity best suited to execute it.
 
-**Input:** `~/.matrix/cache/construct/<project-name>/` (output from Construct path)
+**Input:** `{storage}/cache/construct/<project-name>/` (output from Construct path)
+
+> See `lib/storage.md` for public vs private storage resolution.
 
 **Output:** GitHub issues created on the repo with `identity:<name>` labels
 
@@ -14,7 +16,7 @@
 
 > See `lib/locate.md` for project detection logic.
 
-Output: Absolute path to repo, project name (used to find `~/.matrix/cache/construct/<project-name>/`)
+Output: Absolute path to repo, project name (used to find `{storage}/cache/construct/<project-name>/`)
 
 ### Phase 1: Read the Construct
 1. **Neo reads all construct outputs:**
@@ -58,7 +60,7 @@ Output: Absolute path to repo, project name (used to find `~/.matrix/cache/const
    - `synthesis.md` - blockers, improvements, ideas
 
 ### Phase 2: Write Issue Markdown
-2. **Neo writes issue `.md` files** to `~/.matrix/cache/construct/<project-name>/issues/`
+2. **Neo writes issue `.md` files** to `{storage}/cache/construct/<project-name>/issues/`
    - One file per actionable item (e.g., `fix-command-injection.md`)
    - Follow template at `~/.matrix/artifacts/etc/issue-template.md`
    - Include: Context, Problem, Solution, Implementation Steps, Acceptance Criteria, Handoff
@@ -78,10 +80,10 @@ Output: Absolute path to repo, project name (used to find `~/.matrix/cache/const
    mx sync labels <owner/repo>
 
    # Convert authored markdown to YAML
-   mx convert md2yaml ~/.matrix/cache/construct/<project>/issues/
+   mx convert md2yaml {storage}/cache/construct/<project>/issues/
 
    # Push to GitHub (unified sync routes by type)
-   mx sync push <owner/repo> -i ~/.matrix/cache/construct/<project>/issues/
+   mx sync push <owner/repo> -i {storage}/cache/construct/<project>/issues/
    ```
 
    The sync routes based on `metadata.type`:

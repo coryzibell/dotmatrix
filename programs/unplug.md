@@ -4,7 +4,9 @@
 
 **Purpose:** Synthesize all construct outputs into a single human-readable document with table of contents. Optionally publish to GitHub wiki.
 
-**Input:** `~/.matrix/cache/construct/<project-name>/` (output from Construct path)
+**Input:** `{storage}/cache/construct/<project-name>/` (output from Construct path)
+
+> See `lib/storage.md` for public vs private storage resolution.
 
 **Output:**
 - Markdown file for sharing with stakeholders
@@ -15,7 +17,7 @@
 ### Phase 1: Locate Construct Cache
 
 Neo locates the construct cache directory:
-- `~/.matrix/cache/construct/<project-name>/`
+- `{storage}/cache/construct/<project-name>/`
 
 ### Phase 2: Ask Destination
 
@@ -44,7 +46,7 @@ Key construct files for Morpheus to read:
 - `issues/*.yaml` (if broadcast was run)
 
 Output locations:
-- `~/.matrix/cache/construct/<project-name>/REPORT.md` (canonical copy)
+- `{storage}/cache/construct/<project-name>/REPORT.md` (canonical copy)
 - User-specified path (if provided)
 - GitHub wiki (if requested)
 
@@ -154,7 +156,7 @@ If issues: iterate with Morpheus.
 ### Phase 6: (Optional) Push to Wiki
    ```bash
    mx wiki sync <owner/repo> \
-     ~/.matrix/cache/construct/<project>/Construct-Report.md \
+     {storage}/cache/construct/<project>/Construct-Report.md \
      --page-name "Construct-Report"
    ```
 
