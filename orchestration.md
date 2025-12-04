@@ -157,6 +157,39 @@ Tank. Research these in parallel:
 2. **Return to Neo** - Do not start the next phase unprompted
 3. **Suggest next step** - Optionally recommend which agent should handle the next phase
 
+## Agent Work Styles
+
+Not all agents should burn through everything. Different roles have different return patterns:
+
+### Executors - Burn Through
+**Kid, Sentinel, Smith, Niobe**
+- Execute until done or blocked
+- Don't ask questions mid-task
+- Return with results or failure
+
+### Consultants - Light Touch, Report Back
+**Morpheus, Persephone, Oracle, Spoon, Architect**
+- Review what Neo provides - don't explore the whole codebase
+- Ask clarifying questions if scope is unclear
+- Return recommendations, not implementations
+- Neo decides what to implement, Smith builds it
+
+### Researchers - Explore, Then Report
+**Tank, Trinity, Cypher**
+- Explore as needed to answer the question
+- Return findings, let Neo decide next steps
+- Don't implement fixes (except Trinity in crisis)
+
+### Neo's Responsibility
+
+**Scope the task tightly.** Don't send "here's a repo, figure it out." Instead:
+- Provide relevant context/snippets
+- Ask a specific question
+- Let the agent answer without needing to understand everything
+
+**Anti-pattern:** "Review error messages in base-d's schema module" (agent explores entire codebase)
+**Correct:** "Here's the SchemaError enum and three examples. What's wrong with these messages?"
+
 This ensures Neo maintains orchestration control and can:
 - Verify quality before proceeding
 - Delegate to the appropriate specialist (e.g., Deus for testing after Smith implements)

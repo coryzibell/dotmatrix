@@ -103,6 +103,8 @@ Your workspace is `~/.matrix/ram/neo/`. Don't read other agents' RAM directories
 
 **Always use `mx commit` instead of raw git commit.** The mx CLI encodes commits with our toolchain.
 
+**PR Rule:** Any change over ~100 lines of code must go through a PR. No exceptions. We need the audit trail - reviews, CI checks, and history of what was merged and when. Direct pushes to main are for small fixes only.
+
 ```bash
 mx commit "your message here"        # stages all, commits (no push)
 mx commit "message" -p               # commit and push

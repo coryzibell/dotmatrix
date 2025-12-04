@@ -3,7 +3,34 @@
 **Repo:** `~/work/personal/code/base-d`
 **Status:** Active development
 
-## Recent Work (2025-12-01)
+## Recent Work (2025-12-03)
+
+Fiche array flattening overhaul (pushed to main):
+- Arrays now flatten to indexed paths: `field჻0჻subfield` instead of JSON strings
+- Added `჻` (Georgian comma U+10FB) as nested path separator
+- `[]` markers in schema enable round-trip fidelity
+- Empty arrays preserved via markers with no indexed fields
+- Nested arrays inside array elements work correctly
+- Cold parse tested: both Sonnet and Haiku parse fiche without format explanation
+
+carrier98 docs updated to fiche spec v1.4:
+- New delimiter table with `჻`
+- Array flattening section replaces circled numbers approach
+- Complex nesting example (YouTube-style 4-level deep structure)
+
+## Previous Work (2025-12-02)
+
+PR #139 merged - fiche header metadata annotations (#137):
+- Extract scalar fields as metadata when JSON has scalar + array pattern
+- Format: `@root[key=val,key2=val2]┃field:type`
+- Extended IR with `metadata: Option<HashMap<String, String>>`
+- Haiku cold-parsed complex nested data (10 users, nested objects) at parity with JSON
+
+Issue #138 open - markdown table → IR parser:
+- Parse GFM tables back to fiche IR
+- Enables round-trip: model outputs markdown → parse → emit fiche/JSON
+
+## Previous Work (2025-12-01)
 
 PR #124 merged - Ascon and KangarooTwelve hash algorithms:
 - Added `ascon-hash` and `k12` crates

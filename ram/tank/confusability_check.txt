@@ -1,0 +1,97 @@
+================================================================================
+CONFUSABILITY CHECK - Circle variants vs ASCII O and digit 0
+================================================================================
+
+ASCII Letter O (U+004F):     O O O O O O O O O O
+ASCII Digit 0 (U+0030):      0 0 0 0 0 0 0 0 0 0
+U+25CB White Circle:         ○ ○ ○ ○ ○ ○ ○ ○ ○ ○  [EXCLUDED]
+U+25EF Large Circle:         ◯ ◯ ◯ ◯ ◯ ◯ ◯ ◯ ◯ ◯  [INCLUDED]
+
+Side by side test:
+O0○◯ O0○◯ O0○◯ O0○◯ O0○◯ O0○◯ O0○◯ O0○◯
+
+Mixed strings:
+O◯O0O○O◯O0O○O◯O0O○O◯O0
+0○0◯0O0○0◯0O0○0◯0O0○
+
+Key differences:
+- O (letter): Slightly oval in most fonts
+- 0 (digit): Often has slash or dot, clearly numeric
+- ○ (U+25CB): Very similar to O, CRITICAL CONFUSABLE [EXCLUDED]
+- ◯ (U+25EF): Larger, bolder stroke, more distinct [KEPT]
+
+VERDICT: U+25EF is visually distinct enough to keep.
+
+================================================================================
+SQUARE CONFUSABILITY CHECK - vs space/empty
+================================================================================
+
+Space character:             [   ] [   ] [   ] [   ] [   ]
+U+25A1 White Square:         [ □ ] [ □ ] [ □ ] [ □ ] [ □ ]  [EXCLUDED]
+U+25A0 Black Square:         [ ■ ] [ ■ ] [ ■ ] [ ■ ] [ ■ ]  [INCLUDED]
+
+The white square □ can easily be mistaken for empty space or an input box.
+Black square ■ is clearly visible and distinct.
+
+VERDICT: Correctly excluded U+25A1, kept U+25A0.
+
+================================================================================
+BOX DRAWING - Light vs Heavy comparison
+================================================================================
+
+Light horizontal (U+2500):   ──────────  [EXCLUDED - too thin]
+Heavy horizontal (U+2501):   ━━━━━━━━━━  [INCLUDED - clear]
+
+Light vertical (U+2502):     │││││││││  [EXCLUDED - too thin]
+Heavy vertical (U+2503):     ┃┃┃┃┃┃┃┃┃  [INCLUDED - clear]
+
+Light corner (U+250C):       ┌  [EXCLUDED]
+Heavy corner (U+250F):       ┏  [INCLUDED]
+
+Light box:                   ┌─────┐  [EXCLUDED - nearly invisible]
+                             │     │
+                             └─────┘
+
+Heavy box:                   ┏━━━━━┓  [INCLUDED - clearly visible]
+                             ┃     ┃
+                             ┗━━━━━┛
+
+VERDICT: Light variants correctly excluded.
+
+================================================================================
+BLOCK ELEMENTS - Partial vs Full
+================================================================================
+
+Full block (U+2588):         █ █ █ █ █  [INCLUDED]
+
+Half blocks:
+Upper half (U+2580):         ▀ ▀ ▀ ▀ ▀  [EXCLUDED - orientation unclear]
+Lower half (U+2584):         ▄ ▄ ▄ ▄ ▄  [EXCLUDED - orientation unclear]
+Left half (U+258C):          ▌ ▌ ▌ ▌ ▌  [EXCLUDED - orientation unclear]
+Right half (U+2590):         ▐ ▐ ▐ ▐ ▐  [EXCLUDED - orientation unclear]
+
+Quadrants (distinct patterns):
+Lower left (U+2596):         ▖ ▖ ▖ ▖ ▖  [INCLUDED - unique pattern]
+Lower right (U+2597):        ▗ ▗ ▗ ▗ ▗  [INCLUDED - unique pattern]
+Upper left (U+2598):         ▘ ▘ ▘ ▘ ▘  [INCLUDED - unique pattern]
+Upper right (U+259D):        ▝ ▝ ▝ ▝ ▝  [INCLUDED - unique pattern]
+
+Shades (confusable progression):
+Light shade (U+2591):        ░ ░ ░ ░ ░  [EXCLUDED - looks similar]
+Medium shade (U+2592):       ▒ ▒ ▒ ▒ ▒  [EXCLUDED - looks similar]
+Dark shade (U+2593):         ▓ ▓ ▓ ▓ ▓  [EXCLUDED - looks similar]
+
+VERDICT: Full and quadrants kept, half-fills and shades correctly excluded.
+
+================================================================================
+FINAL CONFUSABILITY ASSESSMENT
+================================================================================
+
+✓ No characters confusable with ASCII letters
+✓ No characters confusable with ASCII digits
+✓ No characters that look like whitespace
+✓ No pairs that are indistinguishable from each other
+✓ All characters visible at small sizes
+✓ All characters have distinct, recognizable shapes
+
+Safe to use: 102 characters (or 96 if excluding heavy dashed variants)

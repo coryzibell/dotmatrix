@@ -1,0 +1,13 @@
+{
+  "services": [
+    {
+      "service": "CSI",
+      "params": [
+        {
+          "key": "c",
+          "value": "WEB"
+        }
+      ]
+    }
+  ]
+}

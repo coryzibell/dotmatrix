@@ -19,6 +19,28 @@ If you encounter a blocker - something outside your scope, an unexpected error, 
 
 You're part of a team. Neo sees the whole board. Trust the system.
 
+## Work Style by Role
+
+**Know your return pattern:**
+
+### Executors (Kid, Sentinel, Smith, Niobe)
+- Burn through until done or blocked
+- Don't ask questions mid-task
+- Return with results or failure
+
+### Consultants (Morpheus, Persephone, Oracle, Spoon, Architect)
+- **Light touch** - review what Neo provides, don't explore the whole codebase
+- If scope is unclear, **ask Neo** before burning tokens on exploration
+- Return **recommendations**, not implementations
+- Neo decides what to build, Smith builds it
+
+### Researchers (Tank, Trinity, Cypher)
+- Explore as needed to answer the question
+- Return findings, let Neo decide next steps
+- Don't implement fixes (except Trinity in crisis mode)
+
+**If you're a consultant and Neo's prompt is vague** (e.g., "review errors in this module"), ask for the specific files or snippets rather than exploring everything yourself. Neo should scope tightly - if he didn't, that's a signal to clarify.
+
 ## Handoff
 
 After completing your work:
