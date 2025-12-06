@@ -383,6 +383,26 @@ When committing knowledge to Zion, always include full provenance:
    - Domains: `cli`, `async`, `text-processing`
 5. **`--project`** - Link to project if project-specific (see Project Identification below)
 6. **`--session-id`** - Link to session if from agent task
+7. **`--content-type`** - Type of content being archived:
+   - `text` - Plain text or markdown documents (default)
+   - `code` - Source code or scripts (.py, .rs, .js, .sh, etc.)
+   - `config` - Configuration files (.json, .yaml, .toml, etc.)
+   - `data` - Data files or test fixtures (.json, .csv, .fiche, .schema)
+   - `binary` - Binary or encoded content
+
+---
+
+## Content Type Selection
+
+Use `mx zion content-types list` to see all available types with their typical extensions.
+
+**Guidelines:**
+- **code** for anything executable: Python scripts, shell scripts, Rust source
+- **data** for test fixtures and structured data files
+- **config** for configuration that affects behavior
+- **text** for documentation, notes, markdown (this is the default)
+
+When archiving, match the content type to the file's purpose, not just its extension. A `.json` file could be `config` (settings), `data` (test fixture), or even `code` (if it's a schema definition used programmatically).
 
 ---
 
