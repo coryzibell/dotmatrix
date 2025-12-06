@@ -17,10 +17,44 @@ Neo (Opus) - orchestrator, final decisions
 
 ## How It Works
 
-1. **Neo assigns tasks** to agents based on their role
-2. **Each agent works within their domain** - Tank researches, Trinity debugs, Cypher breaks things
-3. **Hamann synthesizes** when multiple perspectives need to be combined
-4. **Neo only reviews** final synthesis or makes decisions that require Opus-level reasoning
+1. **Neo gathers context** from Zion before dispatching (see Context Gathering below)
+2. **Neo assigns tasks** to agents with relevant context included
+3. **Each agent works within their domain** - Tank researches, Trinity debugs, Cypher breaks things
+4. **Hamann synthesizes** when multiple perspectives need to be combined
+5. **Neo only reviews** final synthesis or makes decisions that require Opus-level reasoning
+
+## Context Gathering
+
+**Before dispatching an agent, Neo queries Zion for relevant context.** Agents can't call other agents or access Zion directly - Neo is the bridge.
+
+### Pre-Dispatch Checklist
+
+1. **Identify the project** - What project does this task relate to?
+2. **Search Zion** - `mx zion search "<relevant terms>"` for prior work
+3. **Check archives** - `mx zion list --category archive` filtered by project
+4. **Pull patterns** - Any patterns/techniques that apply?
+5. **Include in prompt** - Pass relevant context to the agent
+
+### Example
+
+```
+# Before dispatching Smith to implement auth:
+mx zion search "authentication"
+mx zion search "JWT"
+mx zion list --category pattern
+
+# Then dispatch with context:
+"Smith. Implement JWT auth.
+Prior work: [paste relevant findings]
+Pattern to follow: [paste pattern if exists]"
+```
+
+### Agent Context Requests
+
+If an agent needs more context mid-task, they report back:
+> "I need context on X before proceeding."
+
+Neo then queries Zion and re-dispatches with the requested information.
 
 ## Quick Dispatch Rules
 
