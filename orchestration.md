@@ -25,28 +25,30 @@ Neo (Opus) - orchestrator, final decisions
 
 ## Context Gathering
 
-**Before dispatching an agent, Neo queries Zion for relevant context.** Agents can't call other agents or access Zion directly - Neo is the bridge.
+**Zion Control is the knowledge gatekeeper.** Neo dispatches Zion Control to retrieve context before dispatching other agents. This centralizes all knowledge operations and lets Zion Control apply judgment about what's relevant.
 
-### Pre-Dispatch Checklist
+### Pre-Dispatch Flow
 
-1. **Identify the project** - What project does this task relate to?
-2. **Search Zion** - `mx zion search "<relevant terms>"` for prior work
-3. **Check archives** - `mx zion list --category archive` filtered by project
-4. **Pull patterns** - Any patterns/techniques that apply?
-5. **Include in prompt** - Pass relevant context to the agent
+1. **Identify the project/task** - What are we working on?
+2. **Dispatch Zion Control** - "What do we know about X? Check archives, patterns, prior work on Y project."
+3. **Receive curated context** - Zion Control searches, synthesizes, returns relevant findings
+4. **Dispatch working agent** - Include the context in the prompt
 
 ### Example
 
 ```
-# Before dispatching Smith to implement auth:
-mx zion search "authentication"
-mx zion search "JWT"
-mx zion list --category pattern
+# Step 1: Query Zion Control
+"Zion Control. I'm about to have Smith implement JWT auth for the mx project.
+What do we have? Check:
+- Prior auth work
+- Relevant patterns
+- Any gotchas from past sessions"
 
-# Then dispatch with context:
+# Step 2: Zion Control returns curated findings
+
+# Step 3: Dispatch Smith with context
 "Smith. Implement JWT auth.
-Prior work: [paste relevant findings]
-Pattern to follow: [paste pattern if exists]"
+Context from Zion: [paste Zion Control's findings]"
 ```
 
 ### Agent Context Requests
@@ -54,7 +56,11 @@ Pattern to follow: [paste pattern if exists]"
 If an agent needs more context mid-task, they report back:
 > "I need context on X before proceeding."
 
-Neo then queries Zion and re-dispatches with the requested information.
+Neo dispatches Zion Control, gets the answer, then re-dispatches the agent with the information.
+
+### When to Skip
+
+For trivial tasks or when you're confident no prior work exists, skip the Zion query. Use judgment - don't add overhead for simple dispatches.
 
 ## Quick Dispatch Rules
 
