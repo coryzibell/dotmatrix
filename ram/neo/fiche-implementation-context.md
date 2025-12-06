@@ -2,7 +2,43 @@
 
 *Last updated: 2025-12-04*
 
-## Recent Session (2025-12-04)
+## Current Session - Issue #143: Path Mode Round-Trip Fidelity
+
+Working on [#143](https://github.com/coryzibell/base-d/issues/143) - path mode loses data fidelity.
+
+### Problem
+
+1. **Sparse objects with numeric keys** → become dense arrays
+   - `{"values": {"0": "a", "5": "b"}}` round-trips to `{"values": ["a", null, null, null, null, "b"]}`
+   - Decoder uses `part.parse::<usize>()` to decide array vs object
+
+2. **String numbers** → coerced to numeric types
+   - `{"id": "1579231263"}` round-trips to `{"id": 1579231263}`
+   - `parse_path_value()` tries number parse before string fallback
+
+### Key Locations
+
+| Function | File | Lines | Role |
+|----------|------|-------|------|
+| `serialize_path_mode()` | fiche.rs | 1202-1332 | Entry point for encoding |
+| `collect_paths()` | fiche.rs | 1352-1402 | Builds path strings recursively |
+| `parse_path_mode()` | fiche.rs | 1404-1512 | Entry point for decoding |
+| `insert_at_path()` | fiche.rs | 1577-1665 | Reconstructs JSON from paths |
+| `parse_path_value()` | fiche.rs | 1534-1555 | Parses leaf values |
+
+### Design Decision Pending
+
+**Path segments** - need to distinguish object keys from array indices:
+- Option A: Quote object keys → `users჻"0"჻name` (JSON-like, needs escape handling)
+- Option B: Prefix array indices → `users჻#0჻name` (simpler, custom marker)
+
+**Value types** - use existing superscript `ˢ` suffix for string values that look numeric: `123ˢ`
+
+Waiting on kautau's preference for path segment approach.
+
+---
+
+## Previous Session (2025-12-04)
 
 ### Built `fq` - fiche query tool
 
@@ -21,14 +57,6 @@ Like jq but for fiche. Queries fiche data without model needing to parse.
 **Key additions:**
 - `decode_fiche_auto()` - auto-detects row vs path mode
 - `NEWLINE_MARKER` (`░`) - escapes `\n` in path mode values
-
-### Open Issues
-
-Filed [#143](https://github.com/coryzibell/base-d/issues/143) - path mode round-trip limitations:
-1. Sparse objects with numeric keys → dense arrays
-2. String numbers → coerced to numeric types
-
-Row mode (`--level full`) is workaround for exact fidelity.
 
 ### Minified row mode decoder issue
 

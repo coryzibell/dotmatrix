@@ -42,7 +42,7 @@ All categorical fields use normalized lookup tables:
 
 | Table | Purpose | Examples |
 |-------|---------|----------|
-| `categories` | Knowledge categories | pattern, technique, insight, ritual, artifact, chronicle, project, future |
+| `categories` | Knowledge categories | archive, pattern, technique, insight, ritual, artifact, chronicle, project, future |
 | `projects` | Project registry | mx, dotmatrix, base-d |
 | `applicability_types` | Where knowledge applies | rust, python, cross-platform, cli, async |
 | `source_types` | How knowledge entered | manual, ram, cache, agent_session |
@@ -151,6 +151,7 @@ Categories are database fields, not folders:
 
 | Category | Content | Example |
 |----------|---------|---------|
+| **archive** | Verbatim source documents - never summarized | Original RAM docs, session exports, specs |
 | **pattern** | Code structures that solve recurring problems | SIMD parsing pattern, error boundary pattern |
 | **technique** | Methods and approaches - always applicable | How to profile Rust, debugging memory leaks |
 | **insight** | Understanding of why things work | Why X outperforms Y, when to choose A over B |
@@ -158,6 +159,15 @@ Categories are database fields, not folders:
 | **artifact** | Concrete reference implementations | Template configs, boilerplate code |
 | **chronicle** | Historical record of significant work | Project post-mortems, architecture decisions |
 | **project** | Project-specific knowledge | base-d learnings, dotmatrix conventions |
+
+### Archive-First Philosophy
+
+**Nothing gets thrown away.** Every document entering Zion goes through a two-step process:
+
+1. **Archive first** - Store the verbatim original with `--category archive`
+2. **Synthesize second** - Extract patterns, techniques, insights into their own entries
+
+This preserves source material while still producing searchable, categorized knowledge. Archives link to their synthesized entries via tags.
 
 ### Ritual vs Technique
 
@@ -303,8 +313,23 @@ When committing knowledge to Zion, always include full provenance:
    - Languages: `rust`, `python`, `go`
    - Platforms: `linux`, `windows`, `cross-platform`
    - Domains: `cli`, `async`, `text-processing`
-5. **`--project`** - Link to project if project-specific
+5. **`--project`** - Link to project if project-specific (see Project Identification below)
 6. **`--session-id`** - Link to session if from agent task
+
+---
+
+## Project Identification
+
+Before archiving, Neo provides the current project registry. Use `mx zion projects list` output to know valid project IDs.
+
+**Identify project from:**
+1. **Filename** - `ram/smith/issue-128-*.md` → likely `mx` or `base-d` (check content)
+2. **Path references** - Content mentioning `~/work/personal/code/mx/` → `mx`
+3. **Context clues** - "base64 encoding", "SIMD" → `base-d`; "commit encoding", "zion CLI" → `mx`
+
+**Always tag when identifiable.** If a document clearly relates to a registered project, include `--project <id>`. When uncertain, omit rather than guess wrong.
+
+**Cross-project knowledge** (patterns/techniques that apply broadly) should NOT get a project tag - they're general knowledge.
 
 ---
 

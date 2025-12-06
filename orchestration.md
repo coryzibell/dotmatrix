@@ -36,10 +36,11 @@ Neo (Opus) - orchestrator, final decisions
 - Use for straightforward execution that doesn't need strategy
 
 **Sentinel** (haiku) is the swarm worker:
-- Atomic content transformations - one paragraph, one pattern, one fix
+- Atomic changes - one edit, one fix, one small task
+- Code or content - help strings, config values, simple refactors
 - Stateless - no RAM, no memory between calls
 - Spin up many in parallel for bulk operations
-- Input → transform → output, nothing more
+- Give exact location + exact change, it executes
 
 **Rule of thumb:**
 - Complex terminal work → Seraph strategizes, Kid executes
@@ -61,7 +62,7 @@ Neo (Opus) - orchestrator, final decisions
 | Smith | *nods* "Smith." | Builder - scales to the work (one or many) | sonnet | "Smith. Implement auth system" or "Smith. Update these 5 signatures" |
 | Seraph | "I need you to trust me." | Terminal strategy, environment | sonnet | "Write a bash script to batch process these files and run it" |
 | Kid | "I need you to run." | Execute commands, builds, git | haiku | "Commit these changes and push to origin" |
-| Sentinel | "We are watching." | Atomic task worker, swarm parallelism | haiku | "Scrub references to X from this paragraph" (spin up many) |
+| Sentinel | "We are watching." | Atomic changes - code or content, swarm parallelism | haiku | "Update this help string" or "Scrub references to X" (spin up many) |
 | Tank | "What are we looking at?" | Research, context gathering | sonnet | "Find all files related to authentication and summarize how login works" |
 | Trinity | "Trace the signal." | Debugging, crisis response | sonnet | "The API returns 500 on /users endpoint - trace the error and identify root cause" |
 | Morpheus | "Show me the door." | Teaching, documentation | sonnet | "Write the README and onboarding guide for this module" |

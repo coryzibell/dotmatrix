@@ -27,12 +27,14 @@ Before dispatching Zion Control:
 
 ## Phase 1: Dispatch Zion Control
 
-**Neo passes these paths to Zion Control:**
+**Neo passes to Zion Control:**
 
-1. `{storage}/ram/*/` - Agent working memory
-2. `{storage}/cache/` - Workflow artifacts, construct outputs, session exports
-3. `~/.matrix/future/` - Shelved ideas (should migrate to Zion db) (public only)
-4. `{storage}/zion/**/*.md` - All markdown in Zion (should be in db, not files)
+1. **Project registry** - Output of `mx zion projects list` (for project tagging)
+2. **Paths to process:**
+   - `{storage}/ram/*/` - Agent working memory
+   - `{storage}/cache/` - Workflow artifacts, construct outputs, session exports
+   - `~/.matrix/future/` - Shelved ideas (should migrate to Zion db) (public only)
+   - `{storage}/zion/**/*.md` - All markdown in Zion (should be in db, not files)
 
 **Zion Control scans, reads, and contextualizes.** Neo doesn't pre-read.
 
@@ -46,14 +48,15 @@ Before dispatching Zion Control:
 
 | Action | Destination |
 |--------|-------------|
-| **Keep** | Leave in place |
-| **Archive** | Extract knowledge → Zion database |
+| **Keep** | Leave in place (active work) |
+| **Archive** | Store verbatim → Zion database (archive category) |
 | **Migrate** | Move from future/ or zion/*.md → Zion database |
-| **Delete** | Remove (stale files of any type - scripts, binaries, session exports, old construct outputs) |
+
+**Nothing gets deleted.** Every document moves to Zion as an archive.
 
 Special handling:
-- **Cache/construct/**: Keep recent, delete stale (regenerable via `/load construct`)
-- **Cache/session-export-***: Usually deletable after review
+- **Cache/construct/**: Keep recent, archive when stale (regenerable via `/load construct`)
+- **Cache/session-export-***: Archive with source context, then remove file
 - **Future/**: Migrate ideas to Zion db with category `future`
 - **Zion/**/*.md**: Absorb into db (use appropriate category), then delete the file
 
@@ -76,20 +79,59 @@ Flag for kautau if:
 
 Zion is a database, not a folder. Never write markdown files to `{storage}/zion/`.
 
+### Archive-First Flow
+
+For each document leaving RAM/Cache:
+
+**Step 1: Archive the original**
 ```bash
-# Archive knowledge
-mx zion add --category <category> --title "<title>" --content "<content>"
+mx zion add \
+  --category archive \
+  --title "RAM: smith/issue-128-schema-ir-export.md" \
+  --content "<full verbatim content>" \
+  --source-agent smith \
+  --source-type ram \
+  --entry-type primary \
+  --project mx \
+  --tags "archive,source:ram/smith"
+```
+Note: Include `--project` when content is project-specific. Omit for general knowledge.
 
-# Categories: pattern, technique, insight, ritual, artifact, chronicle, project
-
-# Search existing knowledge
-mx zion search "<query>"
-
-# List entries
-mx zion list --category <category>
+**Step 2: Synthesize knowledge** (if patterns/insights exist)
+```bash
+# Extract patterns, techniques, insights as separate entries
+mx zion add \
+  --category pattern \
+  --title "Schema IR export pattern" \
+  --content "<distilled pattern>" \
+  --source-agent zion-control \
+  --source-type ram \
+  --entry-type synthesis \
+  --tags "archive-ref:<archive-id>"
 ```
 
-For deletions: `rm` the RAM file after archiving.
+### Categories
+
+| Category | Use |
+|----------|-----|
+| **archive** | Verbatim source (never summarize) |
+| **pattern** | Reusable code structures |
+| **technique** | Methods and approaches |
+| **insight** | Understanding of why things work |
+| **ritual** | Human ceremonies |
+| **artifact** | Reference implementations |
+| **chronicle** | Historical records |
+| **project** | Project-specific knowledge |
+
+### Search & List
+
+```bash
+mx zion search "<query>"
+mx zion list --category archive        # See all archived sources
+mx zion list --category pattern        # See synthesized patterns
+```
+
+After archiving: `rm` the RAM file (source preserved in Zion).
 
 ---
 
@@ -104,7 +146,7 @@ For deletions: `rm` the RAM file after archiving.
 ## Key Rules
 
 1. **Database, not files** - `mx zion add`, never write `.md` to zion/
-2. **Synthesize, don't consolidate** - Extract patterns, techniques, insights separately
-3. **Never delete without review**
-4. **Trust regeneration** - If easily recreated, delete it
+2. **Archive first, synthesize second** - Store verbatim original, then extract knowledge
+3. **Nothing thrown away** - Every document becomes an archive entry
+4. **Link archives to synthesis** - Tag synthesized entries with `archive-ref:<id>`
 5. **Timebox** - 10 min max per agent's RAM
