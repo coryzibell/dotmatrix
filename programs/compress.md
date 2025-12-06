@@ -60,6 +60,18 @@ Special handling:
 - **Future/**: Migrate ideas to Zion db with category `future`
 - **Zion/**/*.md**: Absorb into db (use appropriate category), then delete the file
 
+### What to Delete vs Archive
+
+| Content Type | Action | Rationale |
+|--------------|--------|-----------|
+| **Session notes** | Archive | Worth looking back at the thinking |
+| **Working rounds/feedback** | Archive | Preserves the evolution of ideas |
+| **Issue/PR working files** | Archive | Shows improvement over time |
+| **Cloned source code** | Delete | Duplicates actual repo, not worth storing |
+| **Generated/build artifacts** | Delete | Regenerable |
+
+**General rule:** Archive all notes and thinking. Delete copies of source code unless it's an active working directory.
+
 ---
 
 ## Phase 3: Review Gate
