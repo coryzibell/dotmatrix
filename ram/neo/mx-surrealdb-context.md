@@ -1,6 +1,7 @@
 # mx SurrealDB Migration Context
 
 **Issue:** #51 - Migrate Zion knowledge base from SQLite to SurrealDB
+**Branch:** `feature/surrealdb-migration` (pushed)
 **Status:** Phase 1 complete, Phase 2 pending
 
 ## What We Did
